@@ -345,6 +345,47 @@
 </head>
 <body>
 
+{{-- POPUP SUCCÈS Affichée uniquement après une soumission réussie --}}
+@if (session('success'))
+    <div class="success-modal" id="successModal" role="dialog" aria-modal="true" aria-labelledby="successTitle">
+        <div class="success-modal-backdrop"></div>
+        <div class="success-modal-card">
+            {{-- Bouton fermeture --}}
+            <button type="button" class="success-modal-close" id="successModalClose" aria-label="Fermer">
+                ×
+            </button>
+            {{-- Icône succès --}}
+            <div class="success-icon-wrapper">
+                <div class="success-icon">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M5 12.5L9.5 17L19 7"/>
+                    </svg>
+                </div>
+            </div>
+
+            {{-- Contenu --}}
+            <div class="success-modal-content">
+                <span class="success-modal-label">
+                    TRANSMISSION CONFIRMÉE
+                </span>
+                <h2 id="successTitle">
+                    Demande envoyée
+                </h2>
+                <p>
+                    {{ session('success') }}
+                </p>
+                <div class="success-modal-status">
+                    <span class="status-dot"></span>
+                    Votre demande est bien enregistrée
+                </div>
+                <button type="button" class="success-modal-button" id="successModalContinue">
+                    Parfait, merci →
+                </button>
+            </div>
+        </div>
+    </div>
+@endif
+
 <div class="grid-bg"></div>
 <div class="glow glow-1"></div>
 <div class="glow glow-2"></div>
@@ -442,7 +483,7 @@
         <h3>Centres d'appels</h3>
         <p>Préparation linguistique, culturelle et comportementale des agents avant la première mise en production.</p>
       </div>
-      <a href="#contact" class="seg-cta">Voir la solution →</a>
+      <a href="#contact" data-role="Directeur de centre d'appels" data-need="Onboarding de nouvelles recrues" class="seg-cta">Voir la solution →</a>
     </div>
     <div class="seg-panel" id="seg2">
       <div class="seg-icon">02</div>
@@ -450,7 +491,7 @@
         <h3>Intégration & formations de masse</h3>
         <p>Digitalisation des parcours récurrents pour former des volumes importants sans mobiliser vos experts internes.</p>
       </div>
-      <a href="#contact" class="seg-cta">Voir la solution →</a>
+      <a href="#contact" data-role="Responsable formation / L&D" data-need="Formation de volumes importants" class="seg-cta">Voir la solution →</a>
     </div>
     <div class="seg-panel" id="seg3">
       <div class="seg-icon">03</div>
@@ -458,7 +499,7 @@
         <h3>Industrie & QHSE</h3>
         <p>Validation 100 % conforme des consignes de sécurité et de qualité, avec traçabilité complète pour vos audits.</p>
       </div>
-      <a href="#contact" class="seg-cta">Voir la solution →</a>
+      <a href="#contact" data-role="Responsable QHSE" data-need="Conformité et traçabilité QHSE" class="seg-cta">Voir la solution →</a>
     </div>
     <div class="seg-panel" id="seg4">
       <div class="seg-icon">04</div>
@@ -466,7 +507,7 @@
         <h3>Directions RH & L&D</h3>
         <p>Passage d'un reporting de présence à une démonstration d'impact réel basée sur le modèle Kirkpatrick.</p>
       </div>
-      <a href="#contact" class="seg-cta">Voir la solution →</a>
+      <a href="#contact" data-role="Responsable formation / L&D" data-need="Mesure du ROI formation" class="seg-cta">Voir la solution →</a>
     </div>
     <div class="seg-panel" id="seg5">
       <div class="seg-icon">05</div>
@@ -474,7 +515,7 @@
         <h3>Direction générale & COMEX</h3>
         <p>Pilotage du budget formation par la donnée de performance et un retour sur investissement démontré.</p>
       </div>
-      <a href="#contact" class="seg-cta">Voir la solution →</a>
+      <a href="#contact" data-role="Direction générale / COMEX" data-need="Mesure du ROI formation" class="seg-cta">Voir la solution →</a>
     </div>
   </div>
 </section>

@@ -80,9 +80,125 @@
   })();
 
   // Form submit (no backend — front-end confirmation only)
-  function handleSubmit(e){
-    e.preventDefault();
-    document.getElementById('hero-form').style.display = 'none';
-    document.getElementById('successMsg').style.display = 'block';
-    return false;
+  // function handleSubmit(e){
+  //   e.preventDefault();
+  //   document.getElementById('hero-form').style.display = 'none';
+  //   document.getElementById('successMsg').style.display = 'block';
+  //   return false;
+  // }
+
+// ======================================================
+// BOUTON "VOIR LA SOLUTION"
+// Pré-remplit le formulaire puis scroll vers celui-ci
+// ======================================================
+
+(function () {
+  const solutionButtons = document.querySelectorAll('.seg-cta');
+  const roleSelect = document.getElementById('role');
+  const needSelect = document.getElementById('need');
+  const form = document.getElementById('hero-form');
+  solutionButtons.forEach(function (button) {
+    button.addEventListener('click', function (e) {
+      // Empêche le href="#contact" de faire son propre scroll
+      e.preventDefault();
+      const role = button.dataset.role;
+      const need = button.dataset.need;
+
+      // ------------------------------------------
+      // Pré-remplir le rôle
+      // ------------------------------------------
+      if (roleSelect && role) {
+
+        const roleOption = Array.from(roleSelect.options).find(function (option) {
+          return option.textContent.trim() === role;
+        });
+        if (roleOption) {
+          roleSelect.value = roleOption.value;
+          roleSelect.dispatchEvent(
+            new Event('change', { bubbles: true })
+          );
+        }
+      }
+
+      // ------------------------------------------
+      // Pré-remplir l'enjeu
+      // ------------------------------------------
+      if (needSelect && need) {
+        const needOption = Array.from(needSelect.options).find(function (option) {
+          return option.textContent.trim() === need;
+        });
+        if (needOption) {
+          needSelect.value = needOption.value;
+          needSelect.dispatchEvent(
+            new Event('change', { bubbles: true })
+          );
+        }
+      }
+
+      // ------------------------------------------
+      // Scroll vers le formulaire
+      // ------------------------------------------
+      if (form) {
+        form.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }
+    });
+  });
+})();
+
+
+// ======================================================
+// SUCCESS MODAL
+// ======================================================
+(function () {
+  const modal = document.getElementById('successModal');
+  // Si Laravel n'a pas envoyé de message success,
+  // la modal n'existe pas → on arrête.
+  if (!modal) return;
+  const closeBtn = document.getElementById('successModalClose');
+  const continueBtn = document.getElementById('successModalContinue');
+  const backdrop = modal.querySelector('.success-modal-backdrop');
+
+  // Empêche le scroll de la page lorsque la popup est ouverte
+  document.body.style.overflow = 'hidden';
+
+  // Affichage avec animation
+  requestAnimationFrame(function () {
+    modal.classList.add('is-visible');
+  });
+
+  // ------------------------------------------
+  // Fermer la popup
+  // ------------------------------------------
+
+  function closeModal() {
+    modal.classList.remove('is-visible');
+    document.body.style.overflow = '';
+    // Retire complètement la modal après l'animation
+    setTimeout(function () {
+      modal.remove();
+    }, 400);
+
   }
+
+  // Bouton X
+  if (closeBtn) {
+    closeBtn.addEventListener('click', closeModal);
+  }
+  // Bouton "Parfait, merci"
+  if (continueBtn) {
+    continueBtn.addEventListener('click', closeModal);
+  }
+  // Cliquer sur le fond
+  if (backdrop) {
+    backdrop.addEventListener('click', closeModal);
+  }
+  // Touche Escape
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') {
+      closeModal();
+    }
+  });
+})();
