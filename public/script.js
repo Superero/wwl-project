@@ -202,3 +202,52 @@
     }
   });
 })();
+
+// ======================================================
+// LOGO — 3 CLICS → DASHBOARD
+// ======================================================
+
+(function () {
+
+  const logo = document.getElementById('siteLogo');
+
+  if (!logo) return;
+
+  let clickCount = 0;
+  let clickTimer = null;
+
+  logo.addEventListener('click', function () {
+
+    clickCount++;
+
+    // ------------------------------------------
+    // 3 clics
+    // ------------------------------------------
+    if (clickCount === 3) {
+
+      clearTimeout(clickTimer);
+
+      const dashboardUrl = logo.dataset.dashboardUrl;
+
+      if (dashboardUrl) {
+        window.location.href = dashboardUrl;
+      }
+
+      clickCount = 0;
+
+      return;
+    }
+
+    // ------------------------------------------
+    // Réinitialisation
+    // Si l'utilisateur attend plus d'1 seconde
+    // ------------------------------------------
+    clearTimeout(clickTimer);
+
+    clickTimer = setTimeout(function () {
+      clickCount = 0;
+    }, 1000);
+
+  });
+
+})();

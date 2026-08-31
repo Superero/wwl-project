@@ -392,7 +392,11 @@
 
 <header>
   <nav>
-    <div class="brand">
+    <div class="brand" id="siteLogo"
+     data-dashboard-url="{{ route('dashboard') }}"
+     role="button"
+     tabindex="0"
+     aria-label="Ward Wide Learning">
       <span class="">
       <img class="brand-mark" src="./logo-lockup.svg" alt="" srcset="">
     </span>Ward Wide Learning</div>
