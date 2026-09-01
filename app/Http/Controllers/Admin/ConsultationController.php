@@ -15,9 +15,11 @@ class ConsultationController extends Controller
         $requests = ConsultationRequest::latest()->paginate(20);
         $total = ConsultationRequest::count();
         $today = ConsultationRequest::whereDate('created_at', today())->count();
+        $enCours = ConsultationRequest::where('status', 'en_cours')->count();
+        $valide  = ConsultationRequest::where('status', 'valide')->count();
 
         // dd($requests[0]);
-        return view('admin.consultations.index', compact('requests', 'total', 'today'));
+        return view('admin.consultations.index', compact('requests', 'total', 'today','enCours','valide'));
     }
 
     public function destroy(ConsultationRequest $consultationRequest)
