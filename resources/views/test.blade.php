@@ -763,6 +763,139 @@ footer{border-top:1px solid var(--border);padding:40px 0;}
   .success-icon svg{width:30px;height:30px;}
   .success-modal-content h2{font-size:26px;}
 }
+/* =========================
+   RESPONSIVE — MOBILE FIXES
+========================= */
+
+@media(max-width: 768px){
+  /* Hero : réduction des espacements */
+  .hero{padding: 56px 0 40px;}
+  .hero-grid{gap: 40px;}
+  .hero h1{font-size: clamp(26px, 7vw, 40px);}
+  .hero p.lead{font-size: 15.5px;}
+  .nav-cta{display: none;}
+  /* Boutons : pleine largeur empilés */
+  .btn-row{flex-direction: column; width: 100%;}
+  .btn-primary, .btn-ghost{
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+    padding: 13px 20px;
+    font-size: 14.5px;
+  }
+
+  /* Module field : adapté à l'écran */
+  .module-field{
+    max-width: 100%;
+    gap: 8px;
+    aspect-ratio: 1 / 0.85;
+  }
+  .module-tile{padding: 10px 12px;}
+  .metric-value{font-size: clamp(24px, 8vw, 32px);}
+  .tile-stat .stat-value{font-size: 14px;}
+  .tile-stat .stat-label{font-size: 10px;}
+
+  /* Sections : padding réduit */
+  section{padding: 64px 0;}
+  .section-head{margin-bottom: 36px;}
+  .section-head h2{font-size: clamp(22px, 6vw, 28px);}
+
+  /* Constat : lignes plus compactes */
+  .index-row{padding: 24px 0; gap: 16px;}
+  .index-row:hover{padding-left: 8px;}
+  .index-row h3{font-size: 17px;}
+  .index-row p{font-size: 14px;}
+
+  /* Segments : scroll horizontal propre */
+  .seg-tabs{
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 4px;
+    gap: 0;
+  }
+  .seg-tabs::after{display: none;} /* indicateur masqué sur mobile */
+  .seg-tab{
+    margin-right: 18px;
+    font-size: 13px;
+    padding: 10px 2px;
+    white-space: nowrap;
+    flex: 0 0 auto;
+  }
+  .seg-panel{
+    padding: 28px 0 0;
+    gap: 20px;
+    text-align: left;
+  }
+  .seg-icon{
+    width: 44px;
+    height: 44px;
+    font-size: 14px;
+  }
+  .seg-panel h3{font-size: 18px;}
+  .seg-panel p{font-size: 14px;}
+
+  /* Pillars : padding réduit */
+  .pillar{padding: 24px 20px;}
+  .pillar h3{font-size: 17px;}
+  .pillar p{font-size: 13.5px;}
+
+  /* About : gap réduit */
+  .about-wrap{gap: 36px;}
+  .about-panel{padding: 6px 20px;}
+  .about-panel .row{padding: 14px 0; font-size: 13px;}
+  .badge-row{gap: 8px;}
+  .badge{padding: 10px 12px; font-size: 11.5px;}
+
+  /* Contact : plus compact */
+  .contact-card{padding: 28px 20px; gap: 32px;}
+  .contact-card h2{font-size: 22px;}
+  .mini-stats{justify-content: flex-start; gap: 16px;}
+  .mini-stats .n{font-size: 17px;}
+  .field-row input, .field-row select{padding: 11px 12px;}
+
+  /* Footer : centré en colonne */
+  .footer-wrap{
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+  }
+  .footer-wrap .brand{font-size: 13px;}
+}
+
+@media(max-width: 480px){
+  /* Très petits écrans : 375–430px */
+  .wrap{padding: 0 16px;}
+  .nav-cta{display: none;}
+  .module-field{
+    gap: 6px;
+    grid-template-rows: repeat(4, minmax(36px, 1fr));
+  }
+  .module-tile{padding: 8px 10px;}
+  .metric-value{font-size: 22px;}
+  .metric-label{font-size: 11px;}
+
+  .kicker{font-size: 12px; padding-bottom: 12px; margin-bottom: 16px;}
+
+  .index-row{grid-template-columns: 32px 1fr; gap: 12px;}
+  .index-row .num{font-size: 12px;}
+
+  .pillar{padding: 20px 16px;}
+
+  .contact-card{padding: 24px 16px; border-radius: var(--radius-md);}
+  .contact-card::before{height: 3px;}
+
+  .about-panel .row{flex-direction: column; gap: 4px; align-items: flex-start;}
+  .about-panel .row .v{text-align: left;}
+
+  .success-modal{padding: 12px;}
+  .success-modal-card{padding: 32px 18px 24px;}
+  .success-icon{width: 60px; height: 60px;}
+  .success-icon svg{width: 26px; height: 26px;}
+
+  .wa-panel{width: calc(100vw - 32px); right: 16px;}
+}
 
 /* =========================
    ACCESSIBILITY
