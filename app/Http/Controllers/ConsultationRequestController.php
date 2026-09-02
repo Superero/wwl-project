@@ -12,7 +12,7 @@ class ConsultationRequestController extends Controller
     public function store(StoreConsultationRequest $request){
         $consultation = ConsultationRequest::create($request->validated());
         \Log::info('Dispatch SendToGoogleSheets pour la demande #' . $consultation->id);
-        SendToGoogleSheets::dispatch($consultation);
+        SendToGoogleSheets::dispatchSync($consultation);
 
         return back()->with('success', 'Votre demande a bien été envoyée. Un expert vous recontacte sous 24h.');
     }
