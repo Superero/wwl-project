@@ -25,8 +25,11 @@ class SendToGoogleSheets implements ShouldQueue
         $response = Http::asJson()->post($url, [
             'name'  => $this->consultation->name,
             'phone' => $this->consultation->phone,
+            'email'   => $this->consultation->email,
+            'company' => $this->consultation->company,
             'role'  => $this->consultation->role,
             'need'  => $this->consultation->need,
+            'message' => $this->consultation->message,
             'status' => $this->consultation->status,
             'date'  => $this->consultation->created_at->toIso8601String(),
         ]);

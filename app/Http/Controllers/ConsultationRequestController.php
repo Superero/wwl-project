@@ -10,6 +10,7 @@ use App\Jobs\SendToGoogleSheets;
 class ConsultationRequestController extends Controller
 {
     public function store(StoreConsultationRequest $request){
+        // dd($request);
         $consultation = ConsultationRequest::create($request->validated());
         \Log::info('Dispatch SendToGoogleSheets pour la demande #' . $consultation->id);
         SendToGoogleSheets::dispatchSync($consultation);

@@ -14,9 +14,12 @@ return new class extends Migration
         Schema::create('consultation_requests', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('phone');
+            $table->string('phone')->nullable();
             $table->string('role');
             $table->string('need');
+            $table->string('email');
+            $table->string('company');
+            $table->text('message')->nullable();
             $table->enum('status', ['en_attente', 'en_cours', 'valide'])->default('en_attente');
             $table->timestamps();
         });

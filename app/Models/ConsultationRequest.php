@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class ConsultationRequest extends Model
 {
-    protected $fillable= ['name','phone','role','need','status'];
+    protected $fillable= ['name','phone','role','need','email', 'company','message','status'];
     public const STATUSES = [
         'en_attente' => 'En attente',
         'en_cours'   => 'En cours',

@@ -24,9 +24,12 @@ class StoreConsultationRequest extends FormRequest
     {
         return [
             'name'  => 'required|string|max:255',
-            'phone' => 'required|string|max:30',
+            'phone' => 'nullable|string|max:30',
+            'email'   => 'required|email|max:255',
             'role'  => 'required|string|max:255',
             'need'  => 'required|string|max:500',
+            'company' => 'required|string|max:255',
+            'message' => 'nullable|string|max:2000',
         ];
     }
 }

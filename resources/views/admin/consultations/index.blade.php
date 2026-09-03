@@ -61,6 +61,8 @@
             <th>Date</th>
             <th>Nom & prénom</th>
             <th>Téléphone</th>
+            <th>Email</th>
+            <th>Company</th>
             <th>Rôle</th>
             <th>Enjeu principal</th>
             <th>Statut</th>
@@ -73,6 +75,8 @@
               <td class="mono">{{ $r->created_at->format('d/m/Y H:i') }}</td>
               <td>{{ $r->name }}</td>
               <td class="mono">{{ $r->phone }}</td>
+              <td class="mono">{{ $r->email }}</td>
+              <td>{{ $r->company }}</td>
               <td>{{ $r->role }}</td>
               <td>{{ $r->need }}</td>
               <td>

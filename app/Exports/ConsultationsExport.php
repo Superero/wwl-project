@@ -25,7 +25,7 @@ class ConsultationsExport implements FromCollection, WithHeadings, WithMapping, 
     
     public function headings(): array
     {
-        return ['Date', 'Nom & prénom', 'Téléphone', 'Rôle', 'Enjeu principal', 'Statut'];
+        return ['Date', 'Nom & prénom', 'Téléphone','Email','Entreprise', 'Rôle', 'Enjeu principal','Message', 'Statut'];
     }
 
     public function map($consultation): array
@@ -34,8 +34,11 @@ class ConsultationsExport implements FromCollection, WithHeadings, WithMapping, 
             $consultation->created_at->format('d/m/Y H:i'),
             $consultation->name,
             $consultation->phone,
+            $consultation->email,
+            $consultation->company,
             $consultation->role,
             $consultation->need,
+            $consultation->message,
             $consultation->statusLabel(),
         ];
     }
@@ -49,13 +52,16 @@ class ConsultationsExport implements FromCollection, WithHeadings, WithMapping, 
             'D' => 26,
             'E' => 32,
             'F' => 16,
+            'G' => 16,
+            'H' => 40,
+            'I' => 16,
         ];
     }
 
     public function styles(Worksheet $sheet)
     {
         // En-tête en gras, fond sombre, texte clair — cohérent avec le thème du site
-        $sheet->getStyle('A1:F1')->applyFromArray([
+        $sheet->getStyle('A1:I1')->applyFromArray([
             'font' => ['bold' => true, 'color' => ['rgb' => 'E9F0F5']],
             'fill' => [
                 'fillType' => \PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID,
