@@ -9,7 +9,7 @@ Route::get('/', function () {
     return view('index');
 })->name('home');
 
-Route::get('/test',function(){ return view('test-4'); });
+Route::get('/test',function(){ return view('test-v4'); });
 Route::get('/testt',function(){ return view('test'); });
 Route::get('/testtt',function(){ return view('test-v3'); });
 // Route::get('/dashboard', function () {
