@@ -3,7 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ward Wide Learning — Formation d'entreprise, pilotée par la donnée</title>
+<title>Solutions — Ward Wide Learning | Des réponses concrètes à vos enjeux Learning</title>
+<meta name="description" content="Learning Impact, Digital Learning, Académies & parcours, Pit Stop Learning, Assessment & Positioning, Management & Human Performance : découvrez nos solutions Learning sur mesure.">
 <link rel="shortcut icon" href="{{ asset('logo-lockup.svg') }}" type="image/x-icon">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,6 +15,9 @@
    WARD WIDE LEARNING — STYLESHEET
    Identité visuelle construite à partir du logo :
    encre marine, bleu institutionnel, sarcelle, ambre, magenta.
+   (Feuille de style identique à la homepage — ne pas dupliquer
+   dans un fichier séparé, factoriser via {{ asset('style.css') }}
+   dès que possible.)
    ========================================================= */
 
 /* =========================
@@ -293,11 +297,12 @@ html[data-theme="light"] .nav-cta{color:var(--primary-ink);border-color:var(--pr
 }
 
 /* =========================
-   HERO
+   PAGE HERO (sous-pages)
 ========================= */
-.hero{padding:76px 0 56px;}
-.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:64px;align-items:center;}
-@media(max-width:940px){.hero-grid{grid-template-columns:1fr;}}
+.page-hero{padding:64px 0 8px;}
+.page-hero .kicker{margin-bottom:22px;}
+.page-hero h1{font-size:clamp(30px,4vw,48px);line-height:1.12;margin-bottom:20px;max-width:16ch;}
+.page-hero p.lead{font-size:17px;color:var(--text-secondary);max-width:640px;margin-bottom:30px;}
 
 .kicker{
   display:inline-flex;align-items:center;gap:9px;
@@ -306,11 +311,6 @@ html[data-theme="light"] .nav-cta{color:var(--primary-ink);border-color:var(--pr
   position:relative;overflow:hidden;
 }
 .kicker::before{content:'';width:7px;height:7px;border-radius:2px;background:var(--accent);transform:rotate(45deg);flex:0 0 auto;}
-
-.hero h1{font-size:clamp(32px,4.4vw,54px);line-height:1.1;margin-bottom:22px;}
-.hero h1 .accent-word{color:var(--primary);position:relative;display:inline-block;}
-html[data-theme="light"] .hero h1 .accent-word{color:var(--primary-ink);}
-.hero p.lead{font-size:17px;color:var(--text-secondary);max-width:520px;margin-bottom:32px;}
 
 .btn-row{display:flex;gap:14px;flex-wrap:wrap;}
 .btn-primary{
@@ -332,54 +332,6 @@ html[data-theme="light"] .hero h1 .accent-word{color:var(--primary-ink);}
 }
 .btn-ghost:hover{border-color:var(--text-secondary);color:var(--text-primary);background:var(--surface-hover);}
 
-.hero-microcopy{
-  display:flex;align-items:center;gap:8px;flex-wrap:wrap;
-  margin-top:18px;font-family:var(--font-mono);font-size:12px;color:var(--text-secondary);letter-spacing:.02em;
-}
-.hero-microcopy span{display:flex;align-items:center;gap:8px;}
-.hero-microcopy span:not(:first-child)::before{content:'·';color:var(--secondary);}
-
-/* module field */
-.module-field{
-  --mx:50%;--my:50%;
-  position:relative;
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  grid-template-rows:repeat(2,minmax(150px,1fr));
-  gap:14px;
-  aspect-ratio:1/.92;
-  max-width:440px;margin:0 auto;
-  perspective:800px;
-}
-.module-tile{
-  position:relative;border-radius:var(--radius-sm);
-  border:1px solid var(--border);
-  background:var(--surface);
-  overflow:hidden;
-  display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-end;
-  padding:18px 20px;
-  transition:transform .4s cubic-bezier(.25,.46,.45,.94), border-color .3s ease, box-shadow .3s ease;
-  cursor:default;
-}
-.module-tile::before{
-  content:'';position:absolute;inset:0;
-  background:radial-gradient(220px 220px at var(--mx) var(--my), rgba(255,255,255,0.07), transparent 60%);
-  opacity:0;transition:opacity .4s ease;
-}
-.module-field:hover .module-tile::before{opacity:1;}
-.module-tile:hover{
-  transform:translateZ(12px) scale(1.02);
-  border-color:var(--border-strong);
-  box-shadow:0 8px 24px rgba(0,0,0,.2);
-}
-.module-tile .tile-tag{font-family:var(--font-mono);font-size:11px;color:var(--secondary);margin-bottom:8px;}
-.module-tile h4{font-family:var(--font-display);font-size:16.5px;font-weight:600;line-height:1.25;}
-.module-tile:nth-of-type(1){border-top:3px solid var(--primary-ink);}
-.module-tile:nth-of-type(2){border-top:3px solid var(--secondary);}
-.module-tile:nth-of-type(3){border-top:3px solid var(--magenta);}
-.module-tile:nth-of-type(4){border-top:3px solid var(--accent);}
-@media(max-width:600px){.module-field{max-width:340px;grid-template-rows:repeat(2,minmax(120px,1fr));}}
-
 /* =========================
    SECTION HEADS
 ========================= */
@@ -390,70 +342,68 @@ html[data-theme="light"] .hero h1 .accent-word{color:var(--primary-ink);}
 .section-head-cta{margin-top:28px;}
 
 /* =========================
-   PROBLEM / CONSTAT — reused as EXPERTISES index list
+   SOLUTIONS — bloc sommaire (jump links)
 ========================= */
-.index-list{border-top:1px solid var(--border);}
-.index-row{
-  display:grid;grid-template-columns:64px 1fr 1.6fr;gap:28px;
-  padding:30px 0;border-bottom:1px solid var(--border);
-  align-items:start;
-  transition:background .3s ease, padding-left .3s ease, border-color .3s ease;
-  cursor:default;position:relative;
+.solutions-jump{
+  display:flex;flex-wrap:wrap;gap:10px;margin-top:8px;
 }
-.index-row::before{
+.solutions-jump a{
+  font-family:var(--font-mono);font-size:12.5px;color:var(--text-secondary);
+  border:1px solid var(--border);border-radius:20px;padding:9px 16px;
+  display:inline-flex;align-items:center;gap:8px;transition:all .25s ease;
+  background:var(--surface);
+}
+.solutions-jump a .jump-dot{width:6px;height:6px;border-radius:50%;background:var(--jump-color,var(--primary));flex:0 0 auto;}
+.solutions-jump a:hover{border-color:var(--jump-color,var(--secondary));color:var(--text-primary);transform:translateY(-2px);}
+.solutions-jump a:nth-child(1){--jump-color:var(--primary-ink);}
+.solutions-jump a:nth-child(2){--jump-color:var(--secondary);}
+.solutions-jump a:nth-child(3){--jump-color:var(--magenta);}
+.solutions-jump a:nth-child(4){--jump-color:var(--accent);}
+.solutions-jump a:nth-child(5){--jump-color:var(--primary-ink);}
+.solutions-jump a:nth-child(6){--jump-color:var(--secondary);}
+
+/* =========================
+   SOLUTION DETAIL — sections longues
+========================= */
+.solution-detail{
+  scroll-margin-top:100px;
+  border-top:1px solid var(--border);
+  padding:56px 0;
+  display:grid;grid-template-columns:64px 1fr;gap:28px;
+  position:relative;
+}
+.solution-detail:last-child{border-bottom:1px solid var(--border);}
+.solution-detail::before{
   content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--tag-color,var(--primary));
-  transform:scaleY(0);transition:transform .4s cubic-bezier(.25,.46,.45,.94);
+  transform:scaleY(0);transform-origin:top;transition:transform .5s cubic-bezier(.25,.46,.45,.94);
 }
-.index-row:hover{padding-left:16px;background:var(--surface);border-color:var(--border-strong);}
-.index-row:hover::before{transform:scaleY(1);}
-.index-row .num{font-family:var(--font-mono);font-size:14px;color:var(--text-secondary);padding-top:3px;transition:color .3s ease;}
-.index-row:hover .num{color:var(--tag-color,var(--primary));}
-.index-row h3{font-size:19px;font-weight:600;transition:transform .3s ease;}
-.index-row:hover h3{transform:translateX(4px);}
-.index-row .tag{display:block;font-size:11.5px;color:var(--tag-color, var(--primary));margin-bottom:8px;transition:letter-spacing .3s ease;}
-.index-row:hover .tag{letter-spacing:.05em;}
-.index-row p{color:var(--text-secondary);font-size:15px;max-width:44ch;}
-.index-row:nth-child(1){--tag-color:var(--primary-ink);}
-.index-row:nth-child(2){--tag-color:var(--secondary);}
-.index-row:nth-child(3){--tag-color:var(--magenta);}
-.index-row:nth-child(4){--tag-color:var(--accent);}
+.solution-detail.in::before{transform:scaleY(1);}
+.solution-detail .num{font-family:var(--font-mono);font-size:14px;color:var(--text-secondary);padding-top:4px;}
+.solution-detail .tag{display:block;font-size:11.5px;letter-spacing:.05em;text-transform:uppercase;color:var(--tag-color,var(--primary));margin-bottom:10px;font-family:var(--font-mono);}
+.solution-detail h3{font-size:clamp(21px,2.4vw,27px);margin-bottom:6px;display:flex;align-items:center;gap:10px;}
+.solution-detail .hook{font-family:var(--font-display);font-weight:600;font-size:17.5px;color:var(--text-primary);margin:14px 0 16px;max-width:56ch;line-height:1.5;}
+.solution-detail .body-text{color:var(--text-secondary);font-size:15px;max-width:66ch;margin-bottom:14px;}
+.solution-detail .body-text:last-of-type{margin-bottom:22px;}
+.solution-detail .tools-note{
+  display:inline-block;font-family:var(--font-mono);font-size:12px;color:var(--secondary);
+  background:color-mix(in srgb, var(--secondary) 10%, transparent);
+  border:1px solid color-mix(in srgb, var(--secondary) 30%, transparent);
+  border-radius:20px;padding:6px 12px;margin-bottom:18px;
+}
+.solution-detail:nth-of-type(1){--tag-color:var(--primary-ink);}
+.solution-detail:nth-of-type(2){--tag-color:var(--secondary);}
+.solution-detail:nth-of-type(3){--tag-color:var(--magenta);}
+.solution-detail:nth-of-type(4){--tag-color:var(--accent);}
+.solution-detail:nth-of-type(5){--tag-color:var(--primary-ink);}
+.solution-detail:nth-of-type(6){--tag-color:var(--secondary);}
 @media(max-width:700px){
-  .index-row{grid-template-columns:40px 1fr;}
-  .index-row p{grid-column:2/3;max-width:none;}
-  .index-row:hover{padding-left:10px;}
+  .solution-detail{grid-template-columns:36px 1fr;gap:14px;padding:40px 0;}
 }
 
-/* =========================
-   SOLUTIONS — cards grid
-========================= */
-.solutions-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
-@media(max-width:940px){.solutions-grid{grid-template-columns:repeat(2,1fr);}}
-@media(max-width:640px){.solutions-grid{grid-template-columns:1fr;}}
-.solution-card{
-  background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-md);padding:28px 26px;
-  display:flex;flex-direction:column;gap:12px;
-  transition:transform .4s cubic-bezier(.25,.46,.45,.94), box-shadow .4s ease, border-color .3s ease;
-  position:relative;overflow:hidden;
-}
-.solution-card::before{
-  content:'';position:absolute;top:0;left:0;right:0;height:3px;
-  background:linear-gradient(90deg, var(--primary-ink), var(--secondary));
-  transform:scaleX(0);transform-origin:left;transition:transform .5s cubic-bezier(.25,.46,.45,.94);
-}
-.solution-card:hover{transform:translateY(-6px);box-shadow:0 20px 40px rgba(0,0,0,.25);border-color:var(--border-strong);}
-.solution-card:hover::before{transform:scaleX(1);}
-.solution-card .num{font-family:var(--font-mono);font-size:12px;color:var(--secondary);}
-.solution-card h3{font-size:19px;}
-.solution-card p{color:var(--text-secondary);font-size:14.5px;flex:1;}
-.solution-card .seg-cta{align-self:flex-start;}
-
-/* =========================
-   SEGMENTS (legacy, retained for compatibility)
-========================= */
 .seg-cta{
   font-family:var(--font-body);font-size:14px;font-weight:600;color:var(--primary-ink);
   border-bottom:1px solid var(--primary-ink);padding-bottom:2px;white-space:nowrap;
-  position:relative;transition:all .3s ease;
+  position:relative;transition:all .3s ease;display:inline-flex;align-items:center;
 }
 .seg-cta::after{
   content:'→';position:absolute;right:-18px;opacity:0;transform:translateX(-4px);
@@ -481,7 +431,7 @@ html[data-theme="dark"] .seg-cta,:root .seg-cta{color:var(--primary);border-colo
 .interactive-card p{color:var(--text-secondary);font-size:15px;max-width:48ch;}
 
 /* =========================
-   PILLARS — Notre approche (Pit Stop)
+   PILLARS — "Comment ça se passe ?"
 ========================= */
 .pit-lane{position:relative;padding-top:6px;}
 .pit-track{position:absolute;top:22px;left:5%;right:5%;height:1px;background:var(--border);}
@@ -508,140 +458,40 @@ html[data-theme="dark"] .seg-cta,:root .seg-cta{color:var(--primary);border-colo
 .pillar:hover .pillar-marker{transform:scale(1.15) rotate(-10deg);background:var(--surface-hover);}
 .pillar .stage{font-family:var(--font-mono);font-size:11px;color:var(--secondary);transition:letter-spacing .3s ease;}
 .pillar:hover .stage{letter-spacing:.08em;}
-.pillar h3{font-size:18px;margin:10px 0;}
-.pillar p{color:var(--text-secondary);font-size:14.5px;}
+.pillar h3{font-size:17px;margin:10px 0;}
+.pillar p{color:var(--text-secondary);font-size:14px;}
 
 /* =========================
-   INSIGHTS
+   CHECKLIST — "Ce que vous obtenez"
 ========================= */
-.insights-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
-@media(max-width:860px){.insights-grid{grid-template-columns:1fr;}}
-.insight-card{
-  background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-md);overflow:hidden;
-  display:flex;flex-direction:column;
-  transition:transform .4s cubic-bezier(.25,.46,.45,.94), box-shadow .4s ease, border-color .3s ease;
+.checklist-panel{
+  background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-md);
+  padding:8px 30px;transition:box-shadow .4s ease, border-color .3s ease;
 }
-.insight-card:hover{transform:translateY(-6px);box-shadow:0 20px 40px rgba(0,0,0,.25);border-color:var(--border-strong);}
-.insight-thumb{
-  aspect-ratio:16/10;background:linear-gradient(135deg, var(--surface-2), var(--bg-soft));
-  position:relative;display:flex;align-items:flex-end;padding:16px;overflow:hidden;
+.checklist-panel:hover{box-shadow:0 12px 32px rgba(0,0,0,.15);border-color:var(--border-strong);}
+.checklist-panel .row{
+  display:flex;align-items:flex-start;gap:14px;padding:18px 0;border-bottom:1px solid var(--border);
+  transition:padding-left .3s ease;
 }
-.insight-thumb::before{
-  content:'';position:absolute;inset:0;
-  background:radial-gradient(320px 220px at 20% 0%, rgba(93,201,202,.18), transparent 70%);
-}
-.insight-cat{
-  font-family:var(--font-mono);font-size:11px;letter-spacing:.04em;color:var(--secondary);
+.checklist-panel .row:last-child{border-bottom:none;}
+.checklist-panel .row:hover{padding-left:8px;}
+.checklist-panel .row .check-ic{
+  flex:0 0 auto;width:26px;height:26px;border-radius:50%;
   background:color-mix(in srgb, var(--secondary) 14%, transparent);
-  border:1px solid color-mix(in srgb, var(--secondary) 35%, transparent);
-  padding:5px 10px;border-radius:20px;position:relative;
+  border:1px solid color-mix(in srgb, var(--secondary) 40%, transparent);
+  display:flex;align-items:center;justify-content:center;color:var(--secondary);margin-top:1px;
 }
-.insight-thumb {
-  position: relative;
-  height: 220px;
-  overflow: hidden;
-  border-radius: var(--radius-sm);
-  background: var(--surface-2);
-}
-
-.insight-thumb img {
-  width: 100%;
-  height: 100%;
-  display: block;
-  object-fit: cover;
-  transition: transform .6s cubic-bezier(.25,.46,.45,.94),
-              filter .4s ease;
-}
-
-.insight-card:hover .insight-thumb img {
-  transform: scale(1.06);
-  filter: brightness(.72);
-}
-
-.insight-thumb::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(
-      to top,
-      rgba(0,0,0,.72) 0%,
-      rgba(0,0,0,.18) 55%,
-      transparent 100%
-    );
-  pointer-events: none;
-}
-
-.insight-cat {
-  position: absolute;
-  left: 16px;
-  bottom: 16px;
-  z-index: 2;
-
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-
-  padding: 7px 10px;
-
-  border: 1px solid rgba(255,255,255,.18);
-  border-radius: 8px;
-
-  background: rgba(0,0,0,.38);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-
-  color: #fff;
-  font-size: 11px;
-  font-family: var(--font-mono);
-}
-
-.insight-cat svg {
-  width: 14px;
-  height: 14px;
-  stroke-width: 1.8;
-}
-
-.insight-card:hover .insight-cat {
-  border-color: rgba(255,255,255,.32);
-}
-.insight-body{padding:22px 22px 24px;display:flex;flex-direction:column;gap:10px;flex:1;}
-.insight-meta{font-family:var(--font-mono);font-size:11.5px;color:var(--text-secondary);}
-.insight-body h3{font-size:17px;line-height:1.35;}
-.insight-link{margin-top:auto;font-size:13.5px;font-weight:600;color:var(--primary);}
-html[data-theme="light"] .insight-link{color:var(--primary-ink);}
+.checklist-panel .row .check-ic svg{width:14px;height:14px;}
+.checklist-panel .row span.label{color:var(--text-primary);font-size:14.5px;padding-top:3px;}
 
 /* =========================
-   ABOUT
+   ABOUT-LIKE QUOTE BLOCK
 ========================= */
-.about-wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:60px;align-items:start;}
-@media(max-width:860px){.about-wrap{grid-template-columns:1fr;}}
-.about-wrap p{color:var(--text-secondary);font-size:15.5px;margin-bottom:18px;}
-.about-lead{font-size:18px;color:var(--text-primary);font-family:var(--font-display);font-weight:600;line-height:1.4;margin-bottom:22px;}
-.badge-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:8px;}
-.badge{
-  font-size:12.5px;border:1px solid var(--border);border-radius:var(--radius-sm);
-  padding:11px 15px;color:var(--text-secondary);background:var(--surface);
-  transition:all .3s ease;position:relative;overflow:hidden;
+.quote-block{max-width:760px;}
+.quote-block .about-lead{
+  font-size:20px;color:var(--text-primary);font-family:var(--font-display);font-weight:600;line-height:1.5;margin-bottom:22px;
 }
-.badge::before{
-  content:'';position:absolute;inset:0;background:var(--secondary);opacity:0;
-  transition:opacity .3s ease;
-}
-.badge:hover{border-color:var(--secondary);transform:translateY(-2px);box-shadow:0 6px 16px rgba(93,201,202,.1);}
-.badge:hover::before{opacity:.04;}
-.badge .v{display:block;color:var(--secondary);font-size:14.5px;font-weight:600;margin-bottom:3px;position:relative;}
-.about-panel{
-  background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-md);padding:8px 30px;
-  font-size:14px;transition:box-shadow .4s ease, border-color .3s ease;
-}
-.about-panel:hover{box-shadow:0 12px 32px rgba(0,0,0,.15);border-color:var(--border-strong);}
-.about-panel .row{display:flex;justify-content:space-between;padding:16px 0;border-bottom:1px solid var(--border);gap:16px;transition:padding-left .3s ease;}
-.about-panel .row:last-child{border-bottom:none;}
-.about-panel .row:hover{padding-left:8px;}
-.about-panel .row span:first-child{color:var(--text-secondary);transition:color .3s ease;}
-.about-panel .row:hover span:first-child{color:var(--text-primary);}
-.about-panel .row .v{color:var(--text-primary);font-weight:500;text-align:right;}
+.quote-block p{color:var(--text-secondary);font-size:15.5px;margin-bottom:22px;max-width:64ch;}
 
 /* =========================
    FINAL CTA
@@ -814,6 +664,662 @@ footer{border-top:1px solid var(--border);padding:40px 0;}
 }
 
 /* =========================
+   RESPONSIVE — MOBILE FIXES
+========================= */
+@media(max-width: 768px){
+  .page-hero{padding:44px 0 4px;}
+  .page-hero h1{font-size: clamp(26px, 7vw, 36px);}
+  .page-hero p.lead{font-size: 15.5px;}
+  .nav-cta{display: none;}
+  .btn-row{flex-direction: column; width: 100%;}
+  .btn-primary, .btn-ghost{
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+    padding: 13px 20px;
+    font-size: 14.5px;
+  }
+  section{padding: 64px 0;}
+  .section-head{margin-bottom: 36px;}
+  .section-head h2{font-size: clamp(22px, 6vw, 28px);}
+  .interactive-card{padding:34px 22px;}
+  .pillar{padding: 22px 18px;}
+  .pillar h3{font-size: 16px;}
+  .pillar p{font-size: 13px;}
+  .checklist-panel{padding: 6px 20px;}
+  .checklist-panel .row{padding: 14px 0; font-size: 13px;}
+  .final-cta{padding:40px 22px;}
+  .contact-card{padding: 28px 20px; gap: 32px;}
+  .contact-card h2{font-size: 22px;}
+  .field-row input, .field-row select, .field-row textarea{padding: 11px 12px;}
+  .footer-wrap{
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+  }
+  .footer-wrap .brand{font-size: 13px;}
+  .solutions-jump{gap:8px;}
+}
+
+@media(max-width: 480px){
+  .wrap{padding: 0 16px;}
+  .nav-cta{display: none;}
+  .kicker{font-size: 12px; padding-bottom: 12px; margin-bottom: 16px;}
+  .pillar{padding: 20px 16px;}
+  .contact-card{padding: 24px 16px; border-radius: var(--radius-md);}
+  .contact-card::before{height: 3px;}
+  .wa-panel{width: calc(100vw - 32px); right: 16px;}
+}
+
+/* =========================
+   ACCESSIBILITY
+========================= */
+:focus-visible{outline:2px solid var(--secondary);outline-offset:2px;}
+.wa-fab:focus-visible,.theme-toggle:focus-visible,.nav-burger:focus-visible{outline-offset:3px;}
+
+/* =========================
+   CURSOR CUSTOM (desktop only)
+========================= */
+@media(min-width:1024px) and (pointer:fine){
+  .cursor-dot,.cursor-ring{
+    position:fixed;top:0;left:0;pointer-events:none;z-index:9999;border-radius:50%;
+    transition:transform .15s ease-out, opacity .15s ease;
+  }
+  .cursor-dot{width:6px;height:6px;background:var(--secondary);transform:translate(-50%,-50%);}
+  .cursor-ring{width:32px;height:32px;border:1.5px solid var(--secondary);opacity:.4;transform:translate(-50%,-50%);}
+  .cursor-ring.hover{transform:translate(-50%,-50%) scale(1.6);opacity:.15;border-color:var(--primary);}
+  .cursor-dot.hover{transform:translate(-50%,-50%) scale(.5);background:var(--primary);}
+}
+@media(max-width:1023px),(pointer:coarse){.cursor-dot,.cursor-ring{display:none;}}
+
+/* =========================================================
+   HERO VISUAL — SOLUTIONS
+========================================================= */
+
+.page-hero{
+    padding:78px 0 34px;
+}
+
+.hero-layout{
+    display:grid;
+    grid-template-columns:minmax(0, 1.05fr) minmax(380px, .95fr);
+    align-items:center;
+    gap:70px;
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+}
+
+.hero-content h1{
+    max-width:15ch;
+}
+
+.hero-content .lead{
+    max-width:620px;
+}
+
+
+/* =========================
+   HERO VISUAL
+========================= */
+
+.hero-visual{
+    position:relative;
+    min-height:520px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.hero-image-card{
+    position:relative;
+    width:min(100%, 500px);
+    aspect-ratio: .88;
+}
+
+
+/* Image principale */
+
+.hero-image-frame{
+    position:absolute;
+    inset:28px 18px 28px 18px;
+    overflow:hidden;
+    border-radius:28px;
+
+    background:var(--surface);
+
+    border:1px solid var(--border-strong);
+
+    box-shadow:
+        0 35px 80px rgba(0,0,0,.32),
+        0 0 0 1px rgba(255,255,255,.025);
+
+    transform:rotate(2deg);
+
+    transition:
+        transform .6s cubic-bezier(.25,.46,.45,.94),
+        box-shadow .6s ease;
+}
+
+.hero-image-frame img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+
+    filter:saturate(.82) contrast(1.04);
+
+    transform:scale(1.04);
+
+    transition:
+        transform 1s cubic-bezier(.25,.46,.45,.94),
+        filter .6s ease;
+}
+
+
+/* Overlay */
+
+.hero-image-overlay{
+    position:absolute;
+    inset:0;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(57,81,171,.30),
+            transparent 45%,
+            rgba(93,201,202,.20)
+        );
+
+    mix-blend-mode:screen;
+}
+
+
+/* Hover */
+
+.hero-image-card:hover .hero-image-frame{
+    transform:rotate(0deg) translateY(-6px);
+
+    box-shadow:
+        0 45px 100px rgba(0,0,0,.38),
+        0 0 60px rgba(93,201,202,.08);
+}
+
+.hero-image-card:hover img{
+    transform:scale(1.09);
+    filter:saturate(1) contrast(1.05);
+}
+
+
+/* =========================
+   IMAGE GLOW
+========================= */
+
+.hero-image-card::before{
+    content:'';
+
+    position:absolute;
+
+    width:300px;
+    height:300px;
+
+    top:50%;
+    left:50%;
+
+    transform:translate(-50%,-50%);
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(93,201,202,.20),
+            transparent 68%
+        );
+
+    filter:blur(30px);
+
+    z-index:-2;
+
+    pointer-events:none;
+}
+
+
+/* =========================
+   FLOATING LABEL
+========================= */
+
+.hero-floating-label{
+    position:absolute;
+
+    display:flex;
+    align-items:center;
+    gap:9px;
+
+    padding:9px 13px;
+
+    background:color-mix(
+        in srgb,
+        var(--surface) 88%,
+        transparent
+    );
+
+    border:1px solid var(--border-strong);
+
+    backdrop-filter:blur(14px);
+
+    border-radius:30px;
+
+    font-family:var(--font-mono);
+    font-size:10px;
+    letter-spacing:.05em;
+    text-transform:uppercase;
+
+    color:var(--text-secondary);
+
+    box-shadow:0 12px 30px rgba(0,0,0,.18);
+
+    z-index:5;
+}
+
+.hero-label-top{
+    top:18px;
+    left:-16px;
+}
+
+.label-dot{
+    width:7px;
+    height:7px;
+
+    border-radius:50%;
+
+    background:var(--secondary);
+
+    box-shadow:
+        0 0 0 4px
+        color-mix(
+            in srgb,
+            var(--secondary) 12%,
+            transparent
+        );
+
+    animation:heroPulse 2.4s ease-in-out infinite;
+}
+
+@keyframes heroPulse{
+    0%,100%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.3);
+    }
+}
+
+
+/* =========================
+   FLOATING CARD
+========================= */
+
+.hero-floating-card{
+    position:absolute;
+
+    right:-22px;
+    bottom:42px;
+
+    display:flex;
+    align-items:center;
+    gap:12px;
+
+    min-width:190px;
+
+    padding:13px 16px;
+
+    background:var(--surface);
+
+    border:1px solid var(--border-strong);
+
+    border-radius:14px;
+
+    box-shadow:
+        0 20px 50px rgba(0,0,0,.28);
+
+    z-index:6;
+
+    animation:heroFloat 5s ease-in-out infinite;
+}
+
+@keyframes heroFloat{
+
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-8px);
+    }
+
+}
+
+.floating-icon{
+    width:36px;
+    height:36px;
+
+    flex:0 0 auto;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:10px;
+
+    background:
+        color-mix(
+            in srgb,
+            var(--primary-ink) 16%,
+            transparent
+        );
+
+    color:var(--primary);
+}
+
+.floating-icon svg{
+    width:17px;
+    height:17px;
+}
+
+.floating-small{
+    display:block;
+
+    font-family:var(--font-mono);
+
+    font-size:9px;
+
+    color:var(--text-secondary);
+
+    letter-spacing:.08em;
+
+    margin-bottom:2px;
+}
+
+.hero-floating-card strong{
+    display:block;
+
+    font-family:var(--font-display);
+
+    font-size:14px;
+
+    color:var(--text-primary);
+}
+
+
+/* =========================
+   DECORATIVE ORBITS
+========================= */
+
+.hero-orbit{
+    position:absolute;
+
+    border:1px solid;
+
+    border-radius:50%;
+
+    pointer-events:none;
+
+    opacity:.28;
+}
+
+.orbit-one{
+    width:430px;
+    height:430px;
+
+    top:50%;
+    left:50%;
+
+    transform:
+        translate(-50%,-50%)
+        rotate(18deg);
+
+    border-color:var(--secondary);
+
+    border-left-color:transparent;
+    border-bottom-color:transparent;
+
+    animation:orbitRotate 24s linear infinite;
+}
+
+.orbit-two{
+    width:360px;
+    height:360px;
+
+    top:50%;
+    left:50%;
+
+    transform:
+        translate(-50%,-50%)
+        rotate(-25deg);
+
+    border-color:var(--primary);
+
+    border-right-color:transparent;
+    border-top-color:transparent;
+
+    animation:orbitRotateReverse 30s linear infinite;
+}
+
+@keyframes orbitRotate{
+    from{
+        transform:
+            translate(-50%,-50%)
+            rotate(18deg);
+    }
+
+    to{
+        transform:
+            translate(-50%,-50%)
+            rotate(378deg);
+    }
+}
+
+@keyframes orbitRotateReverse{
+    from{
+        transform:
+            translate(-50%,-50%)
+            rotate(-25deg);
+    }
+
+    to{
+        transform:
+            translate(-50%,-50%)
+            rotate(-385deg);
+    }
+}
+
+
+/* =========================
+   COLOR ACCENTS
+========================= */
+
+.hero-accent{
+    position:absolute;
+
+    width:13px;
+    height:13px;
+
+    border-radius:3px;
+
+    transform:rotate(45deg);
+
+    z-index:7;
+}
+
+.accent-one{
+    top:70px;
+    right:18px;
+
+    background:var(--accent);
+
+    box-shadow:
+        0 0 25px
+        color-mix(
+            in srgb,
+            var(--accent) 35%,
+            transparent
+        );
+}
+
+.accent-two{
+    bottom:78px;
+    left:4px;
+
+    background:var(--magenta);
+
+    box-shadow:
+        0 0 25px
+        color-mix(
+            in srgb,
+            var(--magenta) 30%,
+            transparent
+        );
+}
+
+
+/* =========================
+   LIGHT MODE
+========================= */
+
+html[data-theme="light"] .hero-image-frame{
+    box-shadow:
+        0 30px 70px rgba(16,20,35,.14),
+        0 0 0 1px rgba(16,20,35,.03);
+}
+
+html[data-theme="light"] .hero-floating-card{
+    box-shadow:
+        0 20px 45px rgba(16,20,35,.12);
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media(max-width:980px){
+
+    .hero-layout{
+        grid-template-columns:1fr;
+        gap:50px;
+    }
+
+    .hero-content h1{
+        max-width:17ch;
+    }
+
+    .hero-visual{
+        min-height:460px;
+        max-width:620px;
+        margin:0 auto;
+        width:100%;
+    }
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:768px){
+
+    .page-hero{
+        padding:50px 0 25px;
+    }
+
+    .hero-layout{
+        gap:38px;
+    }
+
+    .hero-content h1{
+        max-width:100%;
+    }
+
+    .hero-visual{
+        min-height:390px;
+    }
+
+    .hero-image-card{
+        width:100%;
+        max-width:390px;
+    }
+
+    .hero-image-frame{
+        inset:22px 12px;
+        border-radius:22px;
+    }
+
+    .hero-label-top{
+        left:-4px;
+        top:10px;
+    }
+
+    .hero-floating-card{
+        right:-4px;
+        bottom:28px;
+    }
+
+    .orbit-one{
+        width:330px;
+        height:330px;
+    }
+
+    .orbit-two{
+        width:280px;
+        height:280px;
+    }
+
+}
+
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media(max-width:480px){
+
+    .hero-visual{
+        min-height:350px;
+    }
+
+    .hero-floating-card{
+        min-width:auto;
+        padding:10px 12px;
+    }
+
+    .floating-icon{
+        width:32px;
+        height:32px;
+    }
+
+    .hero-floating-card strong{
+        font-size:12px;
+    }
+
+    .hero-floating-label{
+        font-size:9px;
+        padding:8px 10px;
+    }
+
+    .hero-label-top{
+        left:0;
+    }
+
+    .hero-image-frame{
+        inset:20px 8px;
+    }
+
+}
+
+/* =========================
    SUCCESS MODAL
 ========================= */
 .success-modal{
@@ -888,542 +1394,7 @@ footer{border-top:1px solid var(--border);padding:40px 0;}
   .success-icon svg{width:30px;height:30px;}
   .success-modal-content h2{font-size:26px;}
 }
-/* =========================
-   RESPONSIVE — MOBILE FIXES
-========================= */
 
-@media(max-width: 768px){
-  /* Hero : réduction des espacements */
-  .hero{padding: 56px 0 40px;}
-  .hero-grid{gap: 40px;}
-  .hero h1{font-size: clamp(26px, 7vw, 40px);}
-  .hero p.lead{font-size: 15.5px;}
-  .nav-cta{display: none;}
-  /* Boutons : pleine largeur empilés */
-  .btn-row{flex-direction: column; width: 100%;}
-  .btn-primary, .btn-ghost{
-    width: 100%;
-    justify-content: center;
-    text-align: center;
-    padding: 13px 20px;
-    font-size: 14.5px;
-  }
-
-  /* Module field : adapté à l'écran */
-  .module-field{
-    max-width: 100%;
-    gap: 8px;
-  }
-  .module-tile{padding: 14px 16px;}
-
-  /* Sections : padding réduit */
-  section{padding: 64px 0;}
-  .section-head{margin-bottom: 36px;}
-  .section-head h2{font-size: clamp(22px, 6vw, 28px);}
-
-  /* Constat / expertises : lignes plus compactes */
-  .index-row{padding: 24px 0; gap: 16px;}
-  .index-row:hover{padding-left: 8px;}
-  .index-row h3{font-size: 17px;}
-  .index-row p{font-size: 14px;}
-
-  /* Solutions : grille en 1 colonne déjà gérée */
-  .solution-card{padding: 22px 20px;}
-
-  .interactive-card{padding:34px 22px;}
-
-  /* Pillars : padding réduit */
-  .pillar{padding: 22px 18px;}
-  .pillar h3{font-size: 16.5px;}
-  .pillar p{font-size: 13.5px;}
-
-  /* About : gap réduit */
-  .about-wrap{gap: 36px;}
-  .about-panel{padding: 6px 20px;}
-  .about-panel .row{padding: 14px 0; font-size: 13px;}
-  .badge-row{gap: 8px;}
-  .badge{padding: 10px 12px; font-size: 11.5px;}
-
-  .final-cta{padding:40px 22px;}
-
-  /* Contact : plus compact */
-  .contact-card{padding: 28px 20px; gap: 32px;}
-  .contact-card h2{font-size: 22px;}
-  .field-row input, .field-row select, .field-row textarea{padding: 11px 12px;}
-
-  /* Footer : centré en colonne */
-  .footer-wrap{
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 10px;
-  }
-  .footer-wrap .brand{font-size: 13px;}
-}
-
-@media(max-width: 480px){
-  /* Très petits écrans : 375–430px */
-  .wrap{padding: 0 16px;}
-  .nav-cta{display: none;}
-  .module-field{gap: 6px;}
-  .module-tile{padding: 12px 14px;}
-
-  .kicker{font-size: 12px; padding-bottom: 12px; margin-bottom: 16px;}
-
-  .index-row{grid-template-columns: 32px 1fr; gap: 12px;}
-  .index-row .num{font-size: 12px;}
-
-  .pillar{padding: 20px 16px;}
-
-  .contact-card{padding: 24px 16px; border-radius: var(--radius-md);}
-  .contact-card::before{height: 3px;}
-
-  .about-panel .row{flex-direction: column; gap: 4px; align-items: flex-start;}
-  .about-panel .row .v{text-align: left;}
-
-  .success-modal{padding: 12px;}
-  .success-modal-card{padding: 32px 18px 24px;}
-  .success-icon{width: 60px; height: 60px;}
-  .success-icon svg{width: 26px; height: 26px;}
-
-  .wa-panel{width: calc(100vw - 32px); right: 16px;}
-}
-
-/* =========================
-   ACCESSIBILITY
-========================= */
-:focus-visible{outline:2px solid var(--secondary);outline-offset:2px;}
-.wa-fab:focus-visible,.theme-toggle:focus-visible,.nav-burger:focus-visible{outline-offset:3px;}
-
-/* =========================
-   CURSOR CUSTOM (desktop only)
-========================= */
-@media(min-width:1024px) and (pointer:fine){
-  .cursor-dot,.cursor-ring{
-    position:fixed;top:0;left:0;pointer-events:none;z-index:9999;border-radius:50%;
-    transition:transform .15s ease-out, opacity .15s ease;
-  }
-  .cursor-dot{width:6px;height:6px;background:var(--secondary);transform:translate(-50%,-50%);}
-  .cursor-ring{width:32px;height:32px;border:1.5px solid var(--secondary);opacity:.4;transform:translate(-50%,-50%);}
-  .cursor-ring.hover{transform:translate(-50%,-50%) scale(1.6);opacity:.15;border-color:var(--primary);}
-  .cursor-dot.hover{transform:translate(-50%,-50%) scale(.5);background:var(--primary);}
-}
-@media(max-width:1023px),(pointer:coarse){.cursor-dot,.cursor-ring{display:none;}}
-
-/* =========================================================
-   MODULE FIELD — LEARNING SIGNAL
-   ========================================================= */
-
-.module-field {
-    position: relative;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 24px;
-    padding: 35px;
-
-    isolation: isolate;
-}
-
-
-/* ---------------------------------------------------------
-   LIGNE CENTRALE
-   --------------------------------------------------------- */
-
-.module-field::before {
-    content: "";
-
-    position: absolute;
-
-    top: 8%;
-    bottom: 8%;
-    left: 50%;
-
-    width: 1px;
-
-    background: linear-gradient(
-        to bottom,
-        transparent,
-        var(--primary),
-        var(--secondary),
-        var(--accent),
-        transparent
-    );
-
-    opacity: .35;
-
-    transform: translateX(-50%);
-
-    z-index: -1;
-}
-
-
-/* Point lumineux qui descend */
-
-.module-field::after {
-    content: "";
-
-    position: absolute;
-
-    left: 50%;
-    top: 10%;
-
-    width: 7px;
-    height: 7px;
-
-    border-radius: 50%;
-
-    background: var(--secondary);
-
-    box-shadow:
-        0 0 10px var(--secondary),
-        0 0 25px rgba(93,201,202,.5);
-
-    transform: translateX(-50%);
-
-    animation: signalMove 4s ease-in-out infinite;
-
-    z-index: 3;
-}
-
-
-/* =========================================================
-   CARDS
-   ========================================================= */
-
-.module-tile {
-    position: relative;
-
-    min-height: 175px;
-
-    padding: 28px;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-
-    background: var(--surface);
-
-    border: 1px solid rgba(255,255,255,.09);
-
-    border-radius: 18px;
-
-    overflow: hidden;
-
-    transition:
-        transform .45s cubic-bezier(.22,1,.36,1),
-        border-color .4s ease,
-        box-shadow .4s ease;
-}
-
-
-/* ---------------------------------------------------------
-   NUMÉRO GÉANT EN ARRIÈRE-PLAN
-   --------------------------------------------------------- */
-
-.module-tile::before {
-    content: "";
-
-    position: absolute;
-
-    right: -10px;
-    bottom: -35px;
-
-    font-family: "IBM Plex Mono", monospace;
-
-    font-size: 110px;
-    font-weight: 600;
-
-    line-height: 1;
-
-    color: transparent;
-
-    -webkit-text-stroke: 1px rgba(113,136,218,.10);
-
-    opacity: .8;
-
-    transition:
-        transform .5s ease,
-        opacity .4s ease;
-}
-
-.module-tile:nth-child(1)::before {
-    content: "01";
-}
-
-.module-tile:nth-child(2)::before {
-    content: "02";
-}
-
-.module-tile:nth-child(3)::before {
-    content: "03";
-}
-
-.module-tile:nth-child(4)::before {
-    content: "04";
-}
-
-
-/* ---------------------------------------------------------
-   PETITE BARRE DE SIGNAL
-   --------------------------------------------------------- */
-
-.module-tile::after {
-    content: "";
-
-    position: absolute;
-
-    left: 0;
-    bottom: 0;
-
-    width: 0%;
-    height: 3px;
-
-    background: linear-gradient(
-        90deg,
-        var(--primary),
-        var(--secondary)
-    );
-
-    transition: width .5s cubic-bezier(.22,1,.36,1);
-}
-
-
-/* =========================================================
-   HOVER
-   ========================================================= */
-
-.module-tile:hover {
-    transform: translateY(-8px);
-
-    border-color: rgba(93,201,202,.35);
-
-    box-shadow:
-        0 18px 45px rgba(0,0,0,.20),
-        0 0 25px rgba(93,201,202,.06);
-}
-
-.module-tile:hover::before {
-    transform: translate(-8px, -8px) scale(1.05);
-    opacity: 1;
-}
-
-.module-tile:hover::after {
-    width: 100%;
-}
-
-
-/* =========================================================
-   ICONE
-   ========================================================= */
-
-.module-tile .tile-icon {
-    position: relative;
-    z-index: 2;
-
-    width: 31px;
-    height: 31px;
-
-    color: var(--secondary);
-
-    stroke-width: 1.5;
-
-    transition:
-        transform .4s cubic-bezier(.22,1,.36,1),
-        color .3s ease;
-}
-
-.module-tile:hover .tile-icon {
-    transform: translateY(-4px) scale(1.12);
-
-    color: var(--accent);
-}
-
-
-/* =========================================================
-   TAG
-   ========================================================= */
-
-.module-tile .tile-tag {
-    position: absolute;
-
-    top: 22px;
-    right: 24px;
-
-    z-index: 2;
-
-    font-family: "IBM Plex Mono", monospace;
-
-    font-size: 10px;
-
-    letter-spacing: .15em;
-
-    color: var(--secondary);
-
-    opacity: .65;
-}
-
-
-/* =========================================================
-   TITRE
-   ========================================================= */
-
-.module-tile h4 {
-    position: relative;
-
-    z-index: 2;
-
-    max-width: 210px;
-
-    margin: 25px 0 0;
-
-    font-family: "Fraunces", serif;
-
-    font-size: 20px;
-
-    line-height: 1.15;
-
-    color: var(--text);
-
-    transition:
-        transform .4s ease,
-        color .3s ease;
-}
-
-.module-tile:hover h4 {
-    transform: translateX(5px);
-
-    color: var(--secondary);
-}
-
-
-/* =========================================================
-   PETITS REPÈRES GRAPHIQUES
-   ========================================================= */
-
-.module-field {
-    --dot-size: 4px;
-}
-
-.module-field .module-tile:nth-child(1)::marker {
-    display: none;
-}
-
-
-/* petits points autour du champ */
-
-.module-field {
-    background-image:
-        radial-gradient(
-            circle,
-            rgba(113,136,218,.35) 1px,
-            transparent 1px
-        );
-
-    background-size: 28px 28px;
-
-    background-position: center;
-}
-
-
-/* =========================================================
-   ANIMATION DU SIGNAL
-   ========================================================= */
-
-@keyframes signalMove {
-
-    0% {
-        top: 10%;
-        opacity: 0;
-    }
-
-    15% {
-        opacity: 1;
-    }
-
-    50% {
-        top: 50%;
-        opacity: 1;
-    }
-
-    85% {
-        opacity: 1;
-    }
-
-    100% {
-        top: 90%;
-        opacity: 0;
-    }
-}
-
-
-/* =========================================================
-   LIGHT MODE
-   ========================================================= */
-
-[data-theme="light"] .module-tile {
-    border-color: rgba(57,81,171,.10);
-
-    box-shadow:
-        0 12px 35px rgba(57,81,171,.06);
-}
-
-[data-theme="light"] .module-field {
-    background-image:
-        radial-gradient(
-            circle,
-            rgba(57,81,171,.16) 1px,
-            transparent 1px
-        );
-}
-
-
-/* =========================================================
-   MOBILE
-   ========================================================= */
-
-@media (max-width: 700px) {
-
-    .module-field {
-        grid-template-columns: 1fr;
-
-        padding: 20px 5px;
-
-        background-size: 24px 24px;
-    }
-
-    .module-field::before,
-    .module-field::after {
-        display: none;
-    }
-
-    .module-tile {
-        min-height: 145px;
-    }
-
-    .module-tile h4 {
-        font-size: 19px;
-    }
-
-    .module-tile::before {
-        font-size: 85px;
-    }
-}
-
-
-/* =========================================================
-   REDUCED MOTION
-   ========================================================= */
-
-@media (prefers-reduced-motion: reduce) {
-
-    .module-field::after {
-        animation: none;
-    }
-
-    .module-tile {
-        transition: none;
-    }
-}
 </style>
 </head>
 <body>
@@ -1464,13 +1435,14 @@ footer{border-top:1px solid var(--border);padding:40px 0;}
 
 <!-- SECTION NAV INDICATOR -->
 <nav class="section-nav" aria-label="Navigation des sections">
-  <a href="#hero" data-label="Accueil" aria-label="Accueil"></a>
-  <a href="#expertises" data-label="Expertises" aria-label="Nos expertises"></a>
-  <a href="#solutions" data-label="Solutions" aria-label="Nos solutions"></a>
+  <a href="#solutions-hero" data-label="Solutions" aria-label="Solutions"></a>
+  <a href="#learning-impact" data-label="Learning Impact" aria-label="Learning Impact"></a>
+  <a href="#digital-learning" data-label="Digital Learning" aria-label="Digital Learning"></a>
+  <a href="#pit-stop" data-label="Pit Stop" aria-label="Pit Stop Learning"></a>
+  <a href="#academies" data-label="Académies" aria-label="Académies & parcours"></a>
+  <a href="#assessment" data-label="Assessment" aria-label="Assessment & Positioning"></a>
+  <a href="#management" data-label="Management" aria-label="Management & Human Performance"></a>
   <a href="#check" data-label="Diagnostic" aria-label="Learning Performance Check"></a>
-  <a href="#approche" data-label="Approche" aria-label="Notre approche"></a>
-  <a href="#insights" data-label="Insights" aria-label="Insights"></a>
-  <a href="#apropos" data-label="À propos" aria-label="À propos"></a>
   <a href="#contact" data-label="Contact" aria-label="Contact"></a>
 </nav>
 
@@ -1505,11 +1477,11 @@ footer{border-top:1px solid var(--border);padding:40px 0;}
       <span>Ward Wide Learning</span>
     </div>
     <div class="nav-links" id="navLinks">
-      <a href="{{ route('expertises') }}">Expertises</a>
-      <a href="{{ route('solutions') }}">Solutions</a>
-      <a href="{{ route('insights') }}">Insights</a>
-      <a href="#apropos">À propos</a>
-      <a href="#contact">Contact</a>
+      <a href="{{ route('home') }}#expertises">Expertises</a>
+      <a href="{{ route('solutions') }}" class="active">Solutions</a>
+      <a href="{{ route('home') }}#insights">Insights</a>
+      <a href="{{ route('home') }}#apropos">À propos</a>
+      <a href="{{ route('home') }}#contact">Contact</a>
     </div>
     <div class="nav-actions">
       <button class="theme-toggle" id="themeToggle" type="button" aria-label="Activer le mode clair"></button>
@@ -1521,251 +1493,334 @@ footer{border-top:1px solid var(--border);padding:40px 0;}
   </nav>
 </header>
 
-<section class="hero" id="hero">
-  <div class="wrap hero-grid">
-    <div>
-      <span class="kicker reveal">Diagnostic offert · Partenaire Learning & Performance</span>
-      <h1 class="reveal reveal-delay-1">Nous concevons des expériences d'apprentissage qui créent un changement <span class="accent-word">mesurable</span>.</h1>
-      <p class="lead reveal reveal-delay-2">Stratégie Learning, Digital Learning, assessment et impact au service de vos enjeux business.</p>
-      <div class="btn-row reveal reveal-delay-3">
-        <a href="#contact" class="btn-primary">Faire le diagnostic offert <i data-lucide="arrow-up-right" aria-hidden="true"></i></a>
-        <a href="#solutions" class="btn-ghost">Découvrir nos solutions <i data-lucide="arrow-down" aria-hidden="true"></i></a>
-      </div>
-      <div class="hero-microcopy reveal reveal-delay-3">
-        <span>5 minutes</span>
-        <span>Résultat immédiat</span>
-        <span>Sans engagement</span>
-      </div>
+<!-- =========================
+     HERO DE PAGE
+========================= -->
+{{-- <section class="page-hero" id="solutions-hero">
+  <div class="wrap">
+    <span class="kicker reveal">Vos enjeux, nos solutions</span>
+    <h1 class="reveal reveal-delay-1">Des solutions conçues pour vos enjeux Learning.</h1>
+    <p class="lead reveal reveal-delay-2">Qu'il s'agisse de repenser un dispositif existant, de digitaliser un parcours, de structurer une académie ou de mieux mesurer l'impact de la formation, nous construisons des solutions adaptées à votre contexte, vos publics et vos objectifs.</p>
+    <div class="btn-row reveal reveal-delay-3">
+      <a href="#contact" class="btn-primary">Faire le diagnostic offert <i data-lucide="arrow-up-right" aria-hidden="true"></i></a>
+      <a href="#check" class="btn-ghost">Tester mon Impact Coverage <i data-lucide="arrow-down" aria-hidden="true"></i></a>
     </div>
-    <div class="module-field reveal reveal-delay-2">
-      <div class="module-tile">
-        <i data-lucide="compass" class="tile-icon" aria-hidden="true"></i>
-        <span class="tile-tag">01</span>
-        <h4>Learning Strategy</h4>
-      </div>
-      <div class="module-tile">
-        <i data-lucide="sparkles" class="tile-icon" aria-hidden="true"></i>
-        <span class="tile-tag">02</span>
-        <h4>Learning Experience Design</h4>
-      </div>
-      <div class="module-tile">
-        <i data-lucide="monitor-play" class="tile-icon" aria-hidden="true"></i>
-        <span class="tile-tag">03</span>
-        <h4>Digital Learning</h4>
-      </div>
-      <div class="module-tile">
-        <i data-lucide="chart-no-axes-combined" class="tile-icon" aria-hidden="true"></i>
-        <span class="tile-tag">04</span>
-        <h4>Learning Impact & Assessment</h4>
-      </div>
+    <div class="solutions-jump reveal reveal-delay-4">
+      <a href="#learning-impact"><span class="jump-dot"></span>Learning Impact</a>
+      <a href="#digital-learning"><span class="jump-dot"></span>Digital Learning</a>
+      <a href="#pit-stop"><span class="jump-dot"></span>Pit Stop Learning</a>
+      <a href="#academies"><span class="jump-dot"></span>Académies & parcours</a>
+      <a href="#assessment"><span class="jump-dot"></span>Assessment & Positioning</a>
+      <a href="#management"><span class="jump-dot"></span>Management & Human Performance</a>
     </div>
   </div>
+</section> --}}
+
+<!-- =========================
+     HERO DE PAGE
+========================= -->
+<section class="page-hero" id="solutions-hero">
+    <div class="wrap">
+
+        <div class="hero-layout">
+
+            <!-- CONTENU -->
+            <div class="hero-content">
+
+                <span class="kicker reveal">
+                    Vos enjeux, nos solutions
+                </span>
+
+                <h1 class="reveal reveal-delay-1">
+                    Des solutions conçues pour vos enjeux Learning.
+                </h1>
+
+                <p class="lead reveal reveal-delay-2">
+                    Qu'il s'agisse de repenser un dispositif existant,
+                    de digitaliser un parcours, de structurer une académie
+                    ou de mieux mesurer l'impact de la formation, nous
+                    construisons des solutions adaptées à votre contexte,
+                    vos publics et vos objectifs.
+                </p>
+
+                <div class="btn-row reveal reveal-delay-3">
+                    <a href="#contact" class="btn-primary">
+                        Faire le diagnostic offert
+                        <i data-lucide="arrow-up-right" aria-hidden="true"></i>
+                    </a>
+
+                    <a href="#check" class="btn-ghost">
+                        Tester mon Impact Coverage
+                        <i data-lucide="arrow-down" aria-hidden="true"></i>
+                    </a>
+                </div>
+
+                <div class="solutions-jump reveal reveal-delay-4">
+                    <a href="#learning-impact">
+                        <span class="jump-dot"></span>
+                        Learning Impact
+                    </a>
+
+                    <a href="#digital-learning">
+                        <span class="jump-dot"></span>
+                        Digital Learning
+                    </a>
+
+                    <a href="#pit-stop">
+                        <span class="jump-dot"></span>
+                        Pit Stop Learning
+                    </a>
+
+                    <a href="#academies">
+                        <span class="jump-dot"></span>
+                        Académies & parcours
+                    </a>
+
+                    <a href="#assessment">
+                        <span class="jump-dot"></span>
+                        Assessment & Positioning
+                    </a>
+
+                    <a href="#management">
+                        <span class="jump-dot"></span>
+                        Management & Human Performance
+                    </a>
+                </div>
+
+            </div>
+
+
+            <!-- VISUEL HERO -->
+            <div class="hero-visual reveal reveal-delay-2">
+
+                <div class="hero-image-card">
+
+                    <div class="hero-image-frame">
+
+                        <img
+                            src="img3.png"
+                            alt="Innovation et transformation des expériences Learning"
+                        >
+
+                        <div class="hero-image-overlay"></div>
+
+                    </div>
+
+
+                    <!-- Étiquette -->
+                    <div class="hero-floating-label hero-label-top">
+                        <span class="label-dot"></span>
+                        Learning Intelligence
+                    </div>
+
+
+                    <!-- Carte flottante -->
+                    <div class="hero-floating-card">
+
+                        <div class="floating-icon">
+                            <i data-lucide="sparkles"></i>
+                        </div>
+
+                        <div>
+                            <span class="floating-small">
+                                APPROCHE
+                            </span>
+
+                            <strong>
+                                Learning × Impact
+                            </strong>
+                        </div>
+
+                    </div>
+
+
+                    <!-- Élément décoratif -->
+                    <div class="hero-orbit orbit-one"></div>
+                    <div class="hero-orbit orbit-two"></div>
+
+                    <span class="hero-accent accent-one"></span>
+                    <span class="hero-accent accent-two"></span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
 </section>
 
-<section id="expertises">
+<!-- =========================
+     LISTE DES SOLUTIONS — DÉTAIL
+========================= -->
+<section id="solutions-detail">
   <div class="wrap">
-    <div class="section-head reveal">
-      <span class="kicker">Nos expertises</span>
-      <h2>Une expertise de bout en bout, du besoin à l'impact.</h2>
-    </div>
-    <div class="index-list">
-      <div class="index-row reveal">
-        <span class="num">01</span>
-        <div>
-          <span class="tag">Learning Strategy</span>
-          <h3><i data-lucide="target" class="inline-icon" aria-hidden="true"></i> Learning design Strategy</h3>
-        </div>
-        <p>Aligner la formation aux enjeux stratégiques, métiers et compétences.</p>
-      </div>
-      <div class="index-row reveal reveal-delay-1">
-        <span class="num">02</span>
-        <div>
-          <span class="tag">Conception</span>
-          <h3><i data-lucide="layers-3" class="inline-icon" aria-hidden="true"></i> Learning Experience Design</h3>
-        </div>
-        <p>Concevoir des expériences utiles, engageantes et adaptées au travail réel.</p>
-      </div>
-      <div class="index-row reveal reveal-delay-2">
-        <span class="num">03</span>
-        <div>
-          <span class="tag">Digital</span>
-          <h3><i data-lucide="monitor-play" class="inline-icon" aria-hidden="true"></i> Digital Learning</h3>
-        </div>
-        <p>Créer des parcours digitaux, blended et scalables sans appauvrir l'expérience.</p>
-      </div>
-      <div class="index-row reveal reveal-delay-3">
-        <span class="num">04</span>
-        <div>
-          <span class="tag">Impact</span>
-          <h3><i data-lucide="chart-no-axes-combined" class="inline-icon" aria-hidden="true"></i> Learning Impact & Assessment</h3>
-        </div>
-        <p>Mesurer l'apprentissage, le transfert, les compétences et la contribution aux résultats.</p>
-      </div>
-    </div>
-  </div>
-</section>
 
-<section id="solutions">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <span class="kicker">Vos enjeux, nos solutions</span>
-      <h2>Commencez par votre problème. Nous construisons la réponse.</h2>
-    </div>
-    <div class="solutions-grid">
-      <div class="solution-card reveal">
-        <span class="num">01</span>
+    <div class="solution-detail reveal" id="learning-impact">
+      <span class="num">01</span>
+      <div>
+        <span class="tag">Learning Impact</span>
         <h3><i data-lucide="bar-chart-3" class="inline-icon" aria-hidden="true"></i> Learning Impact</h3>
-        <p>Évaluer l'efficacité des formations, structurer les indicateurs, mesurer le transfert et mieux piloter les décisions L&D.</p>
+        <p class="hook">Passer du reporting de formation à une véritable lecture de son efficacité.</p>
+        <p class="body-text">Nous accompagnons les équipes RH et L&amp;D dans la construction de dispositifs d'évaluation adaptés à leur niveau de maturité et aux enjeux de chaque formation.</p>
+        <p class="body-text">L'objectif n'est pas de multiplier les questionnaires, mais de définir ce qu'il est réellement utile de mesurer : expérience apprenant, apprentissages acquis, application en situation de travail et évolution des résultats associés.</p>
+        <p class="body-text">Selon le besoin, nous pouvons réaliser un diagnostic de maturité, structurer le dispositif d'évaluation selon les différents niveaux du modèle de <strong>Kirkpatrick</strong>, définir les indicateurs pertinents, mettre en place le suivi du transfert des acquis et concevoir des tableaux de bord permettant de transformer les données en décisions d'amélioration.</p>
         <a href="#contact" data-need="Mesure du ROI formation" class="seg-cta">Évaluer l'impact de mes formations</a>
       </div>
-      <div class="solution-card reveal reveal-delay-1">
-        <span class="num">02</span>
+    </div>
+
+    <div class="solution-detail reveal" id="digital-learning">
+      <span class="num">02</span>
+      <div>
+        <span class="tag">Digital Learning</span>
         <h3><i data-lucide="monitor-play" class="inline-icon" aria-hidden="true"></i> Digital Learning</h3>
-        <p>Digitaliser des parcours, produire des modules e-learning, concevoir du blended learning et structurer des expériences scalables.</p>
+        <p class="hook">Transformer une formation en expérience digitale, pas simplement en contenu en ligne.</p>
+        <p class="body-text">Nous concevons et digitalisons des parcours adaptés aux usages des apprenants, aux contraintes du terrain et aux objectifs pédagogiques.</p>
+        <p class="body-text">Notre intervention peut couvrir l'ensemble de la chaîne : architecture du parcours, scénarisation pédagogique, création de modules e-learning interactifs, microlearning, dispositifs blended, simulations et intégration sur les plateformes de formation.</p>
+        <p class="body-text">Nous produisons notamment avec une panoplie d'outils (Articulate, Rise, Kumullus...) et développons des contenus compatibles avec les standards LMS tels que SCORM/HTML5. Nous pouvons également intégrer l'intelligence artificielle lorsqu'elle permet d'enrichir, personnaliser ou optimiser l'expérience d'apprentissage.</p>
+        <span class="tools-note mono"><i data-lucide="wrench" aria-hidden="true"></i> Articulate · Rise · SCORM/HTML5</span><br>
         <a href="#contact" data-need="Formation de volumes importants" class="seg-cta">Digitaliser mon parcours</a>
       </div>
-      <div class="solution-card reveal reveal-delay-2">
-        <span class="num">03</span>
-        <h3><i data-lucide="route" class="inline-icon" aria-hidden="true"></i> Académies & parcours</h3>
-        <p>Structurer une académie, un curriculum, une architecture de parcours ou une offre de formation cohérente.</p>
-        <a href="#contact" data-need="Structurer une académie" class="seg-cta">Structurer mon académie</a>
-      </div>
-      <div class="solution-card reveal">
-        <span class="num">04</span>
+    </div>
+
+    <div class="solution-detail reveal" id="pit-stop">
+      <span class="num">03</span>
+      <div>
+        <span class="tag">Intervention ciblée</span>
         <h3><i data-lucide="gauge" class="inline-icon" aria-hidden="true"></i> Pit Stop Learning</h3>
-        <p>Intervention courte et ciblée pour diagnostiquer un enjeu, prioriser et repartir avec un plan d'action concret.</p>
+        <p class="hook">Prendre du recul rapidement pour débloquer un enjeu Learning précis.</p>
+        <p class="body-text">Le Pit Stop Learning est un format d'intervention court destiné aux organisations qui n'ont pas nécessairement besoin d'un projet de transformation complet, mais qui souhaitent clarifier une problématique et identifier rapidement les bonnes décisions à prendre.</p>
+        <p class="body-text">Nous analysons le dispositif existant, les objectifs, les publics et les principaux points de friction lors d'un diagnostic ciblé et d'un atelier de cadrage avec les parties prenantes.</p>
+        <p class="body-text">À l'issue du Pit Stop, l'organisation dispose d'une lecture claire de la situation, de priorités identifiées et d'un plan d'action concret pour avancer.</p>
         <a href="#contact" data-need="Pit Stop Learning" class="seg-cta">Faire un Pit Stop</a>
       </div>
-      <div class="solution-card reveal reveal-delay-1">
-        <span class="num">05</span>
+    </div>
+
+    <div class="solution-detail reveal" id="academies">
+      <span class="num">04</span>
+      <div>
+        <span class="tag">Académies & parcours</span>
+        <h3><i data-lucide="route" class="inline-icon" aria-hidden="true"></i> Académies & parcours</h3>
+        <p class="hook">Transformer une succession de formations en un véritable parcours de développement.</p>
+        <p class="body-text">Nous accompagnons les organisations dans la création ou la restructuration de leurs académies internes et de leurs parcours de développement.</p>
+        <p class="body-text">Nous partons des compétences attendues et des différentes populations pour construire une architecture cohérente : niveaux de progression, séquençage des apprentissages, modalités pédagogiques, formats digitaux et présentiels, évaluations et accompagnement terrain.</p>
+        <p class="body-text">Nous pouvons également structurer la gouvernance de l'académie, définir sa roadmap de déploiement et accompagner sa digitalisation afin de rendre l'offre plus lisible, accessible et évolutive.</p>
+        <a href="#contact" data-need="Structurer une académie" class="seg-cta">Structurer mon académie</a>
+      </div>
+    </div>
+
+    <div class="solution-detail reveal" id="assessment">
+      <span class="num">05</span>
+      <div>
+        <span class="tag">Assessment & Positioning</span>
         <h3><i data-lucide="clipboard-check" class="inline-icon" aria-hidden="true"></i> Assessment & Positioning</h3>
-        <p>Créer des tests de positionnement, assessments, et dispositifs d'évaluation d'impact et de transfert.</p>
+        <p class="hook">Savoir où en sont les compétences avant de décider comment les développer.</p>
+        <p class="body-text">Nous concevons des dispositifs de positionnement et d'assessment adaptés aux enjeux de formation, de recrutement, de mobilité ou de développement des compétences.</p>
+        <p class="body-text">Nous commençons par définir précisément les compétences à évaluer et la manière dont elles seront mesurées. Nous construisons ensuite l'architecture du test, les niveaux de difficulté, la banque de questions ou de mises en situation ainsi que les règles de scoring.</p>
+        <p class="body-text">Les résultats sont traduits en profils de positionnement et recommandations permettant d'identifier les écarts, d'orienter les parcours de formation ou d'aider à la prise de décision.</p>
         <a href="#contact" data-need="Assessment et positionnement" class="seg-cta">Concevoir mon assessment</a>
       </div>
-      <div class="solution-card reveal reveal-delay-2">
-        <span class="num">06</span>
+    </div>
+
+    <div class="solution-detail reveal" id="management">
+      <span class="num">06</span>
+      <div>
+        <span class="tag">Management & Human Performance</span>
         <h3><i data-lucide="users-round" class="inline-icon" aria-hidden="true"></i> Management & Human Performance</h3>
-        <p>Développer leadership, soft skills, cognition, communication et dynamiques d'équipe avec des dispositifs adaptés.</p>
+        <p class="hook">Développer les compétences qui permettent aux équipes de mieux agir, décider et collaborer.</p>
+        <p class="body-text">Nous concevons des parcours de développement adaptés aux enjeux des managers, des équipes et des fonctions RH : prise de posture managériale, leadership, communication, gestion des situations difficiles, intelligence émotionnelle et dynamiques collectives.</p>
+        <p class="body-text">Selon les objectifs, les dispositifs peuvent combiner formation, ateliers expérientiels, coaching individuel ou collectif, mises en situation et accompagnement dans la durée.</p>
+        <p class="body-text">Nous pouvons également intégrer des approches issues de la performance cognitive pour travailler notamment l'attention, la flexibilité cognitive, la mémoire de travail et la prise de décision dans les environnements professionnels exigeants.</p>
         <a href="#contact" data-need="Management et soft skills" class="seg-cta">Construire mon parcours</a>
       </div>
     </div>
-    <div class="section-head-cta reveal">
-      <a href="#contact" class="btn-ghost">Explorer toutes les solutions</a>
-    </div>
+
   </div>
 </section>
 
+<!-- =========================
+     LEARNING PERFORMANCE CHECK
+========================= -->
 <section id="check">
   <div class="wrap">
     <div class="interactive-card reveal">
       <div>
         <span class="kicker">Rubrique interactive</span>
-        <h2>Que mesure réellement votre dispositif d'évaluation de la formation ?</h2>
-        <p>Répondez à une série courte de questions pour obtenir une première lecture de votre Learning Impact Coverage.</p>
+        <h2>Un premier regard structuré sur la performance de votre dispositif Learning.</h2>
+        <p>Répondez à une série courte de questions pour évaluer votre dispositif selon plusieurs dimensions clés : alignement avec les enjeux métier, qualité du design, apprentissage, transfert des acquis et pilotage. À l'issue du questionnaire, vos réponses sont analysées par Ward Wide Learning et donnent lieu à une restitution personnalisée.</p>
       </div>
-      <a href="#contact" data-need="Learning Performance Check" class="btn-primary">Tester mon Impact Coverage</a>
+      <a href="#contact" data-need="Learning Performance Check" class="btn-primary">Faire le Learning Performance Check <i data-lucide="arrow-up-right" aria-hidden="true"></i></a>
     </div>
   </div>
 </section>
 
-<section id="approche">
+<section id="check-comment">
   <div class="wrap">
     <div class="section-head reveal">
-      <span class="kicker">Notre approche</span>
-      <h2>Apprendre. Ajuster. Accélérer.</h2>
+      <span class="kicker">Comment ça se passe ?</span>
+      <h2>Quatre étapes, du questionnaire à la restitution.</h2>
     </div>
     <div class="pit-lane">
       <div class="pit-track"></div>
       <div class="pillars">
         <div class="pillar reveal">
           <div class="pillar-marker">01</div>
-          <span class="stage">Stop</span>
-          <h3><i data-lucide="search-check" class="inline-icon" aria-hidden="true"></i> Analyser et diagnostiquer</h3>
-          <p>Comprendre le dispositif existant, les objectifs et les points de friction.</p>
+          <span class="stage">Check</span>
+          <h3><i data-lucide="list-checks" class="inline-icon" aria-hidden="true"></i> Vous réalisez le check en ligne</h3>
+          <p>Un questionnaire court permet de recueillir une première lecture de votre dispositif.</p>
         </div>
         <div class="pillar reveal reveal-delay-1">
           <div class="pillar-marker">02</div>
-          <span class="stage">Design</span>
-          <h3><i data-lucide="pen-tool" class="inline-icon" aria-hidden="true"></i> Concevoir l'expérience</h3>
-          <p>Scénariser un dispositif pédagogique adapté aux publics et aux usages.</p>
+          <span class="stage">Analyse</span>
+          <h3><i data-lucide="search-check" class="inline-icon" aria-hidden="true"></i> Nous analysons vos réponses</h3>
+          <p>WWL interprète les résultats et identifie les principaux signaux à approfondir.</p>
         </div>
         <div class="pillar reveal reveal-delay-2">
           <div class="pillar-marker">03</div>
-          <span class="stage">Sprint</span>
-          <h3><i data-lucide="flask-conical" class="inline-icon" aria-hidden="true"></i> Prototyper et tester</h3>
-          <p>Déployer une version pilote et l'ajuster au contact du terrain.</p>
+          <span class="stage">Restitution</span>
+          <h3><i data-lucide="presentation" class="inline-icon" aria-hidden="true"></i> Nous vous restituons les résultats</h3>
+          <p>Un échange permet de partager les constats et d'identifier les premières priorités.</p>
         </div>
         <div class="pillar reveal reveal-delay-3">
           <div class="pillar-marker">04</div>
-          <span class="stage">Accelerate</span>
-          <h3><i data-lucide="rocket" class="inline-icon" aria-hidden="true"></i> Déployer, mesurer et améliorer</h3>
-          <p>Généraliser le dispositif et mettre en place le suivi de son impact.</p>
+          <span class="stage">Approfondir</span>
+          <h3><i data-lucide="microscope" class="inline-icon" aria-hidden="true"></i> Si nécessaire, nous approfondissons</h3>
+          <p>Entretiens, étude des dispositifs existants et, si pertinent, observation terrain.</p>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<section id="insights">
+<section id="check-obtenez">
   <div class="wrap">
     <div class="section-head reveal">
-      <span class="kicker">Insights</span>
-      <h2>Learning, decoded.</h2>
+      <span class="kicker">Ce que vous obtenez</span>
+      <h2>À l'issue de la première restitution.</h2>
     </div>
-    <div class="insights-grid">
-      <article class="insight-card reveal">
-        <div class="insight-thumb">
-            <img src="logo-lockup.svg" alt="" srcset="">
-            <span class="insight-cat"><i data-lucide="trending-up" aria-hidden="true"></i> Learning Impact</span></div>
-        <div class="insight-body">
-          <span class="insight-meta">12 min · 3 sept. 2026</span>
-          <h3>Votre formation a eu 95 % de satisfaction. Et alors ?</h3>
-          <a href="#insights" class="insight-link">Lire l'article <i data-lucide="arrow-up-right" aria-hidden="true"></i></a>
-        </div>
-      </article>
-      <article class="insight-card reveal reveal-delay-1">
-        <div class="insight-thumb"><span class="insight-cat"><i data-lucide="brain" aria-hidden="true"></i> Learning Experience</span></div>
-        <div class="insight-body">
-          <span class="insight-meta">8 min · 27 août 2026</span>
-          <h3>Pourquoi le transfert échoue après une bonne formation.</h3>
-          <a href="#insights" class="insight-link">Lire l'article <i data-lucide="arrow-up-right" aria-hidden="true"></i></a>
-        </div>
-      </article>
-      <article class="insight-card reveal reveal-delay-2">
-        <div class="insight-thumb"><span class="insight-cat"><i data-lucide="bot" aria-hidden="true"></i> Digital Learning & IA</span></div>
-        <div class="insight-body">
-          <span class="insight-meta">10 min · 19 août 2026</span>
-          <h3>Kirkpatrick : ce que les entreprises mesurent... et ce qu'elles oublient.</h3>
-          <a href="#insights" class="insight-link">Lire l'article <i data-lucide="arrow-up-right" aria-hidden="true"></i></a>
-        </div>
-      </article>
-    </div>
-    <div class="section-head-cta reveal">
-      <a href="#insights" class="btn-ghost">Voir tous les Insights</a>
+    <div class="checklist-panel reveal">
+      <div class="row"><span class="check-ic"><i data-lucide="check" aria-hidden="true"></i></span><span class="label">Une lecture structurée de votre dispositif</span></div>
+      <div class="row"><span class="check-ic"><i data-lucide="check" aria-hidden="true"></i></span><span class="label">Vos principaux points forts</span></div>
+      <div class="row"><span class="check-ic"><i data-lucide="check" aria-hidden="true"></i></span><span class="label">Les zones de vigilance identifiées</span></div>
+      <div class="row"><span class="check-ic"><i data-lucide="check" aria-hidden="true"></i></span><span class="label">Les priorités à investiguer</span></div>
+      <div class="row"><span class="check-ic"><i data-lucide="check" aria-hidden="true"></i></span><span class="label">Les premières recommandations WWL</span></div>
     </div>
   </div>
 </section>
 
-<section id="apropos">
-  <div class="wrap about-wrap">
-    <div class="reveal">
-      <span class="kicker">À propos</span>
-      <p class="about-lead">Chez Ward Wide Learning, nous ne concevons pas la formation comme une succession de contenus à délivrer, mais comme un système à faire fonctionner.</p>
-      <p>Nous partons des enjeux réels de l'organisation, concevons des expériences d'apprentissage adaptées aux usages et au terrain, puis nous cherchons à rendre visible ce qui change réellement après la formation.</p>
-      <p>Notre ambition : créer des dispositifs plus utiles, plus engageants et plus mesurables, avec une même exigence tout au long du parcours.</p>
-      <div class="btn-row">
-        <a href="#contact" class="btn-primary">Parler de votre enjeu Learning <i data-lucide="arrow-up-right" aria-hidden="true"></i></a>
-      </div>
-    </div>
-    <div class="about-panel reveal reveal-delay-2">
-      <div class="row"><span><i data-lucide="badge-check" aria-hidden="true"></i> Exigence</span><span class="v">Concevoir avec rigueur</span></div>
-      <div class="row"><span><i data-lucide="user-round" aria-hidden="true"></i> Expérience</span><span class="v">Penser pour l'apprenant et son contexte réel</span></div>
-      <div class="row"><span><i data-lucide="chart-no-axes-combined" aria-hidden="true"></i> Impact</span><span class="v">Mesurer ce qui change vraiment</span></div>
-      <div class="row"><span><i data-lucide="map-pin" aria-hidden="true"></i> Localisation</span><span class="v">Casablanca, Maroc</span></div>
+<section id="check-final">
+  <div class="wrap">
+    <div class="quote-block reveal">
+      <p class="about-lead">Votre dispositif Learning est-il réellement performant ?</p>
+      <p>En quelques minutes, évaluez les forces et les points de friction de votre dispositif de formation : alignement business, qualité du design, apprentissage, transfert terrain et pilotage de l'impact.</p>
+      <a href="#contact" data-need="Learning Performance Check" class="btn-primary">Lancer le Performance Check <i data-lucide="arrow-up-right" aria-hidden="true"></i></a>
     </div>
   </div>
 </section>
 
+<!-- =========================
+     CTA FINAL
+========================= -->
 <section id="cta-final">
   <div class="wrap">
     <div class="final-cta reveal">
@@ -1780,6 +1835,9 @@ footer{border-top:1px solid var(--border);padding:40px 0;}
   </div>
 </section>
 
+<!-- =========================
+     CONTACT
+========================= -->
 <section id="contact">
   <div class="wrap">
     <div class="contact-card reveal">
@@ -1896,14 +1954,12 @@ footer{border-top:1px solid var(--border);padding:40px 0;}
 <script>
     /* =========================================================
    WARD WIDE LEARNING — INTERACTIVE ENGINE
+   (identique à la homepage — script partagé, mêmes sélecteurs)
    ========================================================= */
 
 (function(){
   'use strict';
 
-  /* =========================
-     UTILS
-  ========================= */
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const isTouch = window.matchMedia('(pointer: coarse)').matches;
   const root = document.documentElement;
@@ -1917,9 +1973,7 @@ footer{border-top:1px solid var(--border);padding:40px 0;}
     };
   }
 
-  /* =========================
-     CANVAS BACKGROUND — Subtle connected nodes
-  ========================= */
+  /* CANVAS BACKGROUND */
   (function initCanvas(){
     const canvas = document.getElementById('bgCanvas');
     if(!canvas) return;
@@ -1950,8 +2004,6 @@ footer{border-top:1px solid var(--border);padding:40px 0;}
         this.y += this.vy;
         if(this.x < 0 || this.x > W) this.vx *= -1;
         if(this.y < 0 || this.y > H) this.vy *= -1;
-
-        // gentle mouse repulsion
         const dx = this.x - mouse.x;
         const dy = this.y - mouse.y;
         const dist = Math.sqrt(dx*dx + dy*dy);
@@ -1996,7 +2048,6 @@ footer{border-top:1px solid var(--border);padding:40px 0;}
       }
     }
 
-    let frame = 0;
     function animate(){
       if(document.hidden){ requestAnimationFrame(animate); return; }
       ctx.clearRect(0,0,W,H);
@@ -2013,9 +2064,7 @@ footer{border-top:1px solid var(--border);padding:40px 0;}
     }
   })();
 
-  /* =========================
-     SCROLL PROGRESS
-  ========================= */
+  /* SCROLL PROGRESS */
   (function(){
     const bar = document.getElementById('scrollProgress');
     if(!bar) return;
@@ -2029,9 +2078,7 @@ footer{border-top:1px solid var(--border);padding:40px 0;}
     update();
   })();
 
-  /* =========================
-     SECTION NAV INDICATOR
-  ========================= */
+  /* SECTION NAV INDICATOR */
   (function(){
     const nav = document.querySelector('.section-nav');
     if(!nav) return;
@@ -2048,9 +2095,7 @@ footer{border-top:1px solid var(--border);padding:40px 0;}
     sections.forEach(s => s && observer.observe(s));
   })();
 
-  /* =========================
-     CUSTOM CURSOR
-  ========================= */
+  /* CUSTOM CURSOR */
   (function(){
     if(isTouch || window.innerWidth < 1024) return;
     const dot = document.getElementById('cursorDot');
@@ -2069,16 +2114,14 @@ footer{border-top:1px solid var(--border);padding:40px 0;}
     }
     loop();
 
-    const hoverTargets = 'a, button, .module-tile, .pillar, .solution-card, .badge, .index-row, .insight-card, .nav-cta, .wa-fab, .success-modal-button';
+    const hoverTargets = 'a, button, .solution-detail, .pillar, .checklist-panel .row, .nav-cta, .wa-fab, .success-modal-button';
     document.querySelectorAll(hoverTargets).forEach(el => {
       el.addEventListener('mouseenter', () => { dot.classList.add('hover'); ring.classList.add('hover'); });
       el.addEventListener('mouseleave', () => { dot.classList.remove('hover'); ring.classList.remove('hover'); });
     });
   })();
 
-  /* =========================
-     GLOBAL CURSOR GLOW + GRID PARALLAX
-  ========================= */
+  /* GLOBAL CURSOR GLOW + GRID PARALLAX */
   (function(){
     const grid = document.querySelector('.field-grid');
     if(!reducedMotion && !isTouch){
@@ -2109,32 +2152,7 @@ footer{border-top:1px solid var(--border);padding:40px 0;}
     }
   })();
 
-  /* =========================
-     MODULE FIELD 3D HOVER
-  ========================= */
-  (function(){
-    const field = document.querySelector('.module-field');
-    if(!field) return;
-    const canAnimate = window.innerWidth > 780 && !reducedMotion;
-    if(!canAnimate) return;
-    let ticking = false;
-    field.addEventListener('mousemove', function(e){
-      if(ticking) return;
-      requestAnimationFrame(function(){
-        const rect = field.getBoundingClientRect();
-        const mx = ((e.clientX - rect.left) / rect.width) * 100;
-        const my = ((e.clientY - rect.top) / rect.height) * 100;
-        field.style.setProperty('--mx', mx + '%');
-        field.style.setProperty('--my', my + '%');
-        ticking = false;
-      });
-      ticking = true;
-    });
-  })();
-
-  /* =========================
-     REVEAL ON SCROLL
-  ========================= */
+  /* REVEAL ON SCROLL */
   (function(){
     const revealEls = document.querySelectorAll('.reveal');
     if(!revealEls.length) return;
@@ -2149,9 +2167,7 @@ footer{border-top:1px solid var(--border);padding:40px 0;}
     revealEls.forEach(el => observer.observe(el));
   })();
 
-  /* =========================
-     THEME TOGGLE
-  ========================= */
+  /* THEME TOGGLE */
   (function(){
     const toggle = document.getElementById('themeToggle');
     if(!toggle) return;
@@ -2167,7 +2183,7 @@ footer{border-top:1px solid var(--border);padding:40px 0;}
 
     const saved = localStorage.getItem('wwl-theme');
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    apply(saved || (prefersDark ? 'dark' : 'dark')); // default dark as per design
+    apply(saved || (prefersDark ? 'dark' : 'dark'));
 
     toggle.addEventListener('click', () => {
       const next = root.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
@@ -2175,9 +2191,7 @@ footer{border-top:1px solid var(--border);padding:40px 0;}
     });
   })();
 
-  /* =========================
-     MOBILE NAVIGATION
-  ========================= */
+  /* MOBILE NAVIGATION */
   (function(){
     const burger = document.getElementById('navBurger');
     const links = document.getElementById('navLinks');
@@ -2198,9 +2212,7 @@ footer{border-top:1px solid var(--border);padding:40px 0;}
     });
   })();
 
-  /* =========================
-     SMOOTH ANCHOR SCROLL
-  ========================= */
+  /* SMOOTH ANCHOR SCROLL */
   (function(){
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function(e){
@@ -2215,9 +2227,7 @@ footer{border-top:1px solid var(--border);padding:40px 0;}
     });
   })();
 
-  /* =========================
-     WHATSAPP WIDGET
-  ========================= */
+  /* WHATSAPP WIDGET */
   (function(){
     const fab = document.getElementById('waFab');
     const panel = document.getElementById('waPanel');
@@ -2244,11 +2254,9 @@ footer{border-top:1px solid var(--border);padding:40px 0;}
     });
   })();
 
-  /* =========================
-     SOLUTION BUTTONS → FORM (pré-remplissage de l'enjeu)
-  ========================= */
+  /* BOUTONS SOLUTIONS → FORMULAIRE (pré-remplissage de l'enjeu) */
   (function(){
-    const solutionButtons = document.querySelectorAll('.seg-cta');
+    const solutionButtons = document.querySelectorAll('.seg-cta, [data-need].btn-primary');
     const needSelect = document.getElementById('need');
     const form = document.getElementById('hero-form');
     if(!solutionButtons.length) return;
@@ -2277,9 +2285,7 @@ footer{border-top:1px solid var(--border);padding:40px 0;}
     });
   })();
 
-  /* =========================
-     SUCCESS MODAL
-  ========================= */
+  /* SUCCESS MODAL */
   (function(){
     const modal = document.getElementById('successModal');
     if(!modal) return;
@@ -2301,9 +2307,7 @@ footer{border-top:1px solid var(--border);padding:40px 0;}
     document.addEventListener('keydown', (e) => { if(e.key === 'Escape') closeModal(); });
   })();
 
-  /* =========================
-     LOGO — 3 CLICKS → DASHBOARD
-  ========================= */
+  /* LOGO — 3 CLICKS → DASHBOARD */
   (function(){
     const logo = document.getElementById('siteLogo');
     if(!logo) return;
@@ -2322,9 +2326,7 @@ footer{border-top:1px solid var(--border);padding:40px 0;}
     });
   })();
 
-  /* =========================
-     FORM SUBMIT LOADING STATE
-  ========================= */
+  /* FORM SUBMIT LOADING STATE */
   (function(){
     const form = document.getElementById('hero-form');
     const btn = document.getElementById('submitBtn');
