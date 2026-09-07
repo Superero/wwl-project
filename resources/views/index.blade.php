@@ -346,28 +346,32 @@
     <div class="insights-grid">
       <article class="insight-card reveal">
         <div class="insight-thumb">
-            <img src="logo-lockup.svg" alt="" srcset="">
+            <img src="article01.png" alt="" srcset="" loading="lazy">
             <span class="insight-cat"><i data-lucide="trending-up" aria-hidden="true"></i> Learning Impact</span></div>
         <div class="insight-body">
           <span class="insight-meta">12 min · 3 sept. 2026</span>
           <h3>Votre formation a eu 95 % de satisfaction. Et alors ?</h3>
-          <a href="#insights" class="insight-link">Lire l'article <i data-lucide="arrow-up-right" aria-hidden="true"></i></a>
+          <a href="{{ route('insights') }}" class="insight-link">Lire l'article <i data-lucide="arrow-up-right" aria-hidden="true"></i></a>
         </div>
       </article>
       <article class="insight-card reveal reveal-delay-1">
-        <div class="insight-thumb"><span class="insight-cat"><i data-lucide="brain" aria-hidden="true"></i> Learning Experience</span></div>
+        <div class="insight-thumb">
+            <img src="article02.png" alt="" srcset="" loading="lazy">
+          <span class="insight-cat"><i data-lucide="brain" aria-hidden="true"></i> Learning Experience</span></div>
         <div class="insight-body">
           <span class="insight-meta">8 min · 27 août 2026</span>
           <h3>Pourquoi le transfert échoue après une bonne formation.</h3>
-          <a href="#insights" class="insight-link">Lire l'article <i data-lucide="arrow-up-right" aria-hidden="true"></i></a>
+          <a href="{{ route('insights') }}" class="insight-link">Lire l'article <i data-lucide="arrow-up-right" aria-hidden="true"></i></a>
         </div>
       </article>
       <article class="insight-card reveal reveal-delay-2">
-        <div class="insight-thumb"><span class="insight-cat"><i data-lucide="bot" aria-hidden="true"></i> Digital Learning & IA</span></div>
+        <div class="insight-thumb">
+            <img src="article03.png" alt="" srcset="" loading="lazy">
+          <span class="insight-cat"><i data-lucide="bot" aria-hidden="true"></i> Digital Learning & IA</span></div>
         <div class="insight-body">
           <span class="insight-meta">10 min · 19 août 2026</span>
           <h3>Kirkpatrick : ce que les entreprises mesurent... et ce qu'elles oublient.</h3>
-          <a href="#insights" class="insight-link">Lire l'article <i data-lucide="arrow-up-right" aria-hidden="true"></i></a>
+          <a href="{{ route('insights') }}" class="insight-link">Lire l'article <i data-lucide="arrow-up-right" aria-hidden="true"></i></a>
         </div>
       </article>
     </div>
