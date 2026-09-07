@@ -4,357 +4,23 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ward Wide Learning — Formation d'entreprise, pilotée par la donnée</title>
-<link rel="shortcut icon" href="logo-lockup.svg" type="image/x-icon">
+<link rel="shortcut icon" href="{{ asset('logo-lockup.svg') }}" type="image/x-icon">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-{{-- <style>
-  :root{
-    --bg:#080b14;
-    --bg-alt:#0e1424;
-    --panel:#11182b;
-    --panel-2:#141d34;
-    --line:rgba(148,168,204,0.14);
-    --cyan:#4ce0d2;
-    --violet:#8b7cf6;
-    --amber:#ffb454;
-    --text:#e9f0f5;
-    --text-dim:#8a97ac;
-    --radius:14px;
-  }
-  /* LIGHT MODE */
-  html[data-theme="light"]{
-    --bg:#f6f8fb;
-    --bg-alt:#eef2f9;
-    --panel:#ffffff;
-    --panel-2:#f3f6fc;
-    --line:rgba(15,20,40,0.12);
-    --cyan:#0f9a91;
-    --violet:#3851ab;
-    --amber:#dd8a00;
-    --text:#0e1220;
-    --text-dim:#586082;
-  }
-  html[data-theme="light"] body{background:var(--bg);}
-  html[data-theme="light"] .grid-bg{opacity:0.16;}
-  html[data-theme="light"] .glow-1{opacity:0.55;}
-  html[data-theme="light"] .glow-2{opacity:0.55;}
-  html[data-theme="light"] header{background:rgba(246,248,251,0.8);}
-  html[data-theme="light"] .btn-primary{color:#ffffff;}
-  html[data-theme="light"] .nav-cta:hover{color:#ffffff;}
-  html[data-theme="light"] .problem-card::before{color:rgba(14,18,32,0.05);}
-  html[data-theme="light"] .hud-core{box-shadow:inset 0 0 40px rgba(15,154,145,0.10), 0 0 50px rgba(15,154,145,0.12);}
-  html[data-theme="light"] .success-msg{color:#0c7f78;}
-  html[data-theme="light"] ::selection{background:rgba(15,154,145,0.22);}
-
-  *{box-sizing:border-box;margin:0;padding:0;}
-  html{scroll-behavior:smooth;}
-  body{
-    background:var(--bg);
-    color:var(--text);
-    font-family:'Inter',sans-serif;
-    line-height:1.6;
-    overflow-x:hidden;
-    transition:background 0.3s ease, color 0.3s ease;
-  }
-  @media (prefers-reduced-motion: reduce){
-    *{animation-duration:0.01ms !important; animation-iteration-count:1 !important; transition-duration:0.01ms !important;}
-  }
-  h1,h2,h3{font-family:'Space Grotesk',sans-serif; letter-spacing:-0.01em;}
-  .mono{font-family:'IBM Plex Mono',monospace;}
-  a{color:inherit;}
-  .wrap{max-width:1180px;margin:0 auto;padding:0 32px;}
-  section{position:relative;padding:110px 0;}
-
-  /* ambient grid backdrop */
-  .grid-bg{
-    position:fixed;inset:0;z-index:0;pointer-events:none;
-    background-image:
-      linear-gradient(var(--line) 1px, transparent 1px),
-      linear-gradient(90deg, var(--line) 1px, transparent 1px);
-    background-size:64px 64px;
-    opacity:0.35;
-    mask-image:radial-gradient(ellipse 90% 60% at 50% 0%, black 40%, transparent 90%);
-  }
-  .glow{
-    position:fixed;z-index:0;pointer-events:none;border-radius:50%;filter:blur(120px);
-  }
-  .glow-1{width:600px;height:600px;background:radial-gradient(circle, rgba(76,224,210,0.16), transparent 70%);top:-200px;left:-150px;}
-  .glow-2{width:700px;height:700px;background:radial-gradient(circle, rgba(139,124,246,0.14), transparent 70%);top:20%;right:-250px;}
-
-  /* NAV */
-  header{
-    position:sticky;top:0;z-index:50;
-    background:rgba(8,11,20,0.72);
-    backdrop-filter:blur(14px);
-    border-bottom:1px solid var(--line);
-  }
-  nav{display:flex;align-items:center;justify-content:space-between;padding:18px 32px;max-width:1180px;margin:0 auto;}
-  .brand{display:flex;align-items:center;gap:10px;font-family:'Space Grotesk';font-weight:600;font-size:16px;letter-spacing:0.02em;}
-  .brand-mark{width:50px;height:50px;border-radius:30px;background:var(--cyan);box-shadow:0 0 12px var(--cyan);animation:pulse 2.4s ease-in-out infinite;}
-  @keyframes pulse{0%,100%{opacity:1;}50%{opacity:0.4;}}
-  .nav-links{display:flex;gap:28px;font-size:14px;color:var(--text-dim);}
-  .nav-links a{transition:color 0.2s;}
-  .nav-links a:hover{color:var(--cyan);}
-  .nav-cta{
-    font-family:'IBM Plex Mono';font-size:13px;padding:9px 18px;border-radius:8px;
-    border:1px solid var(--cyan);color:var(--cyan);white-space:nowrap;transition:all 0.2s;
-  }
-  .nav-cta:hover{background:var(--cyan);color:#04140f;}
-  @media(max-width:780px){.nav-links{display:none;}}
-
-  /* HERO */
-  .hero{padding:90px 0 60px;}
-  .hero-grid{display:grid;grid-template-columns:1.1fr 0.9fr;gap:60px;align-items:center;}
-  @media(max-width:900px){.hero-grid{grid-template-columns:1fr;}}
-  .eyebrow{
-    display:inline-flex;align-items:center;gap:8px;
-    font-family:'IBM Plex Mono';font-size:12px;letter-spacing:0.08em;text-transform:uppercase;
-    color:var(--cyan);border:1px solid rgba(76,224,210,0.35);background:rgba(76,224,210,0.06);
-    padding:6px 14px;border-radius:999px;margin-bottom:26px;
-  }
-  .eyebrow::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--amber);box-shadow:0 0 8px var(--amber);}
-  .hero h1{font-size:clamp(34px,4.6vw,58px);font-weight:600;line-height:1.08;margin-bottom:24px;}
-  .hero h1 em{font-style:normal;color:var(--cyan);}
-  .hero p.lead{font-size:17px;color:var(--text-dim);max-width:520px;margin-bottom:34px;}
-  .btn-row{display:flex;gap:16px;flex-wrap:wrap;}
-  .btn-primary{
-    font-family:'IBM Plex Mono';font-size:14px;font-weight:500;
-    background:var(--cyan);color:#04140f;padding:14px 26px;border-radius:9px;border:none;cursor:pointer;
-    box-shadow:0 0 0 rgba(76,224,210,0.4);transition:box-shadow 0.25s, transform 0.2s;
-    display:inline-flex;align-items:center;gap:8px;
-  }
-  .btn-primary:hover{box-shadow:0 0 26px rgba(76,224,210,0.45);transform:translateY(-1px);}
-  .btn-ghost{
-    font-family:'IBM Plex Mono';font-size:14px;padding:14px 22px;border-radius:9px;
-    border:1px solid var(--line);color:var(--text-dim);transition:all 0.2s;
-  }
-  .btn-ghost:hover{border-color:var(--text-dim);color:var(--text);}
-
-  /* HUD signature */
-  .hud{position:relative;width:100%;max-width:420px;aspect-ratio:1;margin:0 auto;}
-  .hud-ring{position:absolute;inset:0;border-radius:50%;border:1px solid var(--line);}
-  .hud-ring.r2{inset:34px;border-color:rgba(139,124,246,0.25);animation:spin 40s linear infinite;}
-  .hud-ring.r3{inset:68px;border:1px dashed rgba(76,224,210,0.25);animation:spin 60s linear infinite reverse;}
-  @keyframes spin{to{transform:rotate(360deg);}}
-  .hud-core{
-    position:absolute;inset:100px;border-radius:50%;
-    background:radial-gradient(circle at 35% 30%, var(--panel-2), var(--bg-alt));
-    border:1px solid var(--line);
-    display:flex;flex-direction:column;align-items:center;justify-content:center;
-    box-shadow:inset 0 0 40px rgba(76,224,210,0.08), 0 0 60px rgba(76,224,210,0.08);
-  }
-  .hud-core .num{font-family:'Space Grotesk';font-size:40px;font-weight:700;color:var(--cyan);}
-  .hud-core .lbl{font-family:'IBM Plex Mono';font-size:11px;color:var(--text-dim);letter-spacing:0.05em;margin-top:4px;}
-  .hud-dot{position:absolute;width:9px;height:9px;border-radius:50%;background:var(--amber);box-shadow:0 0 10px var(--amber);}
-  .hud-dot.d1{top:8px;left:calc(50% - 4px);}
-  .hud-dot.d2{bottom:34px;right:22px;background:var(--violet);box-shadow:0 0 10px var(--violet);}
-  .hud-readout{
-    position:absolute;font-family:'IBM Plex Mono';font-size:11px;color:var(--text-dim);
-    background:rgba(8,11,20,0.8);border:1px solid var(--line);padding:6px 10px;border-radius:7px;
-  }
-  .hud-readout.top{top:-6px;right:-10px;}
-  .hud-readout.bottom{bottom:-6px;left:-10px;}
-  .hud-readout .v{color:var(--cyan);font-weight:500;}
-
-  /* SECTION HEADERS */
-  .section-head{max-width:640px;margin-bottom:56px;}
-  .section-head .eyebrow{margin-bottom:18px;}
-  .section-head h2{font-size:clamp(26px,3.2vw,38px);font-weight:600;}
-  .section-head p{color:var(--text-dim);margin-top:14px;font-size:16px;}
-
-  /* PROBLEM */
-  .problem-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
-  @media(max-width:860px){.problem-grid{grid-template-columns:1fr;}}
-  .problem-card{
-    background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);
-    padding:30px 26px;position:relative;overflow:hidden;
-  }
-  .problem-card::before{
-    content:attr(data-idx);position:absolute;top:-6px;right:12px;
-    font-family:'Space Grotesk';font-size:70px;font-weight:700;color:rgba(255,255,255,0.03);
-  }
-  .problem-card .tag{font-family:'IBM Plex Mono';font-size:11px;color:var(--amber);letter-spacing:0.06em;text-transform:uppercase;}
-  .problem-card h3{font-size:19px;margin:12px 0 10px;font-weight:600;}
-  .problem-card p{color:var(--text-dim);font-size:14.5px;}
-
-  /* SEGMENTS */
-  .seg-tabs{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:30px;}
-  .seg-tab{
-    font-family:'IBM Plex Mono';font-size:13px;padding:10px 16px;border-radius:8px;
-    border:1px solid var(--line);color:var(--text-dim);cursor:pointer;background:transparent;transition:all 0.2s;
-  }
-  .seg-tab.active{border-color:var(--cyan);color:var(--cyan);background:rgba(76,224,210,0.07);}
-  .seg-panel{
-    display:none;background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);
-    padding:38px;grid-template-columns:auto 1fr auto;gap:28px;align-items:center;
-  }
-  .seg-panel.active{display:grid;}
-  @media(max-width:720px){.seg-panel{grid-template-columns:1fr;text-align:left;}}
-  .seg-icon{
-    width:54px;height:54px;border-radius:12px;background:var(--bg-alt);border:1px solid var(--line);
-    display:flex;align-items:center;justify-content:center;font-family:'Space Grotesk';font-weight:700;color:var(--cyan);font-size:18px;
-  }
-  .seg-panel h3{font-size:21px;margin-bottom:8px;font-weight:600;}
-  .seg-panel p{color:var(--text-dim);font-size:15px;}
-  .seg-cta{font-family:'IBM Plex Mono';font-size:13px;color:var(--cyan);border:1px solid rgba(76,224,210,0.35);padding:10px 18px;border-radius:8px;white-space:nowrap;}
-
-  /* PILLARS */
-  .pit-lane{position:relative;padding-top:10px;}
-  .pit-track{position:absolute;top:38px;left:6%;right:6%;height:1px;background:var(--line);}
-  .pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;position:relative;}
-  @media(max-width:860px){.pillars{grid-template-columns:1fr;}.pit-track{display:none;}}
-  .pillar{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:34px 26px;}
-  .pillar-marker{
-    width:34px;height:34px;border-radius:50%;background:var(--bg-alt);border:1px solid var(--cyan);
-    display:flex;align-items:center;justify-content:center;font-family:'IBM Plex Mono';font-size:13px;color:var(--cyan);
-    margin-bottom:22px;box-shadow:0 0 14px rgba(76,224,210,0.25);
-  }
-  .pillar .stage{font-family:'IBM Plex Mono';font-size:11px;color:var(--violet);text-transform:uppercase;letter-spacing:0.08em;}
-  .pillar h3{font-size:19px;margin:10px 0;font-weight:600;}
-  .pillar p{color:var(--text-dim);font-size:14.5px;}
-
-  /* ABOUT */
-  .about-wrap{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;}
-  @media(max-width:860px){.about-wrap{grid-template-columns:1fr;}}
-  .about-wrap p{color:var(--text-dim);font-size:15.5px;margin-bottom:20px;}
-  .badge-row{display:flex;gap:14px;flex-wrap:wrap;}
-  .badge{
-    font-family:'IBM Plex Mono';font-size:12.5px;border:1px solid var(--line);border-radius:9px;
-    padding:12px 16px;color:var(--text-dim);background:var(--panel);
-  }
-  .badge .v{display:block;color:var(--cyan);font-size:15px;font-weight:500;margin-bottom:3px;}
-  .about-panel{
-    background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:34px;
-    font-family:'IBM Plex Mono';font-size:13px;color:var(--text-dim);
-  }
-  .about-panel .row{display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid var(--line);}
-  .about-panel .row:last-child{border-bottom:none;}
-  .about-panel .row .v{color:var(--cyan);}
-
-  /* CONTACT */
-  #contact{padding-bottom:140px;}
-  .contact-card{
-    background:linear-gradient(160deg, var(--panel), var(--bg-alt));
-    border:1px solid var(--line);border-radius:20px;padding:56px;
-    display:grid;grid-template-columns:1fr 1fr;gap:50px;
-  }
-  @media(max-width:860px){.contact-card{grid-template-columns:1fr;padding:34px;}}
-  .contact-card h2{font-size:clamp(24px,3vw,32px);margin-bottom:16px;font-weight:600;}
-  .contact-card > div:first-child p{color:var(--text-dim);font-size:15px;margin-bottom:24px;}
-  .mini-stats{display:flex;gap:22px;flex-wrap:wrap;}
-  .mini-stats div{font-family:'IBM Plex Mono';font-size:12px;color:var(--text-dim);}
-  .mini-stats .n{display:block;color:var(--amber);font-size:20px;font-family:'Space Grotesk';font-weight:700;}
-  form{display:flex;flex-direction:column;gap:14px;}
-  .field label{font-family:'IBM Plex Mono';font-size:11px;color:var(--text-dim);text-transform:uppercase;letter-spacing:0.05em;display:block;margin-bottom:6px;}
-  .field input, .field select{
-    width:100%;background:var(--bg-alt);border:1px solid var(--line);border-radius:8px;
-    padding:12px 14px;color:var(--text);font-family:'Inter';font-size:14px;outline:none;transition:border-color 0.2s;
-  }
-  .field input:focus, .field select:focus{border-color:var(--cyan);}
-  .field select{appearance:none;cursor:pointer;}
-  form .btn-primary{margin-top:6px;justify-content:center;}
-  .form-note{font-family:'IBM Plex Mono';font-size:11.5px;color:var(--text-dim);margin-top:4px;}
-  .success-msg{
-    display:none;text-align:center;padding:30px 10px;font-family:'IBM Plex Mono';font-size:14px;color:var(--cyan);
-  }
-
-  footer{border-top:1px solid var(--line);padding:44px 0;}
-  .footer-wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:20px;font-size:13px;color:var(--text-dim);}
-  .footer-wrap .brand{font-size:14px;}
-  .legal{font-size:11.5px;color:#5a6478;max-width:1180px;margin:22px auto 0;padding:0 32px;line-height:1.6;}
-
-  .reveal{opacity:0;transform:translateY(18px);transition:opacity 0.6s ease, transform 0.6s ease;}
-  .reveal.in{opacity:1;transform:translateY(0);}
-
-  /* THEME TOGGLE */
-  .nav-actions{display:flex;align-items:center;gap:14px;}
-  .theme-toggle{
-    width:38px;height:38px;border-radius:50%;flex:0 0 auto;
-    display:flex;align-items:center;justify-content:center;
-    border:1px solid var(--line);background:var(--panel);color:var(--cyan);
-    cursor:pointer;transition:border-color 0.2s, transform 0.2s;
-  }
-  .theme-toggle:hover{border-color:var(--cyan);transform:translateY(-1px);}
-  .theme-toggle svg{width:17px;height:17px;}
-
-  /* WHATSAPP WIDGET */
-  .wa-fab{
-    position:fixed;bottom:26px;right:26px;z-index:70;
-    width:60px;height:60px;border-radius:50%;border:none;cursor:pointer;
-    background:linear-gradient(160deg,#2be08a,#0f9a91);
-    display:flex;align-items:center;justify-content:center;
-    box-shadow:0 8px 26px rgba(15,154,145,0.4);
-    transition:transform 0.2s;
-    animation:wa-pulse 2.8s ease-in-out infinite;
-  }
-  .wa-fab:hover{transform:translateY(-3px) scale(1.05);}
-  .wa-fab svg{width:29px;height:29px;fill:#04140f;}
-  @keyframes wa-pulse{
-    0%,100%{box-shadow:0 8px 26px rgba(15,154,145,0.4), 0 0 0 0 rgba(43,224,138,0.35);}
-    50%{box-shadow:0 8px 26px rgba(15,154,145,0.4), 0 0 0 14px rgba(43,224,138,0);}
-  }
-  .wa-badge{
-    position:absolute;top:-3px;right:-3px;width:15px;height:15px;border-radius:50%;
-    background:var(--amber);border:2px solid var(--bg);
-  }
-  .wa-panel{
-    position:fixed;bottom:100px;right:26px;z-index:70;width:320px;max-width:calc(100vw - 36px);
-    background:var(--panel);border:1px solid var(--line);border-radius:16px;overflow:hidden;
-    box-shadow:0 24px 60px rgba(0,0,0,0.4);
-    opacity:0;transform:translateY(14px) scale(0.97);pointer-events:none;
-    transition:opacity 0.22s ease, transform 0.22s ease;
-  }
-  .wa-panel.open{opacity:1;transform:translateY(0) scale(1);pointer-events:auto;}
-  .wa-panel-head{
-    position:relative;display:flex;align-items:center;gap:12px;padding:16px 40px 16px 18px;
-    background:linear-gradient(135deg,#2be08a,#0f9a91);color:#04140f;
-  }
-  .wa-avatar{
-    width:38px;height:38px;border-radius:50%;flex:0 0 auto;
-    background:rgba(4,20,15,0.14);display:flex;align-items:center;justify-content:center;
-  }
-  .wa-avatar svg{width:20px;height:20px;fill:#04140f;}
-  .wa-panel-head h4{font-family:'Space Grotesk';font-size:14px;font-weight:600;}
-  .wa-panel-head .status{font-family:'IBM Plex Mono';font-size:11px;display:flex;align-items:center;gap:5px;opacity:0.85;margin-top:2px;}
-  .wa-panel-head .status::before{content:'';width:7px;height:7px;border-radius:50%;background:#04140f;opacity:0.55;}
-  .wa-close{
-    position:absolute;top:10px;right:10px;width:26px;height:26px;border:none;background:none;
-    color:#04140f;opacity:0.75;cursor:pointer;font-size:15px;line-height:1;
-  }
-  .wa-panel-body{padding:18px;background:var(--bg-alt);}
-  .wa-bubble{
-    background:var(--panel);border:1px solid var(--line);border-radius:12px 12px 12px 3px;
-    padding:12px 14px;font-size:13.5px;color:var(--text);margin-bottom:16px;line-height:1.5;
-  }
-  .wa-cta{
-    display:flex;align-items:center;justify-content:center;gap:8px;width:100%;
-    background:linear-gradient(135deg,#2be08a,#0f9a91);color:#04140f;
-    font-family:'IBM Plex Mono';font-size:13.5px;font-weight:500;
-    padding:12px 16px;border-radius:9px;text-decoration:none;transition:filter 0.2s;
-  }
-  .wa-cta:hover{filter:brightness(1.08);}
-  .wa-cta svg{width:16px;height:16px;fill:#04140f;}
-  @media(max-width:480px){
-    .wa-fab{right:16px;bottom:16px;}
-    .wa-panel{right:14px;bottom:90px;}
-  }
-</style> --}}
-<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ asset('style/index.css') }}">
 
 </head>
 <body>
 
-{{-- POPUP SUCCÈS Affichée uniquement après une soumission réussie --}}
+{{-- POPUP SUCCÈS — affichée uniquement après une soumission réussie --}}
 @if (session('success'))
     <div class="success-modal" id="successModal" role="dialog" aria-modal="true" aria-labelledby="successTitle">
         <div class="success-modal-backdrop"></div>
         <div class="success-modal-card">
-            {{-- Bouton fermeture --}}
             <button type="button" class="success-modal-close" id="successModalClose" aria-label="Fermer">
                 ×
             </button>
-            {{-- Icône succès --}}
             <div class="success-icon-wrapper">
                 <div class="success-icon">
                     <svg viewBox="0 0 24 24" aria-hidden="true">
@@ -362,33 +28,56 @@
                     </svg>
                 </div>
             </div>
-
-            {{-- Contenu --}}
             <div class="success-modal-content">
-                <span class="success-modal-label">
-                    TRANSMISSION CONFIRMÉE
-                </span>
-                <h2 id="successTitle">
-                    Demande envoyée
-                </h2>
-                <p>
-                    {{ session('success') }}
-                </p>
+                <span class="success-modal-label">Transmission confirmée</span>
+                <h2 id="successTitle">Demande envoyée</h2>
+                <p>{{ session('success') }}</p>
                 <div class="success-modal-status">
                     <span class="status-dot"></span>
                     Votre demande est bien enregistrée
                 </div>
                 <button type="button" class="success-modal-button" id="successModalContinue">
-                    Parfait, merci →
+                    <i data-lucide="check" aria-hidden="true"></i> Parfait, merci
                 </button>
             </div>
         </div>
     </div>
 @endif
 
-<div class="grid-bg"></div>
-<div class="glow glow-1"></div>
-<div class="glow glow-2"></div>
+<!-- SCROLL PROGRESS -->
+<div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+<!-- SECTION NAV INDICATOR -->
+<nav class="section-nav" aria-label="Navigation des sections">
+  <a href="#hero" data-label="Accueil" aria-label="Accueil"></a>
+  <a href="#expertises" data-label="Expertises" aria-label="Nos expertises"></a>
+  <a href="#solutions" data-label="Solutions" aria-label="Nos solutions"></a>
+  <a href="#check" data-label="Diagnostic" aria-label="Learning Performance Check"></a>
+  <a href="#approche" data-label="Approche" aria-label="Notre approche"></a>
+  <a href="#insights" data-label="Insights" aria-label="Insights"></a>
+  <a href="#apropos" data-label="À propos" aria-label="À propos"></a>
+  <a href="#contact" data-label="Contact" aria-label="Contact"></a>
+</nav>
+
+<!-- CUSTOM CURSOR -->
+<div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
+<div class="cursor-ring" id="cursorRing" aria-hidden="true"></div>
+
+<!-- BACKGROUND LAYERS -->
+<div class="field" aria-hidden="true">
+  <canvas id="bgCanvas"></canvas>
+  <div class="field-wash"></div>
+  <div class="field-grid"></div>
+  <div class="field-glow"></div>
+  <div class="field-shapes">
+    <span class="field-shape sh1"></span>
+    <span class="field-shape sh2"></span>
+    <span class="field-shape sh3"></span>
+    <span class="field-shape sh4"></span>
+    <span class="field-shape sh5"></span>
+  </div>
+  <div class="field-grain"></div>
+</div>
 
 <header>
   <nav>
@@ -397,139 +86,218 @@
      role="button"
      tabindex="0"
      aria-label="Ward Wide Learning">
-      <span class="">
-      <img class="brand-mark" src="./logo-lockup.svg" alt="" srcset="">
-    </span>Ward Wide Learning</div>
-    <div class="nav-links">
-      <a href="#constat">Le constat</a>
-      <a href="#enjeux">Votre enjeu</a>
-      <a href="#solution">Solution</a>
-      <a href="#apropos">À propos</a>
+      <img class="brand-mark" src="{{ asset('logo-lockup.svg') }}" alt="Ward Wide Learning">
+      <span>Ward Wide Learning</span>
+    </div>
+    <div class="nav-links" id="navLinks">
+      <a href="{{ route('expertises') }}">Expertises</a>
+      <a href="{{ route('solutions') }}">Solutions</a>
+      <a href="{{ route('insights') }}">Insights</a>
+      <a href="{{ route('about') }}">À propos</a>
+      <a href="{{ route('contact') }}">Contact</a>
     </div>
     <div class="nav-actions">
       <button class="theme-toggle" id="themeToggle" type="button" aria-label="Activer le mode clair"></button>
+      <button class="nav-burger" id="navBurger" type="button" aria-label="Ouvrir le menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
       <a href="#contact" class="nav-cta">Diagnostic offert</a>
     </div>
   </nav>
 </header>
 
-<section class="hero">
+<section class="hero" id="hero">
   <div class="wrap hero-grid">
     <div>
-      <span class="eyebrow">Diagnostic offert · Partenaire digital</span>
-      <h1>Faites de la formation un levier de performance, <em>mesurable et sans répétition</em>.</h1>
-      <p class="lead">Que vous cherchiez à automatiser l'accueil de vos équipes terrain ou à prouver le ROI de vos budgets formation auprès du COMEX, nous concevons des dispositifs digitaux et d'évaluation sur-mesure.</p>
-      <div class="btn-row">
-        <a href="#contact" class="btn-primary">Demander une consultation →</a>
-        <a href="#solution" class="btn-ghost">Voir la méthode</a>
+      <span class="kicker reveal">Diagnostic offert · Partenaire Learning & Performance</span>
+      <h1 class="reveal reveal-delay-1">Nous concevons des expériences d'apprentissage qui créent un changement <span class="accent-word">mesurable</span>.</h1>
+      <p class="lead reveal reveal-delay-2">Stratégie Learning, Digital Learning, assessment et impact au service de vos enjeux business.</p>
+      <div class="btn-row reveal reveal-delay-3">
+        <a href="#contact" class="btn-primary">Faire le diagnostic offert <i data-lucide="arrow-up-right" aria-hidden="true"></i></a>
+        <a href="#solutions" class="btn-ghost">Découvrir nos solutions <i data-lucide="arrow-down" aria-hidden="true"></i></a>
+      </div>
+      <div class="hero-microcopy reveal reveal-delay-3">
+        <span>5 minutes</span>
+        <span>Résultat immédiat</span>
+        <span>Sans engagement</span>
       </div>
     </div>
-    <div class="hud">
-      <div class="hud-ring"></div>
-      <div class="hud-ring r2"></div>
-      <div class="hud-ring r3"></div>
-      <div class="hud-dot d1"></div>
-      <div class="hud-dot d2"></div>
-      <div class="hud-core">
-        <span class="num" id="roiCounter">0%</span>
-        <span class="lbl">ROI FORMATION</span>
+    {{-- <div class="module-field reveal reveal-delay-2">
+      <div class="module-tile">
+        <i data-lucide="compass" class="tile-icon" aria-hidden="true"></i>
+        <span class="tile-tag">01</span>
+        <h4>Learning Strategy</h4>
       </div>
-      <div class="hud-readout top">TEMPS ÉCONOMISÉ <span class="v">-60%</span></div>
-      <div class="hud-readout bottom">CONFORMITÉ <span class="v">100%</span></div>
+      <div class="module-tile">
+        <i data-lucide="sparkles" class="tile-icon" aria-hidden="true"></i>
+        <span class="tile-tag">02</span>
+        <h4>Learning Experience Design</h4>
+      </div>
+      <div class="module-tile">
+        <i data-lucide="monitor-play" class="tile-icon" aria-hidden="true"></i>
+        <span class="tile-tag">03</span>
+        <h4>Digital Learning</h4>
+      </div>
+      <div class="module-tile">
+        <i data-lucide="chart-no-axes-combined" class="tile-icon" aria-hidden="true"></i>
+        <span class="tile-tag">04</span>
+        <h4>Learning Impact & Assessment</h4>
+      </div>
+    </div> --}}
+    <div class="hero-art reveal reveal-delay-2">
+
+    <!-- Glow derrière l'image -->
+    <div class="hero-art-glow"></div>
+
+    <!-- Cercle décoratif -->
+    <div class="hero-art-ring hero-art-ring-1"></div>
+    <div class="hero-art-ring hero-art-ring-2"></div>
+
+    <!-- Image principale -->
+    <div class="hero-art-image">
+
+        <img
+            src="{{ asset('img2.png') }}"
+            alt="Learning and performance"
+        >
+
+        <div class="hero-art-image-overlay"></div>
+
+    </div>
+
+    <!-- Petit élément flottant -->
+    <div class="hero-art-badge">
+        <span class="hero-art-dot"></span>
+
+        <div>
+            <small>WWL</small>
+            <strong>Learning in motion</strong>
+        </div>
+    </div>
+
+    <!-- Chiffre décoratif -->
+    <div class="hero-art-number">
+        01
+    </div>
+
+    <!-- Ligne graphique -->
+    <div class="hero-art-line"></div>
+
+</div>
+  </div>
+</section>
+
+<section id="expertises">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="kicker">Nos expertises</span>
+      <h2>Une expertise de bout en bout, du besoin à l'impact.</h2>
+    </div>
+    <div class="index-list">
+      <div class="index-row reveal">
+        <span class="num">01</span>
+        <div>
+          <span class="tag">Learning Strategy</span>
+          <h3><i data-lucide="target" class="inline-icon" aria-hidden="true"></i> Learning design Strategy</h3>
+        </div>
+        <p>Aligner la formation aux enjeux stratégiques, métiers et compétences.</p>
+      </div>
+      <div class="index-row reveal reveal-delay-1">
+        <span class="num">02</span>
+        <div>
+          <span class="tag">Conception</span>
+          <h3><i data-lucide="layers-3" class="inline-icon" aria-hidden="true"></i> Learning Experience Design</h3>
+        </div>
+        <p>Concevoir des expériences utiles, engageantes et adaptées au travail réel.</p>
+      </div>
+      <div class="index-row reveal reveal-delay-2">
+        <span class="num">03</span>
+        <div>
+          <span class="tag">Digital</span>
+          <h3><i data-lucide="monitor-play" class="inline-icon" aria-hidden="true"></i> Digital Learning</h3>
+        </div>
+        <p>Créer des parcours digitaux, blended et scalables sans appauvrir l'expérience.</p>
+      </div>
+      <div class="index-row reveal reveal-delay-3">
+        <span class="num">04</span>
+        <div>
+          <span class="tag">Impact</span>
+          <h3><i data-lucide="chart-no-axes-combined" class="inline-icon" aria-hidden="true"></i> Learning Impact & Assessment</h3>
+        </div>
+        <p>Mesurer l'apprentissage, le transfert, les compétences et la contribution aux résultats.</p>
+      </div>
     </div>
   </div>
 </section>
 
-<section id="constat">
+<section id="solutions">
   <div class="wrap">
     <div class="section-head reveal">
-      <span class="eyebrow">Le constat</span>
-      <h2>Le problème universel des formations en entreprise</h2>
+      <span class="kicker">Vos enjeux, nos solutions</span>
+      <h2>Commencez par votre problème. Nous construisons la réponse.</h2>
     </div>
-    <div class="problem-grid">
-      <div class="problem-card reveal" data-idx="01">
-        <span class="tag">Coût</span>
-        <h3>Des coûts répétitifs</h3>
-        <p>Mobiliser vos experts et vos managers pour réexpliquer en boucle les mêmes bases brûle du temps et du budget.</p>
+    <div class="solutions-grid">
+      <div class="solution-card reveal">
+        <span class="num">01</span>
+        <h3><i data-lucide="bar-chart-3" class="inline-icon" aria-hidden="true"></i> Learning Impact</h3>
+        <p>Évaluer l'efficacité des formations, structurer les indicateurs, mesurer le transfert et mieux piloter les décisions L&D.</p>
+        <a href="#contact" data-need="Mesure du ROI formation" class="seg-cta">Évaluer l'impact de mes formations</a>
       </div>
-      <div class="problem-card reveal" data-idx="02">
-        <span class="tag">Conformité</span>
-        <h3>Une traçabilité complexe</h3>
-        <p>Préparer vos audits ou suivre l'assimilation réelle des procédures reste un casse-tête opérationnel.</p>
+      <div class="solution-card reveal reveal-delay-1">
+        <span class="num">02</span>
+        <h3><i data-lucide="monitor-play" class="inline-icon" aria-hidden="true"></i> Digital Learning</h3>
+        <p>Digitaliser des parcours, produire des modules e-learning, concevoir du blended learning et structurer des expériences scalables.</p>
+        <a href="#contact" data-need="Formation de volumes importants" class="seg-cta">Digitaliser mon parcours</a>
       </div>
-      <div class="problem-card reveal" data-idx="03">
-        <span class="tag">Impact</span>
-        <h3>Un ROI invisible</h3>
-        <p>Mesurer la satisfaction « à chaud » ne garantit aucun changement de comportement durable sur le terrain.</p>
+      <div class="solution-card reveal reveal-delay-2">
+        <span class="num">03</span>
+        <h3><i data-lucide="route" class="inline-icon" aria-hidden="true"></i> Académies & parcours</h3>
+        <p>Structurer une académie, un curriculum, une architecture de parcours ou une offre de formation cohérente.</p>
+        <a href="#contact" data-need="Structurer une académie" class="seg-cta">Structurer mon académie</a>
       </div>
+      <div class="solution-card reveal">
+        <span class="num">04</span>
+        <h3><i data-lucide="gauge" class="inline-icon" aria-hidden="true"></i> Pit Stop Learning</h3>
+        <p>Intervention courte et ciblée pour diagnostiquer un enjeu, prioriser et repartir avec un plan d'action concret.</p>
+        <a href="#contact" data-need="Pit Stop Learning" class="seg-cta">Faire un Pit Stop</a>
+      </div>
+      <div class="solution-card reveal reveal-delay-1">
+        <span class="num">05</span>
+        <h3><i data-lucide="clipboard-check" class="inline-icon" aria-hidden="true"></i> Assessment & Positioning</h3>
+        <p>Créer des tests de positionnement, assessments, et dispositifs d'évaluation d'impact et de transfert.</p>
+        <a href="#contact" data-need="Assessment et positionnement" class="seg-cta">Concevoir mon assessment</a>
+      </div>
+      <div class="solution-card reveal reveal-delay-2">
+        <span class="num">06</span>
+        <h3><i data-lucide="users-round" class="inline-icon" aria-hidden="true"></i> Management & Human Performance</h3>
+        <p>Développer leadership, soft skills, cognition, communication et dynamiques d'équipe avec des dispositifs adaptés.</p>
+        <a href="#contact" data-need="Management et soft skills" class="seg-cta">Construire mon parcours</a>
+      </div>
+    </div>
+    <div class="section-head-cta reveal">
+      <a href="#contact" class="btn-ghost">Explorer toutes les solutions</a>
     </div>
   </div>
 </section>
 
-<section id="enjeux">
+<section id="check">
   <div class="wrap">
-    <div class="section-head reveal">
-      <span class="eyebrow">C'est vous ?</span>
-      <h2>Quel est votre enjeu prioritaire ?</h2>
-      <p>Sélectionnez votre situation — la solution qui correspond s'affiche instantanément.</p>
-    </div>
-    <div class="seg-tabs reveal" id="segTabs">
-      <button class="seg-tab active" data-target="seg1">Centres d'appels</button>
-      <button class="seg-tab" data-target="seg2">Intégration & formations de masse</button>
-      <button class="seg-tab" data-target="seg3">Industrie & QHSE</button>
-      <button class="seg-tab" data-target="seg4">Directions RH & L&D</button>
-      <button class="seg-tab" data-target="seg5">Direction générale & COMEX</button>
-    </div>
-
-    <div class="seg-panel active" id="seg1">
-      <div class="seg-icon">01</div>
+    <div class="interactive-card reveal">
       <div>
-        <h3>Centres d'appels</h3>
-        <p>Préparation linguistique, culturelle et comportementale des agents avant la première mise en production.</p>
+        <span class="kicker">Rubrique interactive</span>
+        <h2>Que mesure réellement votre dispositif d'évaluation de la formation ?</h2>
+        <p>Répondez à une série courte de questions pour obtenir une première lecture de votre Learning Impact Coverage.</p>
       </div>
-      <a href="#contact" data-role="Directeur de centre d'appels" data-need="Onboarding de nouvelles recrues" class="seg-cta">Voir la solution →</a>
-    </div>
-    <div class="seg-panel" id="seg2">
-      <div class="seg-icon">02</div>
-      <div>
-        <h3>Intégration & formations de masse</h3>
-        <p>Digitalisation des parcours récurrents pour former des volumes importants sans mobiliser vos experts internes.</p>
-      </div>
-      <a href="#contact" data-role="Responsable formation / L&D" data-need="Formation de volumes importants" class="seg-cta">Voir la solution →</a>
-    </div>
-    <div class="seg-panel" id="seg3">
-      <div class="seg-icon">03</div>
-      <div>
-        <h3>Industrie & QHSE</h3>
-        <p>Validation 100 % conforme des consignes de sécurité et de qualité, avec traçabilité complète pour vos audits.</p>
-      </div>
-      <a href="#contact" data-role="Responsable QHSE" data-need="Conformité et traçabilité QHSE" class="seg-cta">Voir la solution →</a>
-    </div>
-    <div class="seg-panel" id="seg4">
-      <div class="seg-icon">04</div>
-      <div>
-        <h3>Directions RH & L&D</h3>
-        <p>Passage d'un reporting de présence à une démonstration d'impact réel basée sur le modèle Kirkpatrick.</p>
-      </div>
-      <a href="#contact" data-role="Responsable formation / L&D" data-need="Mesure du ROI formation" class="seg-cta">Voir la solution →</a>
-    </div>
-    <div class="seg-panel" id="seg5">
-      <div class="seg-icon">05</div>
-      <div>
-        <h3>Direction générale & COMEX</h3>
-        <p>Pilotage du budget formation par la donnée de performance et un retour sur investissement démontré.</p>
-      </div>
-      <a href="#contact" data-role="Direction générale / COMEX" data-need="Mesure du ROI formation" class="seg-cta">Voir la solution →</a>
+      <a href="#contact" data-need="Learning Performance Check" class="btn-primary">Tester mon Impact Coverage</a>
     </div>
   </div>
 </section>
 
-<section id="solution">
+<section id="approche">
   <div class="wrap">
     <div class="section-head reveal">
-      <span class="eyebrow">Notre solution</span>
-      <h2>Trois piliers de performance</h2>
-      <p>Une méthode inspirée de la course automobile : diagnostiquer vite, agir juste, repartir plus fort — sans arrêt de production.</p>
+      <span class="kicker">Notre approche</span>
+      <h2>Apprendre. Ajuster. Accélérer.</h2>
     </div>
     <div class="pit-lane">
       <div class="pit-track"></div>
@@ -537,22 +305,68 @@
         <div class="pillar reveal">
           <div class="pillar-marker">01</div>
           <span class="stage">Stop</span>
-          <h3>Digitalisation & onboarding sur-mesure</h3>
-          <p>Automatisation des contenus standards et d'intégration pour former en continu, sans surcoût par recrue.</p>
+          <h3><i data-lucide="search-check" class="inline-icon" aria-hidden="true"></i> Analyser et diagnostiquer</h3>
+          <p>Comprendre le dispositif existant, les objectifs et les points de friction.</p>
         </div>
-        <div class="pillar reveal">
+        <div class="pillar reveal reveal-delay-1">
           <div class="pillar-marker">02</div>
           <span class="stage">Design</span>
-          <h3>Méthodologie agile « Pit Stop »</h3>
-          <p>Diagnostic rapide, scénarisation pédagogique et déploiement fluide pour zéro temps d'arrêt de production.</p>
+          <h3><i data-lucide="pen-tool" class="inline-icon" aria-hidden="true"></i> Concevoir l'expérience</h3>
+          <p>Scénariser un dispositif pédagogique adapté aux publics et aux usages.</p>
         </div>
-        <div class="pillar reveal">
+        <div class="pillar reveal reveal-delay-2">
           <div class="pillar-marker">03</div>
+          <span class="stage">Sprint</span>
+          <h3><i data-lucide="flask-conical" class="inline-icon" aria-hidden="true"></i> Prototyper et tester</h3>
+          <p>Déployer une version pilote et l'ajuster au contact du terrain.</p>
+        </div>
+        <div class="pillar reveal reveal-delay-3">
+          <div class="pillar-marker">04</div>
           <span class="stage">Accelerate</span>
-          <h3>Mesure d'impact (Kirkpatrick & ITE)</h3>
-          <p>Mise en place d'indicateurs précis pour mesurer la transformation réelle des pratiques et le ROI.</p>
+          <h3><i data-lucide="rocket" class="inline-icon" aria-hidden="true"></i> Déployer, mesurer et améliorer</h3>
+          <p>Généraliser le dispositif et mettre en place le suivi de son impact.</p>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<section id="insights">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="kicker">Insights</span>
+      <h2>Learning, decoded.</h2>
+    </div>
+    <div class="insights-grid">
+      <article class="insight-card reveal">
+        <div class="insight-thumb">
+            <img src="logo-lockup.svg" alt="" srcset="">
+            <span class="insight-cat"><i data-lucide="trending-up" aria-hidden="true"></i> Learning Impact</span></div>
+        <div class="insight-body">
+          <span class="insight-meta">12 min · 3 sept. 2026</span>
+          <h3>Votre formation a eu 95 % de satisfaction. Et alors ?</h3>
+          <a href="#insights" class="insight-link">Lire l'article <i data-lucide="arrow-up-right" aria-hidden="true"></i></a>
+        </div>
+      </article>
+      <article class="insight-card reveal reveal-delay-1">
+        <div class="insight-thumb"><span class="insight-cat"><i data-lucide="brain" aria-hidden="true"></i> Learning Experience</span></div>
+        <div class="insight-body">
+          <span class="insight-meta">8 min · 27 août 2026</span>
+          <h3>Pourquoi le transfert échoue après une bonne formation.</h3>
+          <a href="#insights" class="insight-link">Lire l'article <i data-lucide="arrow-up-right" aria-hidden="true"></i></a>
+        </div>
+      </article>
+      <article class="insight-card reveal reveal-delay-2">
+        <div class="insight-thumb"><span class="insight-cat"><i data-lucide="bot" aria-hidden="true"></i> Digital Learning & IA</span></div>
+        <div class="insight-body">
+          <span class="insight-meta">10 min · 19 août 2026</span>
+          <h3>Kirkpatrick : ce que les entreprises mesurent... et ce qu'elles oublient.</h3>
+          <a href="#insights" class="insight-link">Lire l'article <i data-lucide="arrow-up-right" aria-hidden="true"></i></a>
+        </div>
+      </article>
+    </div>
+    <div class="section-head-cta reveal">
+      <a href="#insights" class="btn-ghost">Voir tous les Insights</a>
     </div>
   </div>
 </section>
@@ -560,21 +374,33 @@
 <section id="apropos">
   <div class="wrap about-wrap">
     <div class="reveal">
-      <span class="eyebrow">À propos</span>
-      <h2 style="font-size:clamp(24px,3vw,32px);font-weight:600;margin-bottom:20px;">Ward Wide Learning</h2>
-      <p>Chaque dispositif est conçu par une équipe d'experts certifiés en ingénierie pédagogique, en évaluation Kirkpatrick & ITE (Institute for Transfer Effectiveness) et en ingénierie digitale.</p>
-      <p>Nous accompagnons les organisations sur la durée, pour transformer la formation en moteur de croissance durable plutôt qu'en centre de coûts.</p>
-      <div class="badge-row">
-        <div class="badge"><span class="v">Kirkpatrick ITE</span>Certification officielle</div>
-        <div class="badge"><span class="v">Pit Stop</span>Méthode propriétaire</div>
+      <span class="kicker">À propos</span>
+      <p class="about-lead">Chez Ward Wide Learning, nous ne concevons pas la formation comme une succession de contenus à délivrer, mais comme un système à faire fonctionner.</p>
+      <p>Nous partons des enjeux réels de l'organisation, concevons des expériences d'apprentissage adaptées aux usages et au terrain, puis nous cherchons à rendre visible ce qui change réellement après la formation.</p>
+      <p>Notre ambition : créer des dispositifs plus utiles, plus engageants et plus mesurables, avec une même exigence tout au long du parcours.</p>
+      <div class="btn-row">
+        <a href="#contact" class="btn-primary">Parler de votre enjeu Learning <i data-lucide="arrow-up-right" aria-hidden="true"></i></a>
       </div>
     </div>
-    <div class="about-panel reveal">
-      <div class="row"><span>Localisation</span><span class="v">Casablanca, Maroc</span></div>
-      <div class="row"><span>Adresse</span><span class="v">Oasis Latitude Offices</span></div>
-      <div class="row"><span>Rue</span><span class="v">Angle Route de l'Oasis</span></div>
-      <div class="row"><span>Consultation</span><span class="v">20 min · offerte</span></div>
-      <div class="row"><span>Statut</span><span class="v">Diagnostic disponible</span></div>
+    <div class="about-panel reveal reveal-delay-2">
+      <div class="row"><span><i data-lucide="badge-check" aria-hidden="true"></i> Exigence</span><span class="v">Concevoir avec rigueur</span></div>
+      <div class="row"><span><i data-lucide="user-round" aria-hidden="true"></i> Expérience</span><span class="v">Penser pour l'apprenant et son contexte réel</span></div>
+      <div class="row"><span><i data-lucide="chart-no-axes-combined" aria-hidden="true"></i> Impact</span><span class="v">Mesurer ce qui change vraiment</span></div>
+      <div class="row"><span><i data-lucide="map-pin" aria-hidden="true"></i> Localisation</span><span class="v">Casablanca, Maroc</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="cta-final">
+  <div class="wrap">
+    <div class="final-cta reveal">
+      <span class="kicker" style="justify-content:center;">Votre prochain Pit Stop commence ici</span>
+      <h2>Parlez-nous de votre enjeu ou commencez par notre diagnostic offert.</h2>
+      <p>Un échange court suffit souvent pour clarifier le point de départ.</p>
+      <div class="btn-row">
+        <a href="#contact" class="btn-primary">Planifier un échange <i data-lucide="calendar-arrow-up" aria-hidden="true"></i></a>
+        <a href="#contact" class="btn-ghost">Faire le diagnostic offert <i data-lucide="arrow-up-right" aria-hidden="true"></i></a>
+      </div>
     </div>
   </div>
 </section>
@@ -583,56 +409,74 @@
   <div class="wrap">
     <div class="contact-card reveal">
       <div>
-        <span class="eyebrow">Échangeons sur votre projet</span>
-        <h2>Planifiez un échange stratégique de 20 minutes</h2>
-        <p>Remplissez ce formulaire pour être recontacté par un expert Ward Wide Learning et faire le point sur votre dispositif de formation.</p>
-        <div class="mini-stats">
-          <div><span class="n">-60%</span>Temps de formation</div>
-          <div><span class="n">100%</span>Traçabilité audit</div>
-          <div><span class="n">+38%</span>ROI formation moyen</div>
+        <span class="kicker">Parlons de votre enjeu Learning</span>
+        <h2>Planifiez un échange stratégique</h2>
+        <p>Un échange court suffit souvent pour clarifier le point de départ. Remplissez ce formulaire pour être recontacté par un expert Ward Wide Learning.</p>
+        <div class="contact-coords">
+          <strong>Ward Wide Learning</strong><br>
+          Oasis Latitude Offices, Angle Route de l'Oasis, Allée Imam Mouslim, Casablanca<br>
+          +212 6 79 85 73 17 · h.ward@wardwidelearning.com
         </div>
       </div>
       <div>
         <form method="POST" action="{{ route('consultation.store') }}" id="hero-form">
           @csrf
-          <div class="field">
-            <label for="name">Nom & prénom</label>
-            <input type="text" id="name" name="name" value="{{ old('name') }}" required placeholder="Votre nom complet">
+          <div class="field-pair">
+            <div class="field-row">
+              <label for="name"><i data-lucide="user" aria-hidden="true"></i> Prénom et nom</label>
+              <input type="text" id="name" name="name" value="{{ old('name') }}" required placeholder="Votre nom complet">
+            </div>
+            <div class="field-row">
+              <label for="email"><i data-lucide="mail" aria-hidden="true"></i> Email professionnel</label>
+              <input type="email" id="email" name="email" value="{{ old('email') }}" required placeholder="vous@entreprise.com">
+            </div>
           </div>
-          <div class="field">
-            <label for="phone">Téléphone</label>
-            <input type="tel" id="phone" name="phone" value="{{ old('phone') }}" required placeholder="+212 6 00 00 00 00">
+          <div class="field-pair">
+            <div class="field-row">
+              <label for="company"><i data-lucide="building-2" aria-hidden="true"></i> Entreprise</label>
+              <input type="text" id="company" name="company" value="{{ old('company') }}" required placeholder="Nom de votre entreprise">
+            </div>
+            <div class="field-row">
+              <label for="role"><i data-lucide="briefcase-business" aria-hidden="true"></i> Fonction</label>
+              <select id="role" name="role" required>
+                <option value="" disabled selected>Sélectionnez votre fonction</option>
+                <option>Responsable formation / L&D</option>
+                <option>Directeur RH</option>
+                <option>Responsable QHSE</option>
+                <option>Direction générale / COMEX</option>
+                <option>Autre</option>
+              </select>
+              <span class="select-arrow"></span>
+            </div>
           </div>
-          <div class="field">
-            <label for="role">Votre rôle</label>
-            <select id="role" name="role" required>
-              <option value="" disabled selected>Sélectionnez votre rôle</option>
-              <option>Responsable formation / L&D</option>
-              <option>Directeur RH</option>
-              <option>Directeur de centre d'appels</option>
-              <option>Responsable QHSE</option>
-              <option>Direction générale / COMEX</option>
-              <option>Autre</option>
-            </select>
-          </div>
-          <div class="field">
-            <label for="need">Votre enjeu principal</label>
+          <div class="field-row">
+            <label for="need"><i data-lucide="layers-3" aria-hidden="true"></i> Votre enjeu principal</label>
             <select id="need" name="need" required>
               <option value="" disabled selected>Sélectionnez votre enjeu</option>
-              <option>Onboarding de nouvelles recrues</option>
-              <option>Conformité et traçabilité QHSE</option>
               <option>Mesure du ROI formation</option>
               <option>Formation de volumes importants</option>
+              <option>Structurer une académie</option>
+              <option>Pit Stop Learning</option>
+              <option>Assessment et positionnement</option>
+              <option>Management et soft skills</option>
+              <option>Learning Performance Check</option>
               <option>Autre besoin</option>
             </select>
+            <span class="select-arrow"></span>
           </div>
-          <button type="submit" class="btn-primary">Demander une consultation →</button>
-          <p class="form-note">Réponse sous 24h ouvrées · aucun engagement.</p>
+          <div class="field-row">
+            <label for="message"><i data-lucide="message-square" aria-hidden="true"></i> Message libre (optionnel)</label>
+            <textarea id="message" name="message" rows="3" placeholder="Décrivez brièvement votre contexte...">{{ old('message') }}</textarea>
+          </div>
+          <button type="submit" class="btn-primary" id="submitBtn">
+            <span>Envoyer ma demande</span>
+          </button>
+          <p class="form-note">Réponse sous 24 à 48h ouvrées · aucun engagement.</p>
         </form>
         @if (session('success'))
             <div class="success-msg" style="display:block;">✓ {{ session('success') }}</div>
         @endif
-        <div class="success-msg" id="successMsg">✓ Demande envoyée. Un expert Ward Wide Learning vous recontacte sous 24h.</div>
+        <div class="success-msg" id="successMsg">✓ Demande envoyée. Un expert Ward Wide Learning vous recontacte sous 24 à 48h.</div>
       </div>
     </div>
   </div>
@@ -640,11 +484,10 @@
 
 <footer>
   <div class="wrap footer-wrap">
-    <div class="brand">Ward Wide Learning</div>
+    <div class="brand"><img class="brand-mark" src="{{ asset('logo-lockup.svg') }}" alt="Ward Wide Learning">Ward Wide Learning</div>
     <div>Oasis Latitude Offices, Angle Route de l'Oasis, Casablanca</div>
     <div>© 2026 Ward Wide Learning</div>
   </div>
-  <!-- <p class="legal">Ce site n'est pas affilié à Meta / Facebook Inc. Cette page n'est en aucun cas sponsorisée, approuvée ou administrée par Facebook, Instagram ou Google. FACEBOOK est une marque déposée de Meta Platforms, Inc. GOOGLE est une marque déposée de Google LLC.</p> -->
 </footer>
 
 <!-- WHATSAPP CHAT WIDGET -->
@@ -656,7 +499,7 @@
 <div class="wa-panel" id="waPanel">
   <div class="wa-panel-head">
     <div class="wa-avatar">
-      <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16.01 3C9.38 3 4 8.38 4 15.01c0 2.35.65 4.54 1.78 6.42L4 29l7.76-1.75c1.79.98 3.86 1.54 6.25 1.54 6.63 0 12.01-5.38 12.01-12.01C30.02 8.38 24.64 3 16.01 3zm7.05 17.16c-.3.84-1.72 1.6-2.38 1.7-.61.09-1.38.13-2.23-.14-.51-.16-1.17-.38-2.02-.75-3.55-1.53-5.86-5.1-6.04-5.34-.18-.24-1.45-1.93-1.45-3.68 0-1.75.92-2.6 1.24-2.96.32-.35.7-.44.93-.44.23 0 .47 0 .67.01.22.01.5-.08.78.6.3.72 1.02 2.48 1.11 2.66.09.18.15.39.03.63-.12.24-.18.39-.36.6-.18.21-.38.47-.54.63-.18.18-.37.38-.16.74.21.35.94 1.55 2.02 2.51 1.39 1.24 2.56 1.62 2.92 1.8.36.18.57.15.78-.09.21-.24.9-1.05 1.14-1.41.24-.35.48-.29.81-.18.33.12 2.09.99 2.45 1.17.36.18.6.27.69.42.09.15.09.85-.21 1.69z"/></svg>
+      <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16.01 3C9.38 3 4 8.38 4 15.01c0 2.35.65 4.54 1.78 6.42L4 29l7.76-1.75c1.79.98 3.86 1.54 6.25 1.54 6.63 0 12.01-5.38 12.01-12.01C30.02 8.38 24.64 3 16.01 3z"/></svg>
     </div>
     <div>
       <h4>Ward Wide Learning</h4>
@@ -665,76 +508,347 @@
     <button class="wa-close" id="waClose" type="button" aria-label="Fermer la discussion">✕</button>
   </div>
   <div class="wa-panel-body">
-    <div class="wa-bubble">👋 Bonjour ! Une question sur nos dispositifs de formation ou notre méthode « Pit Stop » ? Écrivez-nous, on vous répond rapidement.</div>
-    <a class="wa-cta" id="waLink" href="https://wa.me/212699712087?text=Bonjour%20Ward%20Wide%20Learning%2C%20je%20souhaite%20des%20informations%20sur%20vos%20formations." target="_blank" rel="noopener">
+    <div class="wa-bubble">👋 Bonjour ! Une question sur nos solutions Learning ou notre approche « Pit Stop » ? Écrivez-nous, on vous répond rapidement.</div>
+    <a class="wa-cta" id="waLink" href="https://wa.me/212679857317?text=Bonjour%20Ward%20Wide%20Learning%2C%20je%20souhaite%20des%20informations%20sur%20vos%20solutions." target="_blank" rel="noopener">
       <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16.01 3C9.38 3 4 8.38 4 15.01c0 2.35.65 4.54 1.78 6.42L4 29l7.76-1.75c1.79.98 3.86 1.54 6.25 1.54 6.63 0 12.01-5.38 12.01-12.01C30.02 8.38 24.64 3 16.01 3z"/></svg>
       Démarrer la discussion
     </a>
   </div>
 </div>
 
-{{-- <script>
-  // ROI counter animation
-  (function(){
-    const el = document.getElementById('roiCounter');
-    let val = 0;
-    const target = 38;
-    const step = () => {
-      val += 1;
-      el.textContent = val + '%';
-      if(val < target) requestAnimationFrame(() => setTimeout(step, 28));
+{{-- <script src="{{ asset('script.js') }}"></script> --}}
+<script src="https://unpkg.com/lucide@latest"></script>
+<script>
+    /* =========================================================
+   WARD WIDE LEARNING — INTERACTIVE ENGINE
+   ========================================================= */
+
+(function(){
+  'use strict';
+
+  /* =========================
+     UTILS
+  ========================= */
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const isTouch = window.matchMedia('(pointer: coarse)').matches;
+  const root = document.documentElement;
+
+  function rafThrottle(fn){
+    let ticking = false;
+    return function(...args){
+      if(ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => { fn.apply(this, args); ticking = false; });
     };
-    step();
+  }
+
+  /* =========================
+     CANVAS BACKGROUND — Subtle connected nodes
+  ========================= */
+  (function initCanvas(){
+    const canvas = document.getElementById('bgCanvas');
+    if(!canvas) return;
+    const ctx = canvas.getContext('2d');
+    let W, H, particles = [], mouse = {x:-1000,y:-1000};
+    const PARTICLE_COUNT = isTouch ? 30 : 55;
+    const CONNECTION_DIST = 140;
+    const MAX_CONNECTIONS = 3;
+
+    function resize(){
+      W = canvas.width = window.innerWidth;
+      H = canvas.height = window.innerHeight;
+    }
+    resize();
+    window.addEventListener('resize', resize);
+
+    class Particle{
+      constructor(){
+        this.x = Math.random() * W;
+        this.y = Math.random() * H;
+        this.vx = (Math.random() - .5) * .3;
+        this.vy = (Math.random() - .5) * .3;
+        this.r = Math.random() * 1.6 + .9;
+        this.alpha = Math.random() * .4 + .3;
+      }
+      update(){
+        this.x += this.vx;
+        this.y += this.vy;
+        if(this.x < 0 || this.x > W) this.vx *= -1;
+        if(this.y < 0 || this.y > H) this.vy *= -1;
+
+        // gentle mouse repulsion
+        const dx = this.x - mouse.x;
+        const dy = this.y - mouse.y;
+        const dist = Math.sqrt(dx*dx + dy*dy);
+        if(dist < 180){
+          const force = (180 - dist) / 180;
+          this.x += (dx / dist) * force * .8;
+          this.y += (dy / dist) * force * .8;
+        }
+      }
+      draw(){
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.r, 0, Math.PI*2);
+        ctx.fillStyle = getComputedStyle(root).getPropertyValue('--secondary').trim();
+        ctx.globalAlpha = this.alpha;
+        ctx.fill();
+        ctx.globalAlpha = 1;
+      }
+    }
+
+    for(let i=0;i<PARTICLE_COUNT;i++) particles.push(new Particle());
+
+    function drawConnections(){
+      for(let i=0;i<particles.length;i++){
+        let connections = 0;
+        for(let j=i+1;j<particles.length;j++){
+          const dx = particles[i].x - particles[j].x;
+          const dy = particles[i].y - particles[j].y;
+          const dist = Math.sqrt(dx*dx + dy*dy);
+          if(dist < CONNECTION_DIST && connections < MAX_CONNECTIONS){
+            ctx.beginPath();
+            ctx.moveTo(particles[i].x, particles[i].y);
+            ctx.lineTo(particles[j].x, particles[j].y);
+            const alpha = (1 - dist/CONNECTION_DIST) * .22;
+            ctx.strokeStyle = getComputedStyle(root).getPropertyValue('--secondary').trim();
+            ctx.globalAlpha = alpha;
+            ctx.lineWidth = .8;
+            ctx.stroke();
+            ctx.globalAlpha = 1;
+            connections++;
+          }
+        }
+      }
+    }
+
+    let frame = 0;
+    function animate(){
+      if(document.hidden){ requestAnimationFrame(animate); return; }
+      ctx.clearRect(0,0,W,H);
+      particles.forEach(p => { p.update(); p.draw(); });
+      drawConnections();
+      requestAnimationFrame(animate);
+    }
+    if(!reducedMotion) animate();
+
+    if(!isTouch && !reducedMotion){
+      window.addEventListener('mousemove', rafThrottle((e)=>{
+        mouse.x = e.clientX; mouse.y = e.clientY;
+      }), {passive:true});
+    }
   })();
 
-  // Segment tabs
-  const tabs = document.querySelectorAll('.seg-tab');
-  const panels = document.querySelectorAll('.seg-panel');
-  tabs.forEach(tab => {
-    tab.addEventListener('click', () => {
-      tabs.forEach(t => t.classList.remove('active'));
-      panels.forEach(p => p.classList.remove('active'));
-      tab.classList.add('active');
-      document.getElementById(tab.dataset.target).classList.add('active');
-    });
-  });
-
-  // Reveal on scroll
-  const revealEls = document.querySelectorAll('.reveal');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if(entry.isIntersecting){
-        entry.target.classList.add('in');
-        observer.unobserve(entry.target);
-      }
-    });
-  }, {threshold: 0.15});
-  revealEls.forEach(el => observer.observe(el));
-
-  // Theme toggle (dark <-> light), respecte la palette du logo
+  /* =========================
+     SCROLL PROGRESS
+  ========================= */
   (function(){
-    const root = document.documentElement;
+    const bar = document.getElementById('scrollProgress');
+    if(!bar) return;
+    const update = rafThrottle(() => {
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+      bar.style.width = pct + '%';
+    });
+    window.addEventListener('scroll', update, {passive:true});
+    update();
+  })();
+
+  /* =========================
+     SECTION NAV INDICATOR
+  ========================= */
+  (function(){
+    const nav = document.querySelector('.section-nav');
+    if(!nav) return;
+    const links = nav.querySelectorAll('a');
+    const sections = Array.from(links).map(a => document.querySelector(a.getAttribute('href')));
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          const id = entry.target.id;
+          links.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + id));
+        }
+      });
+    }, {threshold: .4});
+    sections.forEach(s => s && observer.observe(s));
+  })();
+
+  /* =========================
+     CUSTOM CURSOR
+  ========================= */
+  (function(){
+    if(isTouch || window.innerWidth < 1024) return;
+    const dot = document.getElementById('cursorDot');
+    const ring = document.getElementById('cursorRing');
+    if(!dot || !ring) return;
+
+    let mx = 0, my = 0, rx = 0, ry = 0;
+    document.addEventListener('mousemove', (e) => { mx = e.clientX; my = e.clientY; }, {passive:true});
+
+    function loop(){
+      rx += (mx - rx) * .18;
+      ry += (my - ry) * .18;
+      dot.style.transform = `translate(${mx}px,${my}px) translate(-50%,-50%)`;
+      ring.style.transform = `translate(${rx}px,${ry}px) translate(-50%,-50%)`;
+      requestAnimationFrame(loop);
+    }
+    loop();
+
+    const hoverTargets = 'a, button, .module-tile, .pillar, .solution-card, .badge, .index-row, .insight-card, .nav-cta, .wa-fab, .success-modal-button';
+    document.querySelectorAll(hoverTargets).forEach(el => {
+      el.addEventListener('mouseenter', () => { dot.classList.add('hover'); ring.classList.add('hover'); });
+      el.addEventListener('mouseleave', () => { dot.classList.remove('hover'); ring.classList.remove('hover'); });
+    });
+  })();
+
+  /* =========================
+     GLOBAL CURSOR GLOW + GRID PARALLAX
+  ========================= */
+  (function(){
+    const grid = document.querySelector('.field-grid');
+    if(!reducedMotion && !isTouch){
+      let raf = false;
+      window.addEventListener('mousemove', function(e){
+        if(raf) return;
+        raf = true;
+        requestAnimationFrame(function(){
+          const mx = (e.clientX / window.innerWidth) * 100;
+          const my = (e.clientY / window.innerHeight) * 100;
+          root.style.setProperty('--mx', mx + '%');
+          root.style.setProperty('--my', my + '%');
+          raf = false;
+        });
+      }, { passive: true });
+    }
+    if(grid && !reducedMotion){
+      let ticking = false;
+      window.addEventListener('scroll', function(){
+        if(ticking) return;
+        ticking = true;
+        requestAnimationFrame(function(){
+          const shift = (window.scrollY * 0.06) % 72;
+          grid.style.setProperty('--scrollShift', shift + 'px');
+          ticking = false;
+        });
+      }, { passive: true });
+    }
+  })();
+
+  /* =========================
+     MODULE FIELD 3D HOVER
+  ========================= */
+  (function(){
+    const field = document.querySelector('.module-field');
+    if(!field) return;
+    const canAnimate = window.innerWidth > 780 && !reducedMotion;
+    if(!canAnimate) return;
+    let ticking = false;
+    field.addEventListener('mousemove', function(e){
+      if(ticking) return;
+      requestAnimationFrame(function(){
+        const rect = field.getBoundingClientRect();
+        const mx = ((e.clientX - rect.left) / rect.width) * 100;
+        const my = ((e.clientY - rect.top) / rect.height) * 100;
+        field.style.setProperty('--mx', mx + '%');
+        field.style.setProperty('--my', my + '%');
+        ticking = false;
+      });
+      ticking = true;
+    });
+  })();
+
+  /* =========================
+     REVEAL ON SCROLL
+  ========================= */
+  (function(){
+    const revealEls = document.querySelectorAll('.reveal');
+    if(!revealEls.length) return;
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          entry.target.classList.add('in');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {threshold: 0.12});
+    revealEls.forEach(el => observer.observe(el));
+  })();
+
+  /* =========================
+     THEME TOGGLE
+  ========================= */
+  (function(){
     const toggle = document.getElementById('themeToggle');
+    if(!toggle) return;
     const sunIcon = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2.4M12 19.6V22M4.93 4.93l1.7 1.7M17.37 17.37l1.7 1.7M2 12h2.4M19.6 12H22M4.93 19.07l1.7-1.7M17.37 6.63l1.7-1.7"/></svg>';
     const moonIcon = '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.35 15.35A9 9 0 018.65 3.65 9 9 0 1020.35 15.35z"/></svg>';
+
     function apply(theme){
       root.setAttribute('data-theme', theme);
       toggle.innerHTML = theme === 'light' ? moonIcon : sunIcon;
       toggle.setAttribute('aria-label', theme === 'light' ? 'Activer le mode sombre' : 'Activer le mode clair');
+      localStorage.setItem('wwl-theme', theme);
     }
-    apply('dark');
-    toggle.addEventListener('click', function(){
+
+    const saved = localStorage.getItem('wwl-theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    apply(saved || (prefersDark ? 'dark' : 'dark')); // default dark as per design
+
+    toggle.addEventListener('click', () => {
       const next = root.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
       apply(next);
     });
   })();
 
-  // WhatsApp chat widget
+  /* =========================
+     MOBILE NAVIGATION
+  ========================= */
+  (function(){
+    const burger = document.getElementById('navBurger');
+    const links = document.getElementById('navLinks');
+    if(!burger || !links) return;
+    function close(){
+      links.classList.remove('open');
+      burger.classList.remove('open');
+      burger.setAttribute('aria-expanded', 'false');
+    }
+    burger.addEventListener('click', () => {
+      const isOpen = links.classList.toggle('open');
+      burger.classList.toggle('open', isOpen);
+      burger.setAttribute('aria-expanded', String(isOpen));
+    });
+    links.querySelectorAll('a').forEach(a => a.addEventListener('click', close));
+    document.addEventListener('click', (e) => {
+      if(links.classList.contains('open') && !links.contains(e.target) && !burger.contains(e.target)) close();
+    });
+  })();
+
+  /* =========================
+     SMOOTH ANCHOR SCROLL
+  ========================= */
+  (function(){
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e){
+        const targetId = this.getAttribute('href');
+        if(targetId === '#') return;
+        const target = document.querySelector(targetId);
+        if(target){
+          e.preventDefault();
+          target.scrollIntoView({behavior: reducedMotion ? 'auto' : 'smooth', block: 'start'});
+        }
+      });
+    });
+  })();
+
+  /* =========================
+     WHATSAPP WIDGET
+  ========================= */
   (function(){
     const fab = document.getElementById('waFab');
     const panel = document.getElementById('waPanel');
     const closeBtn = document.getElementById('waClose');
     const badge = document.getElementById('waBadge');
+    if(!fab || !panel) return;
     function openPanel(){
       panel.classList.add('open');
       fab.setAttribute('aria-expanded', 'true');
@@ -744,25 +858,112 @@
       panel.classList.remove('open');
       fab.setAttribute('aria-expanded', 'false');
     }
-    fab.addEventListener('click', function(){
+    fab.addEventListener('click', () => {
       panel.classList.contains('open') ? closePanel() : openPanel();
     });
-    closeBtn.addEventListener('click', closePanel);
-    document.addEventListener('click', function(e){
+    if(closeBtn) closeBtn.addEventListener('click', closePanel);
+    document.addEventListener('click', (e) => {
       if(panel.classList.contains('open') && !panel.contains(e.target) && !fab.contains(e.target)){
         closePanel();
       }
     });
   })();
 
-  // Form submit (no backend — front-end confirmation only)
-  function handleSubmit(e){
-    e.preventDefault();
-    document.getElementById('hero-form').style.display = 'none';
-    document.getElementById('successMsg').style.display = 'block';
-    return false;
-  }
-</script> --}}
-<script src="script.js"></script>
+  /* =========================
+     SOLUTION BUTTONS → FORM (pré-remplissage de l'enjeu)
+  ========================= */
+  (function(){
+    const solutionButtons = document.querySelectorAll('.seg-cta');
+    const needSelect = document.getElementById('need');
+    const form = document.getElementById('hero-form');
+    if(!solutionButtons.length) return;
+
+    solutionButtons.forEach(button => {
+      button.addEventListener('click', function(e){
+        const need = button.dataset.need;
+        if(!need) return;
+        e.preventDefault();
+
+        if(needSelect){
+          const needOption = Array.from(needSelect.options).find(opt => opt.textContent.trim() === need);
+          if(needOption){
+            needSelect.value = needOption.value;
+            needSelect.dispatchEvent(new Event('change', { bubbles: true }));
+          }
+        }
+        if(form){
+          form.scrollIntoView({ behavior: reducedMotion ? 'auto' : 'smooth', block: 'start' });
+          setTimeout(() => {
+            const firstEmpty = form.querySelector('input:not([value]), input[value=""]');
+            if(firstEmpty) firstEmpty.focus();
+          }, 500);
+        }
+      });
+    });
+  })();
+
+  /* =========================
+     SUCCESS MODAL
+  ========================= */
+  (function(){
+    const modal = document.getElementById('successModal');
+    if(!modal) return;
+    const closeBtn = document.getElementById('successModalClose');
+    const continueBtn = document.getElementById('successModalContinue');
+    const backdrop = modal.querySelector('.success-modal-backdrop');
+
+    document.body.style.overflow = 'hidden';
+    requestAnimationFrame(() => modal.classList.add('is-visible'));
+
+    function closeModal(){
+      modal.classList.remove('is-visible');
+      document.body.style.overflow = '';
+      setTimeout(() => modal.remove(), 500);
+    }
+    if(closeBtn) closeBtn.addEventListener('click', closeModal);
+    if(continueBtn) continueBtn.addEventListener('click', closeModal);
+    if(backdrop) backdrop.addEventListener('click', closeModal);
+    document.addEventListener('keydown', (e) => { if(e.key === 'Escape') closeModal(); });
+  })();
+
+  /* =========================
+     LOGO — 3 CLICKS → DASHBOARD
+  ========================= */
+  (function(){
+    const logo = document.getElementById('siteLogo');
+    if(!logo) return;
+    let clickCount = 0, clickTimer = null;
+    logo.addEventListener('click', () => {
+      clickCount++;
+      if(clickCount === 3){
+        clearTimeout(clickTimer);
+        const url = logo.dataset.dashboardUrl;
+        if(url) window.location.href = url;
+        clickCount = 0;
+        return;
+      }
+      clearTimeout(clickTimer);
+      clickTimer = setTimeout(() => { clickCount = 0; }, 1000);
+    });
+  })();
+
+  /* =========================
+     FORM SUBMIT LOADING STATE
+  ========================= */
+  (function(){
+    const form = document.getElementById('hero-form');
+    const btn = document.getElementById('submitBtn');
+    if(!form || !btn) return;
+    form.addEventListener('submit', () => {
+      btn.disabled = true;
+      btn.innerHTML = '<span style="display:inline-flex;align-items:center;gap:8px;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="animation:spin 1s linear infinite"><path d="M21 12a9 9 0 11-6.22-8.56"/></svg>Envoi en cours…</span>';
+    });
+  })();
+
+})();
+</script>
+<script>
+  if (window.lucide) lucide.createIcons();
+</script>
 </body>
 </html>

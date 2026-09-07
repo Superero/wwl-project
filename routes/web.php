@@ -10,6 +10,8 @@ Route::get('/', function () { return view('index');})->name('home');
 Route::get('/expertises',function(){ return view('expertises'); })->name('expertises');
 Route::get('/solutions',function(){ return view('solutions'); })->name('solutions');
 Route::get('/insights',function(){ return view('insights'); })->name('insights');
+Route::get('/about',function(){ return view('apropos'); })->name('about');
+Route::get('/contact',function(){ return view('contact'); })->name('contact');
 
 
 Route::get('/test',function(){ return view('test-v4'); });
