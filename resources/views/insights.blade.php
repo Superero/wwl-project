@@ -34,7 +34,9 @@
 <section id="featured" style="padding-top:12px;">
   <div class="wrap">
     <a href="#" class="featured-insight reveal" data-category="Learning Impact">
-      <div class="featured-thumb"></div>
+      <div class="featured-thumb">
+           <img src="{{ asset('article01.png') }}" alt="Pourquoi le transfert échoue après une bonne formation" loading="lazy">
+      </div>
       <div class="featured-body">
         <span class="featured-label"><i data-lucide="trending-up" aria-hidden="true"></i> Article à la une · Learning Impact</span>
         <h3>Votre formation a eu 95 % de satisfaction. Et alors ?</h3>
@@ -58,6 +60,7 @@
 
       <article class="insight-card reveal" data-category="Learning Experience">
         <div class="insight-thumb">
+           <img src="{{ asset('article02.png') }}" loading="lazy">
           <span class="insight-cat"><i data-lucide="brain" aria-hidden="true"></i> Learning Experience</span>
         </div>
         <div class="insight-body">
@@ -70,6 +73,7 @@
 
       <article class="insight-card reveal reveal-delay-1" data-category="Learning Impact">
         <div class="insight-thumb">
+           <img src="{{ asset('article03.png') }}" loading="lazy">
           <span class="insight-cat"><i data-lucide="bar-chart-3" aria-hidden="true"></i> Learning Impact</span>
         </div>
         <div class="insight-body">
@@ -82,6 +86,7 @@
 
       <article class="insight-card reveal reveal-delay-2" data-category="Digital Learning & IA">
         <div class="insight-thumb">
+           <img src="{{ asset('article04.png') }}" loading="lazy">
           <span class="insight-cat"><i data-lucide="monitor-play" aria-hidden="true"></i> Digital Learning &amp; IA</span>
         </div>
         <div class="insight-body">
@@ -122,7 +127,7 @@
   </div>
 </section>
 
-<section id="newsletter">
+{{-- <section id="newsletter">
   <div class="wrap">
     <div class="newsletter reveal">
       <div>
@@ -139,7 +144,7 @@
       </div>
     </div>
   </div>
-</section>
+</section> --}}
 
 <section id="cta-final">
   <div class="wrap">

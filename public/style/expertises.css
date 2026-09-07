@@ -957,3 +957,5 @@ html[data-theme="light"] .hero-floating-card{
     transition:none;
   }
 }
+
+html[data-theme="light"] .nav-cta:hover{color:#fff;}

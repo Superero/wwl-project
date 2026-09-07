@@ -365,7 +365,7 @@ html[data-theme="light"] .nav-cta{color:var(--primary-ink);border-color:var(--pr
   transform:scaleY(0);transform-origin:top;transition:transform .5s cubic-bezier(.25,.46,.45,.94);
 }
 .solution-detail.in::before{transform:scaleY(1);}
-.solution-detail .num{font-family:var(--font-mono);font-size:14px;color:var(--text-secondary);padding-top:4px;}
+.solution-detail .num{font-family:var(--font-mono);font-size:14px;color:var(--text-secondary);padding-top:4px;margin-left: 10px; }
 .solution-detail .tag{display:block;font-size:11.5px;letter-spacing:.05em;text-transform:uppercase;color:var(--tag-color,var(--primary));margin-bottom:10px;font-family:var(--font-mono);}
 .solution-detail h3{font-size:clamp(21px,2.4vw,27px);margin-bottom:6px;display:flex;align-items:center;gap:10px;}
 .solution-detail .hook{font-family:var(--font-display);font-weight:600;font-size:17.5px;color:var(--text-primary);margin:14px 0 16px;max-width:56ch;line-height:1.5;}
@@ -1381,3 +1381,4 @@ html[data-theme="light"] .hero-floating-card{
   .success-icon svg{width:30px;height:30px;}
   .success-modal-content h2{font-size:26px;}
 }
+html[data-theme="light"] .nav-cta:hover{color:#fff;}

@@ -82,7 +82,7 @@
      tabindex="0"
      aria-label="Ward Wide Learning">
       <img class="brand-mark" src="{{ asset('logo-lockup.svg') }}" alt="Ward Wide Learning">
-      <span>Ward Wide Learning</span>
+      <span> <a href="{{ route('home') }}"> Ward Wide Learning </a></span>
     </div>
     <div class="nav-links" id="navLinks">
       <a href="{{ route('expertises') }}" class="{{ request()->routeIs('expertises') ? 'active' : '' }}">Expertises</a>

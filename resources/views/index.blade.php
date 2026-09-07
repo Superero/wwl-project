@@ -107,14 +107,18 @@
 </header>
 
 <section class="hero" id="hero">
+  <div class="hero-background-atmosphere"></div>
+  <div class="hero-vignette"></div>
+  <div class="hero-grain"></div>
+  <div class="hero-light"></div>
   <div class="wrap hero-grid">
     <div>
       <span class="kicker reveal">Diagnostic offert · Partenaire Learning & Performance</span>
-      <h1 class="reveal reveal-delay-1">Nous concevons des expériences d'apprentissage qui créent un changement <span class="accent-word">mesurable</span>.</h1>
+      <h1 class="reveal reveal-delay-1 ttl">Nous concevons des expériences d'apprentissage qui créent un changement <span class="accent-word">mesurable</span>.</h1>
       <p class="lead reveal reveal-delay-2">Stratégie Learning, Digital Learning, assessment et impact au service de vos enjeux business.</p>
       <div class="btn-row reveal reveal-delay-3">
         <a href="#contact" class="btn-primary">Faire le diagnostic offert <i data-lucide="arrow-up-right" aria-hidden="true"></i></a>
-        <a href="#solutions" class="btn-ghost">Découvrir nos solutions <i data-lucide="arrow-down" aria-hidden="true"></i></a>
+        <a href="#solutions" class="btn-ghost btn1 ">Découvrir nos solutions <i data-lucide="arrow-down" aria-hidden="true"></i></a>
       </div>
       <div class="hero-microcopy reveal reveal-delay-3">
         <span>5 minutes</span>
@@ -122,7 +126,7 @@
         <span>Sans engagement</span>
       </div>
     </div>
-    {{-- <div class="module-field reveal reveal-delay-2">
+    <div class="module-field reveal reveal-delay-2">
       <div class="module-tile">
         <i data-lucide="compass" class="tile-icon" aria-hidden="true"></i>
         <span class="tile-tag">01</span>
@@ -143,8 +147,8 @@
         <span class="tile-tag">04</span>
         <h4>Learning Impact & Assessment</h4>
       </div>
-    </div> --}}
-    <div class="hero-art reveal reveal-delay-2">
+    </div>
+    {{-- <div class="hero-art reveal reveal-delay-2">
 
     <!-- Glow derrière l'image -->
     <div class="hero-art-glow"></div>
@@ -183,7 +187,7 @@
     <!-- Ligne graphique -->
     <div class="hero-art-line"></div>
 
-</div>
+</div> --}}
   </div>
 </section>
 
@@ -198,7 +202,9 @@
         <span class="num">01</span>
         <div>
           <span class="tag">Learning Strategy</span>
-          <h3><i data-lucide="target" class="inline-icon" aria-hidden="true"></i> Learning design Strategy</h3>
+          <h3>
+            <i data-lucide="target" class="inline-icon" aria-hidden="true"></i>
+             Learning design Strategy</h3>
         </div>
         <p>Aligner la formation aux enjeux stratégiques, métiers et compétences.</p>
       </div>
@@ -275,7 +281,7 @@
       </div>
     </div>
     <div class="section-head-cta reveal">
-      <a href="#contact" class="btn-ghost">Explorer toutes les solutions</a>
+      <a href="{{ route('solutions') }}" class="btn-ghost">Explorer toutes les solutions</a>
     </div>
   </div>
 </section>
@@ -366,7 +372,7 @@
       </article>
     </div>
     <div class="section-head-cta reveal">
-      <a href="#insights" class="btn-ghost">Voir tous les Insights</a>
+      <a href="{{ route('insights') }}" class="btn-ghost">Voir tous les Insights</a>
     </div>
   </div>
 </section>

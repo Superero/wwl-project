@@ -615,3 +615,23 @@ footer{border-top:1px solid var(--border);padding:40px 0;}
   .cursor-dot.hover{transform:translate(-50%,-50%) scale(.5);background:var(--primary);}
 }
 @media(max-width:1023px),(pointer:coarse){.cursor-dot,.cursor-ring{display:none;}}
+html[data-theme="light"] .nav-cta:hover{color:#fff;}
+.featured-thumb img,
+.insight-thumb img{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+
+/* légère assombrissement pour garder le texte du badge lisible */
+.insight-thumb img{
+  filter:saturate(.9) brightness(.85);
+  transition:transform .6s cubic-bezier(.25,.46,.45,.94), filter .3s ease;
+}
+.insight-card:hover .insight-thumb img{
+  transform:scale(1.06);
+  filter:saturate(1) brightness(.75);
+}

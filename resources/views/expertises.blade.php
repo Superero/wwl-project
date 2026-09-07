@@ -228,7 +228,7 @@
       <p>Un échange court suffit souvent pour clarifier le point de départ.</p>
       <div class="btn-row">
         <a href="{{ route('home') }}#contact" class="btn-primary">Planifier un échange <i data-lucide="calendar-arrow-up" aria-hidden="true"></i></a>
-        <a href="{{ route('home') }}#solutions" class="btn-ghost">Découvrir nos solutions <i data-lucide="arrow-up-right" aria-hidden="true"></i></a>
+        <a href="{{ route('solutions') }}" class="btn-ghost">Découvrir nos solutions <i data-lucide="arrow-up-right" aria-hidden="true"></i></a>
       </div>
     </div>
   </div>

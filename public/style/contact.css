@@ -729,3 +729,4 @@ footer{border-top:1px solid var(--border);padding:40px 0;}
   .cursor-dot.hover{transform:translate(-50%,-50%) scale(.5);background:var(--primary);}
 }
 @media(max-width:1023px),(pointer:coarse){.cursor-dot,.cursor-ring{display:none;}}
+html[data-theme="light"] .nav-cta:hover{color:#fff;}

@@ -104,8 +104,11 @@
     </div>
     <div class="team-grid">
       <div class="team-card reveal">
-        <div class="team-photo"><i data-lucide="user" aria-hidden="true"></i></div>
-        <div class="team-body"><h4>À compléter</h4><span>Fonction</span></div>
+        <div class="team-photo">
+          {{-- <i data-lucide="user" aria-hidden="true"></i> --}}
+          <img src="{{ asset('hajar.png') }}" alt="Photo de WARD Hajar" loading="lazy">
+        </div>
+        <div class="team-body"><h4>WARD Hajar</h4><span>Owner</span></div>
       </div>
       <div class="team-card reveal reveal-delay-1">
         <div class="team-photo"><i data-lucide="user" aria-hidden="true"></i></div>
