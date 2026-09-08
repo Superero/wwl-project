@@ -14,9 +14,9 @@ Route::get('/about',function(){ return view('apropos'); })->name('about');
 Route::get('/contact',function(){ return view('contact'); })->name('contact');
 
 
-Route::get('/test',function(){ return view('test-v4'); });
-Route::get('/testt',function(){ return view('test'); });
-Route::get('/testtt',function(){ return view('test-v3'); });
+// Route::get('/test',function(){ return view('test-v4'); });
+// Route::get('/testt',function(){ return view('test'); });
+// Route::get('/testtt',function(){ return view('test-v3'); });
 // Route::get('/dashboard', function () {
 //     return view('dashboard');
 // })->middleware(['auth', 'verified'])->name('dashboard');
@@ -26,7 +26,7 @@ Route::get('/dashboard', [ConsultationController::class, 'index'])->middleware([
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    // Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
 Route::post('/consultation', [ConsultationRequestController::class, 'store'])->name('consultation.store');
@@ -39,5 +39,7 @@ Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () 
     ->name('consultations.updateStatus');
     Route::get('/consultations/export-xlsx', [ConsultationController::class, 'exportXlsx'])->name('consultations.exportXlsx');
 });
+
+Route::fallback(function(){ return redirect()->route('home'); });
 
 require __DIR__.'/auth.php';
