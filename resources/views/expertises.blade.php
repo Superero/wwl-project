@@ -211,7 +211,7 @@
   <div class="wrap">
     <div class="interactive-card reveal">
       <div>
-        <span class="kicker">Rubrique interactive</span>
+        {{-- <span class="kicker">Rubrique interactive</span> --}}
         <h2>Que mesure réellement votre dispositif d'évaluation de la formation ?</h2>
         <p>Répondez à une série courte de questions pour obtenir une première lecture de votre Learning Impact Coverage.</p>
       </div>

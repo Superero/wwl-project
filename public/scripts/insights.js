@@ -237,6 +237,16 @@
       root.setAttribute('data-theme', theme);
       toggle.innerHTML = theme === 'light' ? moonIcon : sunIcon;
       toggle.setAttribute('aria-label', theme === 'light' ? 'Activer le mode sombre' : 'Activer le mode clair');
+      // =========================
+      // CHANGEMENT DU LOGO
+      // =========================
+      const logo = document.getElementById('logo');
+
+      if(logo){
+        logo.src = theme === 'light'
+          ? "/logo-lockup.svg"
+          : "/logo-white.svg";
+      }
       localStorage.setItem('wwl-theme', theme);
     }
 

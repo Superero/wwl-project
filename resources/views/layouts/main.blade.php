@@ -81,7 +81,7 @@
      role="button"
      tabindex="0"
      aria-label="Ward Wide Learning">
-      <img class="brand-mark" src="{{ asset('logo-lockup.svg') }}" alt="Ward Wide Learning">
+      <img class="brand-mark" id="logo" src="{{ asset('logo-lockup.svg') }}" alt="Ward Wide Learning">
       <span> <a href="{{ route('home') }}"> Ward Wide Learning </a></span>
     </div>
     <div class="nav-links" id="navLinks">
@@ -96,7 +96,7 @@
       <button class="nav-burger" id="navBurger" type="button" aria-label="Ouvrir le menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
-      <a href="#contact" class="nav-cta">Diagnostic offert</a>
+      <a href=" https://docs.google.com/forms/d/e/1FAIpQLSfsIlapJ1kpymakN-_97jUNkh-KPlCYq2RTb3LSutkts1JmIQ/viewform?usp=publish-editor" target="blank" class="nav-cta">Diagnostic offert</a>
     </div>
   </nav>
 </header>
@@ -106,9 +106,9 @@
 
 <footer>
   <div class="wrap footer-wrap">
-    <div class="brand"><img class="brand-mark" src="{{ asset('logo-lockup.svg') }}" alt="Ward Wide Learning">Ward Wide Learning</div>
+    <div class="brand"><img class="brand-mark" id="logo" src="{{ asset('logo-lockup.svg') }}" alt="Ward Wide Learning">Ward Wide Learning</div>
     <div>Oasis Latitude Offices, Angle Route de l'Oasis, Casablanca</div>
-    <div>© 2026 Ward Wide Learning</div>
+    <div>© {{ now()->year }} Ward Wide Learning</div>
   </div>
 </footer>
 

@@ -70,7 +70,7 @@
                 </p>
 
                 <div class="btn-row reveal reveal-delay-3">
-                    <a href="#contact" class="btn-primary">
+                    <a href=" https://docs.google.com/forms/d/e/1FAIpQLSfsIlapJ1kpymakN-_97jUNkh-KPlCYq2RTb3LSutkts1JmIQ/viewform?usp=publish-editor" target="blank"class="btn-primary">
                         Faire le diagnostic offert
                         <i data-lucide="arrow-up-right" aria-hidden="true"></i>
                     </a>
@@ -271,7 +271,7 @@
   <div class="wrap">
     <div class="interactive-card reveal">
       <div>
-        <span class="kicker">Rubrique interactive</span>
+        {{-- <span class="kicker">Rubrique interactive</span> --}}
         <h2>Un premier regard structuré sur la performance de votre dispositif Learning.</h2>
         <p>Répondez à une série courte de questions pour évaluer votre dispositif selon plusieurs dimensions clés : alignement avec les enjeux métier, qualité du design, apprentissage, transfert des acquis et pilotage. À l'issue du questionnaire, vos réponses sont analysées par Ward Wide Learning et donnent lieu à une restitution personnalisée.</p>
       </div>
@@ -292,25 +292,33 @@
         <div class="pillar reveal">
           <div class="pillar-marker">01</div>
           <span class="stage">Check</span>
-          <h3><i data-lucide="list-checks" class="inline-icon" aria-hidden="true"></i> Vous réalisez le check en ligne</h3>
+          <h3>
+            {{-- <i data-lucide="list-checks" class="inline-icon" aria-hidden="true"></i> --}}
+             Vous réalisez le check en ligne</h3>
           <p>Un questionnaire court permet de recueillir une première lecture de votre dispositif.</p>
         </div>
         <div class="pillar reveal reveal-delay-1">
           <div class="pillar-marker">02</div>
           <span class="stage">Analyse</span>
-          <h3><i data-lucide="search-check" class="inline-icon" aria-hidden="true"></i> Nous analysons vos réponses</h3>
+          <h3>
+            {{-- <i data-lucide="search-check" class="inline-icon" aria-hidden="true"></i> --}}
+             Nous analysons vos réponses</h3>
           <p>WWL interprète les résultats et identifie les principaux signaux à approfondir.</p>
         </div>
         <div class="pillar reveal reveal-delay-2">
           <div class="pillar-marker">03</div>
           <span class="stage">Restitution</span>
-          <h3><i data-lucide="presentation" class="inline-icon" aria-hidden="true"></i> Nous vous restituons les résultats</h3>
+          <h3>
+            {{-- <i data-lucide="presentation" class="inline-icon" aria-hidden="true"></i> --}}
+             Nous vous restituons les résultats</h3>
           <p>Un échange permet de partager les constats et d'identifier les premières priorités.</p>
         </div>
         <div class="pillar reveal reveal-delay-3">
           <div class="pillar-marker">04</div>
           <span class="stage">Approfondir</span>
-          <h3><i data-lucide="microscope" class="inline-icon" aria-hidden="true"></i> Si nécessaire, nous approfondissons</h3>
+          <h3>
+            {{-- <i data-lucide="microscope" class="inline-icon" aria-hidden="true"></i> --}}
+             Si nécessaire, nous approfondissons</h3>
           <p>Entretiens, étude des dispositifs existants et, si pertinent, observation terrain.</p>
         </div>
       </div>
@@ -355,7 +363,7 @@
       <p>Un échange court suffit souvent pour clarifier le point de départ.</p>
       <div class="btn-row">
         <a href="#contact" class="btn-primary">Planifier un échange <i data-lucide="calendar-arrow-up" aria-hidden="true"></i></a>
-        <a href="#contact" class="btn-ghost">Faire le diagnostic offert <i data-lucide="arrow-up-right" aria-hidden="true"></i></a>
+        <a href=" https://docs.google.com/forms/d/e/1FAIpQLSfsIlapJ1kpymakN-_97jUNkh-KPlCYq2RTb3LSutkts1JmIQ/viewform?usp=publish-editor" target="blank" class="btn-ghost">Faire le diagnostic offert <i data-lucide="arrow-up-right" aria-hidden="true"></i></a>
       </div>
     </div>
   </div>
@@ -368,8 +376,8 @@
   <div class="wrap">
     <div class="contact-card reveal">
       <div>
-        <span class="kicker">Parlons de votre enjeu Learning</span>
-        <h2>Planifiez un échange stratégique</h2>
+        {{-- <span class="kicker">Parlons de votre enjeu Learning</span> --}}
+        <h2>Parlons de votre enjeu</h2>
         <p>Un échange court suffit souvent pour clarifier le point de départ. Remplissez ce formulaire pour être recontacté par un expert Ward Wide Learning.</p>
         <div class="contact-coords">
           <strong>Ward Wide Learning</strong><br>

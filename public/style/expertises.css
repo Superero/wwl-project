@@ -200,7 +200,7 @@ nav{
   display:flex;align-items:center;justify-content:space-between;
   padding:14px 32px;max-width:1180px;margin:0 auto;
 }
-.brand{display:flex;align-items:center;gap:12px;font-family:var(--font-display);font-weight:600;font-size:17px;cursor:pointer;position:relative;}
+.brand{display:flex;align-items:center;gap:12px;font-family:var(--font-display);font-weight:600;font-size:14px;cursor:pointer;position:relative;}
 .brand-mark{height:32px;width:auto;object-fit:contain;transition:transform .4s cubic-bezier(.34,1.56,.64,1);}
 .brand:hover .brand-mark{transform:translateY(-2px) rotate(-3deg) scale(1.05);}
 .nav-links{display:flex;gap:30px;font-size:14.5px;color:var(--text-secondary);}
@@ -959,3 +959,6 @@ html[data-theme="light"] .hero-floating-card{
 }
 
 html[data-theme="light"] .nav-cta:hover{color:#fff;}
+html[data-theme="light"] .btn-primary{background:#fabc19;}
+html[data-theme="light"] .nav-cta{color:black;border-color:black;}
+html[data-theme="light"] .nav-cta:hover::before{color:black;background: #fabc19;}
