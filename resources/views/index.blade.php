@@ -474,7 +474,28 @@ de la formation et impact au service de vos enjeux business.</p>
               <span class="select-arrow"></span>
             </div>
           </div>
-          <div class="field-row">
+          <div class="field-pair">
+            <div class="field-row">
+              <label for="phone"><i data-lucide="phone" aria-hidden="true"></i> Votre numéno de téléphone</label>
+              <input type="tel" id="phone" name="phone" value="{{ old('phone') }}" required placeholder="+212 60000-0000">
+            </div>
+            <div class="field-row">
+              <label for="need"><i data-lucide="layers-3" aria-hidden="true"></i> Votre enjeu principal</label>
+              <select id="need" name="need" required>
+                <option value="" disabled selected>Sélectionnez votre enjeu</option>
+                <option>Mesure du ROI formation</option>
+                <option>Formation de volumes importants</option>
+                <option>Structurer une académie</option>
+                <option>Pit Stop Learning</option>
+                <option>Assessment et positionnement</option>
+                <option>Management et soft skills</option>
+                <option>Learning Performance Check</option>
+                <option>Autre besoin</option>
+              </select>
+              <span class="select-arrow"></span>
+          </div>
+          </div> 
+          {{-- <div class="field-row">
             <label for="need"><i data-lucide="layers-3" aria-hidden="true"></i> Votre enjeu principal</label>
             <select id="need" name="need" required>
               <option value="" disabled selected>Sélectionnez votre enjeu</option>
@@ -488,7 +509,7 @@ de la formation et impact au service de vos enjeux business.</p>
               <option>Autre besoin</option>
             </select>
             <span class="select-arrow"></span>
-          </div>
+          </div> --}}
           <div class="field-row">
             <label for="message"><i data-lucide="message-square" aria-hidden="true"></i> Message libre (optionnel)</label>
             <textarea id="message" name="message" rows="3" placeholder="Décrivez brièvement votre contexte...">{{ old('message') }}</textarea>

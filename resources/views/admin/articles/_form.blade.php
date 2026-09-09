@@ -142,6 +142,7 @@
               <small>Un seul article featured à la fois recommandé</small>
             </div>
             <label class="switch">
+              <input type="hidden" name="is_featured" value="0">
               <input type="checkbox" name="is_featured" value="1"
                      {{ old('is_featured', $article->is_featured ?? false) ? 'checked' : '' }}>
               <span class="track"></span>
