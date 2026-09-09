@@ -31,7 +31,7 @@
   </div>
 </section>
 
-{{-- <section id="featured" style="padding-top:12px;">
+<section id="featured" style="padding-top:12px;">
   <div class="wrap">
     <a href="#" class="featured-insight reveal" data-category="Learning Impact">
       <div class="featured-thumb">
@@ -46,32 +46,9 @@
       </div>
     </a>
   </div>
-</section> --}}
-
-@if($featured)
-<section id="featured" style="padding-top:12px;">
-  <div class="wrap">
-    <a href="{{ route('insights.show', $featured->slug) }}" class="featured-insight reveal" data-category="{{ $featured->category }}">
-      <div class="featured-thumb">
-        @if($featured->image)
-          <img src="{{ Storage::url($featured->image) }}" alt="{{ $featured->title }}" loading="lazy">
-        @endif
-      </div>
-      <div class="featured-body">
-        <span class="featured-label">
-          {{-- <i data-lucide="{{ $featured->icon }}" aria-hidden="true"></i> --}}
-           Article à la une · {{ $featured->category }}</span>
-        <h3>{{ $featured->title }}</h3>
-        <p>{{ $featured->excerpt }}</p>
-        <span class="featured-meta">{{ $featured->reading_time }} min de lecture · {{ $featured->published_at?->translatedFormat('d F Y') }}</span>
-        <span class="featured-link">Lire l'article <i data-lucide="arrow-up-right" aria-hidden="true"></i></span>
-      </div>
-    </a>
-  </div>
 </section>
-@endif
 
-{{-- <section class="insights-index" id="tous-les-articles">
+<section class="insights-index" id="tous-les-articles">
   <div class="wrap">
     <div class="section-head reveal">
       <span class="kicker">Tous les articles</span>
@@ -144,41 +121,6 @@
         </div>
       </article>
 
-    </div>
-
-    <p class="no-results" id="noResults">Aucun article dans cette thématique pour le moment. Choisissez une autre catégorie.</p>
-  </div>
-</section> --}}
-
-<section class="insights-index" id="tous-les-articles">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <span class="kicker">Tous les articles</span>
-      <h2>Des repères concrets pour vos décisions L&amp;D.</h2>
-      <p>Filtrez par thématique ou parcourez l'ensemble des publications Ward Wide Learning.</p>
-    </div>
-
-    <div class="insights-grid" id="insightsGrid">
-      @forelse($articles as $article)
-      <article class="insight-card reveal" data-category="{{ $article->category }}">
-        <div class="insight-thumb">
-          @if($article->image)
-            <img src="{{ Storage::url($article->image) }}" loading="lazy">
-          @endif
-          <span class="insight-cat">
-            {{-- <i data-lucide="{{ $article->icon }}" aria-hidden="true"></i> --}}
-             {{ $article->category }}</span>
-        </div>
-        <div class="insight-body">
-          <span class="insight-meta">{{ $article->reading_time }} min · {{ $article->published_at?->translatedFormat('d F Y') }}</span>
-          <h3>{{ $article->title }}</h3>
-          <p class="insight-excerpt">{{ $article->excerpt }}</p>
-          <a href="{{ route('insights.show', $article->slug) }}" class="insight-link">Lire l'article <i data-lucide="arrow-up-right" aria-hidden="true"></i></a>
-        </div>
-      </article>
-      @empty
-      <p>Aucun article publié pour le moment.</p>
-      @endforelse
     </div>
 
     <p class="no-results" id="noResults">Aucun article dans cette thématique pour le moment. Choisissez une autre catégorie.</p>

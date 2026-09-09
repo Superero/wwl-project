@@ -4,12 +4,14 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ConsultationRequestController;
 use App\Http\Controllers\Admin\ConsultationController;
+use App\Http\Controllers\Admin\ArticleController;
+use App\Http\Controllers\InsightsController;
 
 Route::get('/', function () { return view('index');})->name('home');
 
 Route::get('/expertises',function(){ return view('expertises'); })->name('expertises');
 Route::get('/solutions',function(){ return view('solutions'); })->name('solutions');
-Route::get('/insights',function(){ return view('insights'); })->name('insights');
+// Route::get('/insights',function(){ return view('insights'); })->name('insights'); mo2a9atan
 Route::get('/about',function(){ return view('apropos'); })->name('about');
 Route::get('/contact',function(){ return view('contact'); })->name('contact');
 
@@ -39,6 +41,16 @@ Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () 
     ->name('consultations.updateStatus');
     Route::get('/consultations/export-xlsx', [ConsultationController::class, 'exportXlsx'])->name('consultations.exportXlsx');
 });
+
+Route::get('/insights', [InsightsController::class, 'index'])->name('insights');
+Route::get('/insights/{article:slug}', [InsightsController::class, 'show'])->name('insights.show');
+
+Route::middleware(['auth']) // adapte le middleware à ton système d'admin réel
+    ->prefix('admin')
+    ->name('admin.')
+    ->group(function () {
+        Route::resource('articles', ArticleController::class);
+    });
 
 Route::fallback(function(){ return redirect()->route('home'); });
 
