@@ -71,6 +71,7 @@
 </section>
 @endif
 
+{{-- section des articles statique --}}
 {{-- <section class="insights-index" id="tous-les-articles">
   <div class="wrap">
     <div class="section-head reveal">
@@ -218,11 +219,4 @@
   </div>
 </section>
 
-{{-- <script src="{{ asset('script.js') }}"></script> --}}
-<script src="https://unpkg.com/lucide@latest"></script>
-<script>
-  if (window.lucide) lucide.createIcons();
-</script>
-</body>
-</html>
 @endsection

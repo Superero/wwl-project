@@ -4,10 +4,7 @@
 @section('style',"style/about.css")
 @section('script',"scripts/about.js")
 
-
 @section('content')
-
-
 
 <!-- SECTION NAV INDICATOR -->
 <nav class="section-nav" aria-label="Navigation des sections">
@@ -19,9 +16,7 @@
   <a href="#contact" data-label="Contact" aria-label="Contact"></a>
 </nav>
 
-<!-- =========================
-     HERO DE PAGE
-========================= -->
+<!-- = HERO DE PAGE = -->
 <section class="page-hero" id="apropos-hero">
   <div class="wrap">
     <span class="kicker reveal">À propos</span>
@@ -34,9 +29,7 @@
   </div>
 </section>
 
-<!-- =========================
-     VISION
-========================= -->
+<!-- = VISION = -->
 <section id="vision">
   <div class="wrap about-wrap">
     <div class="reveal">
@@ -57,9 +50,7 @@
   </div>
 </section>
 
-<!-- =========================
-     NOTRE ADN
-========================= -->
+<!-- = NOTRE ADN = -->
 <section id="adn">
   <div class="wrap">
     <div class="section-head reveal">
@@ -92,9 +83,7 @@
   </div>
 </section>
 
-<!-- =========================
-     ÉQUIPE
-========================= -->
+<!-- = ÉQUIPE = -->
 <section id="equipe">
   <div class="wrap">
     <div class="section-head reveal">
@@ -127,9 +116,7 @@
   </div>
 </section>
 
-<!-- =========================
-     CERTIFICATIONS
-========================= -->
+<!-- = CERTIFICATIONS = -->
 <section id="certifications">
   <div class="wrap">
     <div class="section-head reveal">
@@ -146,9 +133,7 @@
   </div>
 </section>
 
-<!-- =========================
-     CTA FINAL
-========================= -->
+<!-- = CTA FINAL = -->
 <section id="cta-final">
   <div class="wrap">
     <div class="final-cta reveal">
@@ -163,9 +148,7 @@
   </div>
 </section>
 
-<!-- =========================
-     CONTACT
-========================= -->
+<!-- = CONTACT = -->
 <section id="contact">
   <div class="wrap">
     <div class="contact-card reveal">
@@ -248,13 +231,4 @@
   </div>
 </section>
 
-
-{{-- <script src="{{ asset('script.js') }}"></script> --}}
-{{-- <script src="https://unpkg.com/lucide@latest"></script> --}}
-
-<script>
-  if (window.lucide) lucide.createIcons();
-</script>
-</body>
-</html>
 @endsection

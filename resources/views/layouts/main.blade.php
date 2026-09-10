@@ -139,9 +139,14 @@
 </div>
 
 
-<script src="https://unpkg.com/lucide@latest"></script>
-{{-- <script src="{{ asset('js/app.js') }}"></script> --}}
-{{-- @stack('scripts') --}}
+<script src="https://unpkg.com/lucide@latest" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    if (window.lucide) {
+        lucide.createIcons();
+    }
+});
+</script>
 <script src="@yield('script')"></script>
 
 </body>

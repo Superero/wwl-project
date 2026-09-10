@@ -4,10 +4,7 @@
 @section('style',"style/contact.css")
 @section('script',"scripts/contact.js")
 
-
 @section('content')
-<!-- SCROLL PROGRESS -->
-<div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
 
 <!-- SECTION NAV INDICATOR -->
 <nav class="section-nav" aria-label="Navigation des sections">
@@ -18,10 +15,7 @@
   <a href="#faq" data-label="FAQ" aria-label="Questions fréquentes"></a>
 </nav>
 
-
-<!-- =========================
-     HERO DE PAGE
-========================= -->
+<!-- = HERO DE PAGE = -->
 <section class="page-hero" id="contact-hero">
   <div class="wrap">
     <span class="kicker reveal">Contact</span>
@@ -35,9 +29,7 @@
   </div>
 </section>
 
-<!-- =========================
-     FORMULAIRE + COORDONNÉES
-========================= -->
+<!-- = FORMULAIRE + COORDONNÉES = -->
 <section id="contact-form">
   <div class="wrap">
     <div class="contact-card reveal">
@@ -120,9 +112,7 @@
   </div>
 </section>
 
-<!-- =========================
-     COMMENT ÇA SE PASSE
-========================= -->
+<!-- = COMMENT ÇA SE PASSE = -->
 <section id="comment">
   <div class="wrap">
     <div class="section-head reveal">
@@ -155,9 +145,7 @@
   </div>
 </section>
 
-<!-- =========================
-     AUTRES CANAUX
-========================= -->
+<!-- = AUTRES CANAUX = -->
 <section id="canaux">
   <div class="wrap">
     <div class="section-head reveal">
@@ -187,9 +175,7 @@
   </div>
 </section>
 
-<!-- =========================
-     FAQ
-========================= -->
+<!-- = FAQ = -->
 <section id="faq">
   <div class="wrap">
     <div class="section-head reveal">
@@ -217,11 +203,7 @@
   </div>
 </section>
 
-
-
-<!-- =========================
-     CTA FINAL
-========================= -->
+<!-- = CTA FINAL = -->
 <section id="cta-final">
   <div class="wrap">
     <div class="final-cta reveal">
@@ -237,11 +219,4 @@
 </section>
 
 
-
-
-{{-- <script src="{{ asset('script.js') }}"></script> --}}
-<script src="https://unpkg.com/lucide@latest"></script>
-<script>
-  if (window.lucide) lucide.createIcons();
-</script>
 @endsection

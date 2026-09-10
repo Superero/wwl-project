@@ -5,46 +5,19 @@
 
 @section('content')
 
-{{-- hero de page --}}
-{{-- <section class="page-hero" id="hero">
-  <div class="wrap">
-    <div class="breadcrumb reveal">
-      <a href="{{ route('home') }}">Accueil</a>
-      <span class="sep">/</span>
-      <span class="current">Expertises</span>
-    </div>
-    <span class="kicker reveal reveal-delay-1">Nos expertises</span>
-    <h1 class="reveal reveal-delay-2">Notre expertise couvre l'ensemble du cycle Learning.</h1>
-    <p class="lead reveal reveal-delay-3">Nous intervenons avant, pendant et après la formation&nbsp;: pour cadrer le besoin, concevoir l'expérience, digitaliser, évaluer et soutenir le transfert.</p>
-    <div class="btn-row reveal reveal-delay-3" style="margin-top:28px;">
-      <a href="{{ route('home') }}#contact" class="btn-primary">Parler de votre enjeu Learning <i data-lucide="arrow-up-right" aria-hidden="true"></i></a>
-      <a href="{{ route('home') }}#solutions" class="btn-ghost">Voir nos solutions <i data-lucide="arrow-right" aria-hidden="true"></i></a>
-    </div>
-  </div>
-</section> --}}
+<! -- hero de page -->
 <section class="page-hero page-hero-expertise" id="hero">
   <div class="wrap">
-
     <div class="hero-expertise-grid">
-
       <!-- CONTENU -->
       <div class="hero-expertise-content">
-
         <div class="breadcrumb reveal">
           <a href="{{ route('home') }}">Accueil</a>
           <span class="sep">/</span>
           <span class="current">Expertises</span>
         </div>
-
-        <span class="kicker reveal reveal-delay-1">
-          Nos expertises
-        </span>
-
-        <h1 class="reveal reveal-delay-2">
-          Notre expertise couvre
-          <span>l'ensemble du cycle Learning.</span>
-        </h1>
-
+        <span class="kicker reveal reveal-delay-1">Nos expertises</span>
+        <h1 class="reveal reveal-delay-2">Notre expertise couvre <span>l'ensemble du cycle Learning.</span></h1>
         <p class="lead reveal reveal-delay-3">
           Nous intervenons avant, pendant et après la formation :
           pour cadrer le besoin, concevoir l'expérience, digitaliser,
@@ -52,60 +25,35 @@
         </p>
 
         <div class="btn-row reveal reveal-delay-3" style="margin-top:28px;">
-          <a href="{{ route('home') }}#contact" class="btn-primary">
-            Parler de votre enjeu Learning
-            <i data-lucide="arrow-up-right" aria-hidden="true"></i>
-          </a>
-
-          <a href="{{ route('home') }}#solutions" class="btn-ghost">
-            Voir nos solutions
-            <i data-lucide="arrow-right" aria-hidden="true"></i>
-          </a>
+          <a href="{{ route('home') }}#contact" class="btn-primary">Parler de votre enjeu Learning<i data-lucide="arrow-up-right" aria-hidden="true"></i></a>
+          <a href="{{ route('solutions') }}" class="btn-ghost">Voir nos solutions<i data-lucide="arrow-right" aria-hidden="true"></i></a>
         </div>
-
       </div>
-
 
       <!-- VISUEL HERO -->
       <div class="hero-expertise-visual reveal reveal-delay-2">
-
         <div class="hero-image-card">
-
-          <img
-            src="img1.avif"
-            alt="Digital Learning et transformation des compétences"
-          >
-
+          <img src="img1.avif" alt="Digital Learning et transformation des compétences">
           <div class="hero-image-overlay"></div>
-
           <!-- Petit élément flottant -->
           <div class="hero-floating-card">
-            <span class="floating-icon">
-              <i data-lucide="brain-circuit"></i>
-            </span>
-
+            <span class="floating-icon"><i data-lucide="brain-circuit"></i></span>
             <div>
               <strong>Learning ecosystem</strong>
               <span>Stratégie · Expérience · Digital · Impact</span>
             </div>
           </div>
-
           <!-- Indicateur -->
           <div class="hero-image-index">
             <span>01</span>
             <small>EXPERTISE</small>
           </div>
-
         </div>
-
         <!-- éléments décoratifs -->
         <div class="hero-orbit orbit-1"></div>
         <div class="hero-orbit orbit-2"></div>
-
       </div>
-
     </div>
-
   </div>
 </section>
 
@@ -215,7 +163,7 @@
         <h2>Que mesure réellement votre dispositif d'évaluation de la formation ?</h2>
         <p>Répondez à une série courte de questions pour obtenir une première lecture de votre Learning Impact Coverage.</p>
       </div>
-      <a href="{{ route('home') }}#contact" data-need="Learning Performance Check" class="btn-primary">Tester mon Impact Coverage</a>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSfsIlapJ1kpymakN-_97jUNkh-KPlCYq2RTb3LSutkts1JmIQ/viewform" data-need="Learning Performance Check" class="btn-primary">Tester mon Impact Coverage</a>
     </div>
   </div>
 </section>
@@ -234,13 +182,4 @@
   </div>
 </section>
 
-
-
-
-{{-- <script src="{{ asset('script.js') }}"></script> --}}
-<script src="https://unpkg.com/lucide@latest"></script>
-{{-- <script src="{{asset('scripts/expertises.js')}}"></script> --}}
-<script>
-  if (window.lucide) lucide.createIcons();
-</script>
 @endsection

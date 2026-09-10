@@ -37,18 +37,14 @@ Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () 
     Route::get('/consultations', [ConsultationController::class, 'index'])->name('consultations.index');
     Route::delete('/consultations/{consultationRequest}', [ConsultationController::class, 'destroy'])->name('consultations.destroy');
     Route::get('/consultations/export', [ConsultationController::class, 'export'])->name('consultations.export');
-    Route::patch('/consultations/{consultationRequest}/status', [ConsultationController::class, 'updateStatus'])
-    ->name('consultations.updateStatus');
+    Route::patch('/consultations/{consultationRequest}/status', [ConsultationController::class, 'updateStatus'])->name('consultations.updateStatus');
     Route::get('/consultations/export-xlsx', [ConsultationController::class, 'exportXlsx'])->name('consultations.exportXlsx');
 });
 
 Route::get('/insights', [InsightsController::class, 'index'])->name('insights');
 Route::get('/insights/{article:slug}', [InsightsController::class, 'show'])->name('insights.show');
 
-Route::middleware(['auth']) // adapte le middleware à ton système d'admin réel
-    ->prefix('admin')
-    ->name('admin.')
-    ->group(function () {
+Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () {
         Route::resource('articles', ArticleController::class);
     });
 

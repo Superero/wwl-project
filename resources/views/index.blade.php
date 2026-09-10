@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Digitalisation de la formation en entreprise, onboarding et mesure du ROI formation.">
 <title>Ward Wide Learning — Formation d'entreprise, pilotée par la donnée</title>
 <link rel="shortcut icon" href="{{ asset('logo-lockup.svg') }}" type="image/x-icon">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -115,8 +116,7 @@
     <div>
       <span class="kicker reveal">Diagnostic offert · Partenaire Learning & Performance</span>
       <h1 class="reveal reveal-delay-1 ttl">Nous concevons des expériences d'apprentissage qui créent un changement <span class="accent-word">mesurable</span>.</h1>
-      <p class="lead reveal reveal-delay-2">Learning strategy, Digital Learning, évaluation
-de la formation et impact au service de vos enjeux business.</p>
+      <p class="lead reveal reveal-delay-2">Learning strategy, Digital Learning, évaluation de la formation et impact au service de vos enjeux business.</p>
       <div class="btn-row reveal reveal-delay-3">
         <a href=" https://docs.google.com/forms/d/e/1FAIpQLSfsIlapJ1kpymakN-_97jUNkh-KPlCYq2RTb3LSutkts1JmIQ/viewform?usp=publish-editor" target="blank" class="btn-primary">Faire le diagnostic offert <i data-lucide="arrow-up-right" aria-hidden="true"></i></a>
         <a href="#solutions" class="btn-ghost btn1 ">Découvrir nos solutions <i data-lucide="arrow-down" aria-hidden="true"></i></a>
@@ -149,46 +149,6 @@ de la formation et impact au service de vos enjeux business.</p>
         <h4>Learning Impact & Assessment</h4>
       </div>
     </div>
-    {{-- <div class="hero-art reveal reveal-delay-2">
-
-    <!-- Glow derrière l'image -->
-    <div class="hero-art-glow"></div>
-
-    <!-- Cercle décoratif -->
-    <div class="hero-art-ring hero-art-ring-1"></div>
-    <div class="hero-art-ring hero-art-ring-2"></div>
-
-    <!-- Image principale -->
-    <div class="hero-art-image">
-
-        <img
-            src="{{ asset('img2.png') }}"
-            alt="Learning and performance"
-        >
-
-        <div class="hero-art-image-overlay"></div>
-
-    </div>
-
-    <!-- Petit élément flottant -->
-    <div class="hero-art-badge">
-        <span class="hero-art-dot"></span>
-
-        <div>
-            <small>WWL</small>
-            <strong>Learning in motion</strong>
-        </div>
-    </div>
-
-    <!-- Chiffre décoratif -->
-    <div class="hero-art-number">
-        01
-    </div>
-
-    <!-- Ligne graphique -->
-    <div class="hero-art-line"></div>
-
-</div> --}}
   </div>
 </section>
 
@@ -495,21 +455,7 @@ de la formation et impact au service de vos enjeux business.</p>
               <span class="select-arrow"></span>
           </div>
           </div> 
-          {{-- <div class="field-row">
-            <label for="need"><i data-lucide="layers-3" aria-hidden="true"></i> Votre enjeu principal</label>
-            <select id="need" name="need" required>
-              <option value="" disabled selected>Sélectionnez votre enjeu</option>
-              <option>Mesure du ROI formation</option>
-              <option>Formation de volumes importants</option>
-              <option>Structurer une académie</option>
-              <option>Pit Stop Learning</option>
-              <option>Assessment et positionnement</option>
-              <option>Management et soft skills</option>
-              <option>Learning Performance Check</option>
-              <option>Autre besoin</option>
-            </select>
-            <span class="select-arrow"></span>
-          </div> --}}
+          
           <div class="field-row">
             <label for="message"><i data-lucide="message-square" aria-hidden="true"></i> Message libre (optionnel)</label>
             <textarea id="message" name="message" rows="3" placeholder="Décrivez brièvement votre contexte...">{{ old('message') }}</textarea>

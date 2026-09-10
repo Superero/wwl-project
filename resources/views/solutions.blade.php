@@ -19,48 +19,14 @@
   <a href="#contact" data-label="Contact" aria-label="Contact"></a>
 </nav>
 
-<!-- =========================
-     HERO DE PAGE
-========================= -->
-{{-- <section class="page-hero" id="solutions-hero">
-  <div class="wrap">
-    <span class="kicker reveal">Vos enjeux, nos solutions</span>
-    <h1 class="reveal reveal-delay-1">Des solutions conçues pour vos enjeux Learning.</h1>
-    <p class="lead reveal reveal-delay-2">Qu'il s'agisse de repenser un dispositif existant, de digitaliser un parcours, de structurer une académie ou de mieux mesurer l'impact de la formation, nous construisons des solutions adaptées à votre contexte, vos publics et vos objectifs.</p>
-    <div class="btn-row reveal reveal-delay-3">
-      <a href="#contact" class="btn-primary">Faire le diagnostic offert <i data-lucide="arrow-up-right" aria-hidden="true"></i></a>
-      <a href="#check" class="btn-ghost">Tester mon Impact Coverage <i data-lucide="arrow-down" aria-hidden="true"></i></a>
-    </div>
-    <div class="solutions-jump reveal reveal-delay-4">
-      <a href="#learning-impact"><span class="jump-dot"></span>Learning Impact</a>
-      <a href="#digital-learning"><span class="jump-dot"></span>Digital Learning</a>
-      <a href="#pit-stop"><span class="jump-dot"></span>Pit Stop Learning</a>
-      <a href="#academies"><span class="jump-dot"></span>Académies & parcours</a>
-      <a href="#assessment"><span class="jump-dot"></span>Assessment & Positioning</a>
-      <a href="#management"><span class="jump-dot"></span>Management & Human Performance</a>
-    </div>
-  </div>
-</section> --}}
-
-<!-- =========================
-     HERO DE PAGE
-========================= -->
+<!-- = HERO DE PAGE = -->
 <section class="page-hero" id="solutions-hero">
     <div class="wrap">
-
         <div class="hero-layout">
-
             <!-- CONTENU -->
             <div class="hero-content">
-
-                <span class="kicker reveal">
-                    Vos enjeux, nos solutions
-                </span>
-
-                <h1 class="reveal reveal-delay-1">
-                    Des solutions conçues pour vos enjeux Learning.
-                </h1>
-
+                <span class="kicker reveal">Vos enjeux, nos solutions</span>
+                <h1 class="reveal reveal-delay-1">Des solutions conçues pour vos enjeux Learning.</h1>
                 <p class="lead reveal reveal-delay-2">
                     Qu'il s'agisse de repenser un dispositif existant,
                     de digitaliser un parcours, de structurer une académie
@@ -68,117 +34,56 @@
                     construisons des solutions adaptées à votre contexte,
                     vos publics et vos objectifs.
                 </p>
-
                 <div class="btn-row reveal reveal-delay-3">
-                    <a href=" https://docs.google.com/forms/d/e/1FAIpQLSfsIlapJ1kpymakN-_97jUNkh-KPlCYq2RTb3LSutkts1JmIQ/viewform?usp=publish-editor" target="blank"class="btn-primary">
-                        Faire le diagnostic offert
-                        <i data-lucide="arrow-up-right" aria-hidden="true"></i>
-                    </a>
-
-                    <a href="#check" class="btn-ghost">
-                        Tester mon Impact Coverage
-                        <i data-lucide="arrow-down" aria-hidden="true"></i>
-                    </a>
+                    <a href=" https://docs.google.com/forms/d/e/1FAIpQLSfsIlapJ1kpymakN-_97jUNkh-KPlCYq2RTb3LSutkts1JmIQ/viewform?usp=publish-editor" target="blank"class="btn-primary">Faire le diagnostic offert<i data-lucide="arrow-up-right" aria-hidden="true"></i></a>
+                    <a href="#check" class="btn-ghost">Tester mon Impact Coverage<i data-lucide="arrow-down" aria-hidden="true"></i></a>
                 </div>
 
                 <div class="solutions-jump reveal reveal-delay-4">
-                    <a href="#learning-impact">
-                        <span class="jump-dot"></span>
-                        Learning Impact
-                    </a>
-
-                    <a href="#digital-learning">
-                        <span class="jump-dot"></span>
-                        Digital Learning
-                    </a>
-
-                    <a href="#pit-stop">
-                        <span class="jump-dot"></span>
-                        Pit Stop Learning
-                    </a>
-
-                    <a href="#academies">
-                        <span class="jump-dot"></span>
-                        Académies & parcours
-                    </a>
-
-                    <a href="#assessment">
-                        <span class="jump-dot"></span>
-                        Assessment & Positioning
-                    </a>
-
-                    <a href="#management">
-                        <span class="jump-dot"></span>
-                        Management & Human Performance
-                    </a>
+                    <a href="#learning-impact"><span class="jump-dot"></span>Learning Impact</a>
+                    <a href="#digital-learning"><span class="jump-dot"></span>Digital Learning</a>
+                    <a href="#pit-stop"><span class="jump-dot"></span>Pit Stop Learning</a>
+                    <a href="#academies"> <span class="jump-dot"></span>Académies & parcours</a>
+                    <a href="#assessment"><span class="jump-dot"></span>Assessment & Positioning</a>
+                    <a href="#management"><span class="jump-dot"></span>Management & Human Performance</a>
                 </div>
-
             </div>
-
 
             <!-- VISUEL HERO -->
             <div class="hero-visual reveal reveal-delay-2">
-
                 <div class="hero-image-card">
-
                     <div class="hero-image-frame">
-
-                        <img
-                            src="img3.avif"
-                            alt="Innovation et transformation des expériences Learning"
-                        >
-
+                        <img src="img3.avif" alt="Innovation et transformation des expériences Learning">
                         <div class="hero-image-overlay"></div>
-
                     </div>
-
 
                     <!-- Étiquette -->
                     <div class="hero-floating-label hero-label-top">
-                        <span class="label-dot"></span>
-                        Learning Intelligence
+                        <span class="label-dot"></span>Learning Intelligence
                     </div>
-
 
                     <!-- Carte flottante -->
                     <div class="hero-floating-card">
-
                         <div class="floating-icon">
                             <i data-lucide="sparkles"></i>
                         </div>
-
                         <div>
-                            <span class="floating-small">
-                                APPROCHE
-                            </span>
-
-                            <strong>
-                                Learning × Impact
-                            </strong>
+                            <span class="floating-small">APPROCHE</span>
+                            <strong>Learning × Impact</strong>
                         </div>
-
                     </div>
-
-
                     <!-- Élément décoratif -->
                     <div class="hero-orbit orbit-one"></div>
                     <div class="hero-orbit orbit-two"></div>
-
                     <span class="hero-accent accent-one"></span>
                     <span class="hero-accent accent-two"></span>
-
                 </div>
-
             </div>
-
         </div>
-
     </div>
 </section>
 
-<!-- =========================
-     LISTE DES SOLUTIONS — DÉTAIL
-========================= -->
+<!-- = LISTE DES SOLUTIONS — DÉTAIL = -->
 <section id="solutions-detail">
   <div class="wrap">
 
@@ -264,14 +169,11 @@
   </div>
 </section>
 
-<!-- =========================
-     LEARNING PERFORMANCE CHECK
-========================= -->
+<!-- = LEARNING PERFORMANCE CHECK = -->
 <section id="check">
   <div class="wrap">
     <div class="interactive-card reveal">
       <div>
-        {{-- <span class="kicker">Rubrique interactive</span> --}}
         <h2>Un premier regard structuré sur la performance de votre dispositif Learning.</h2>
         <p>Répondez à une série courte de questions pour évaluer votre dispositif selon plusieurs dimensions clés : alignement avec les enjeux métier, qualité du design, apprentissage, transfert des acquis et pilotage. À l'issue du questionnaire, vos réponses sont analysées par Ward Wide Learning et donnent lieu à une restitution personnalisée.</p>
       </div>
@@ -292,33 +194,25 @@
         <div class="pillar reveal">
           <div class="pillar-marker">01</div>
           <span class="stage">Check</span>
-          <h3>
-            {{-- <i data-lucide="list-checks" class="inline-icon" aria-hidden="true"></i> --}}
-             Vous réalisez le check en ligne</h3>
+          <h3>Vous réalisez le check en ligne</h3>
           <p>Un questionnaire court permet de recueillir une première lecture de votre dispositif.</p>
         </div>
         <div class="pillar reveal reveal-delay-1">
           <div class="pillar-marker">02</div>
           <span class="stage">Analyse</span>
-          <h3>
-            {{-- <i data-lucide="search-check" class="inline-icon" aria-hidden="true"></i> --}}
-             Nous analysons vos réponses</h3>
+          <h3>Nous analysons vos réponses</h3>
           <p>WWL interprète les résultats et identifie les principaux signaux à approfondir.</p>
         </div>
         <div class="pillar reveal reveal-delay-2">
           <div class="pillar-marker">03</div>
           <span class="stage">Restitution</span>
-          <h3>
-            {{-- <i data-lucide="presentation" class="inline-icon" aria-hidden="true"></i> --}}
-             Nous vous restituons les résultats</h3>
+          <h3>Nous vous restituons les résultats</h3>
           <p>Un échange permet de partager les constats et d'identifier les premières priorités.</p>
         </div>
         <div class="pillar reveal reveal-delay-3">
           <div class="pillar-marker">04</div>
           <span class="stage">Approfondir</span>
-          <h3>
-            {{-- <i data-lucide="microscope" class="inline-icon" aria-hidden="true"></i> --}}
-             Si nécessaire, nous approfondissons</h3>
+          <h3>Si nécessaire, nous approfondissons</h3>
           <p>Entretiens, étude des dispositifs existants et, si pertinent, observation terrain.</p>
         </div>
       </div>
@@ -352,9 +246,7 @@
   </div>
 </section>
 
-<!-- =========================
-     CTA FINAL
-========================= -->
+<!-- = CTA FINAL = -->
 <section id="cta-final">
   <div class="wrap">
     <div class="final-cta reveal">
@@ -369,9 +261,7 @@
   </div>
 </section>
 
-<!-- =========================
-     CONTACT
-========================= -->
+<!-- = CONTACT = -->
 <section id="contact">
   <div class="wrap">
     <div class="contact-card reveal">
@@ -455,12 +345,4 @@
   </div>
 </section>
 
-{{-- <script src="{{ asset('script.js') }}"></script> --}}
-<script src="https://unpkg.com/lucide@latest"></script>
-
-<script>
-  if (window.lucide) lucide.createIcons();
-</script>
-</body>
-</html>
 @endsection
