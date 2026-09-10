@@ -170,8 +170,7 @@
   <div class="wrap">
     <div class="contact-card reveal">
       <div>
-        <span class="kicker">Parlons de votre enjeu Learning</span>
-        <h2>Planifiez un échange stratégique</h2>
+        <h2>Parlons de votre enjeu</h2>
         <p>Un échange court suffit souvent pour clarifier le point de départ. Remplissez ce formulaire pour être recontacté par un expert Ward Wide Learning.</p>
         <div class="contact-coords">
           <strong>Ward Wide Learning</strong><br>

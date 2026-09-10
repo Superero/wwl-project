@@ -1969,7 +1969,9 @@ footer{border-top:1px solid var(--border);padding:40px 0;}
     inset: 0;
 
     background-image:
-        url("/img2.png");
+        url("/img-test.avif");
+    /* background-image:
+        url("/img2.png"); */
 
     background-size: cover;
     background-position: center;

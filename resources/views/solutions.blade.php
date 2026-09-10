@@ -124,7 +124,7 @@
                     <div class="hero-image-frame">
 
                         <img
-                            src="img3.png"
+                            src="img3.avif"
                             alt="Innovation et transformation des expériences Learning"
                         >
 

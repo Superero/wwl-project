@@ -72,7 +72,7 @@
         <div class="hero-image-card">
 
           <img
-            src="img1.png"
+            src="img1.avif"
             alt="Digital Learning et transformation des compétences"
           >
 
