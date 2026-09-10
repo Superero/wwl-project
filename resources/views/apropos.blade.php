@@ -250,7 +250,7 @@
 
 
 {{-- <script src="{{ asset('script.js') }}"></script> --}}
-<script src="https://unpkg.com/lucide@latest"></script>
+{{-- <script src="https://unpkg.com/lucide@latest"></script> --}}
 
 <script>
   if (window.lucide) lucide.createIcons();

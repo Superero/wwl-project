@@ -563,10 +563,14 @@ de la formation et impact au service de vos enjeux business.</p>
 </div>
 
 {{-- <script src="{{ asset('script.js') }}"></script> --}}
-<script src="https://unpkg.com/lucide@latest"></script>
+<script src="https://unpkg.com/lucide@latest" defer></script>
 <script src="{{asset('scripts/index.js')}}" ></script>
 <script>
-  if (window.lucide) lucide.createIcons();
+  document.addEventListener('DOMContentLoaded', function () {
+    if (window.lucide) {
+        lucide.createIcons();
+    }
+  });
 </script>
 </body>
 </html>
