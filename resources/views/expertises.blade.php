@@ -1,5 +1,6 @@
 @extends('layouts.main')
 @section('title',"Expertises — Ward Wide Learning")
+@section('description',"Découvrez les expertises de Ward Wide Learning : ingénierie pédagogique, stratégie de formation, digital learning, conception d’expériences apprenantes et évaluation des dispositifs.")
 @section('style',"style/expertises.css")
 @section('script',"scripts/expertises.js")
 

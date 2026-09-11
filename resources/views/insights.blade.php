@@ -1,5 +1,6 @@
 @extends('layouts.main')
 @section('title',"Insights — Ward Wide Learning")
+@section('description',"Explorez les Insights de Ward Wide Learning : analyses, tendances et réflexions sur le digital learning, l’ingénierie pédagogique, l’IA et l’innovation en formation.")
 @section('style',"style/insights.css")
 @section('script',"scripts/insights.js")
 

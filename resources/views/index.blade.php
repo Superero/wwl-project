@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Digitalisation de la formation en entreprise, onboarding et mesure du ROI formation.">
-<title>Ward Wide Learning — Formation d'entreprise, pilotée par la donnée</title>
-<link rel="shortcut icon" href="{{ asset('logo-lockup.svg') }}" type="image/x-icon">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="{{ asset('style/index.css') }}">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="description" content="Ward Wide Learning conçoit des expériences de formation digitales sur mesure : stratégie, ingénierie pédagogique, digital learning, création de contenus et évaluation.">
+      <title>Ward Wide Learning — Formation d'entreprise, pilotée par la donnée</title>
+      <link rel="shortcut icon" href="{{ asset('logo-lockup.svg') }}" type="image/x-icon">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="{{ asset('style/index.css') }}">
 
-</head>
+  </head>
 <body>
 
 {{-- POPUP SUCCÈS — affichée uniquement après une soumission réussie --}}
@@ -146,7 +146,7 @@
       <div class="module-tile">
         <i data-lucide="chart-no-axes-combined" class="tile-icon" aria-hidden="true"></i>
         <span class="tile-tag">04</span>
-        <h4>Learning Impact & Assessment</h4>
+        <h4>Évaluation de l’impact et du transfert en formation</h4>
       </div>
     </div>
   </div>
@@ -319,7 +319,7 @@
       <h2>Learning, decoded.</h2>
     </div>
     <div class="insights-grid">
-      <article class="insight-card reveal">
+      {{-- <article class="insight-card reveal">
         <div class="insight-thumb">
             <img src="article01.png" alt="" srcset="" loading="lazy">
             <span class="insight-cat"><i data-lucide="trending-up" aria-hidden="true"></i> Learning Impact</span></div>
@@ -348,7 +348,7 @@
           <h3>Kirkpatrick : ce que les entreprises mesurent... et ce qu'elles oublient.</h3>
           <a href="{{ route('insights') }}" class="insight-link">Lire l'article <i data-lucide="arrow-up-right" aria-hidden="true"></i></a>
         </div>
-      </article>
+      </article> --}}
     </div>
     <div class="section-head-cta reveal">
       <a href="{{ route('insights') }}" class="btn-ghost">Voir tous les Insights</a>

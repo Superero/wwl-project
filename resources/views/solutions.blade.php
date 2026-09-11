@@ -35,7 +35,7 @@
                     vos publics et vos objectifs.
                 </p>
                 <div class="btn-row reveal reveal-delay-3">
-                    <a href=" https://docs.google.com/forms/d/e/1FAIpQLSfsIlapJ1kpymakN-_97jUNkh-KPlCYq2RTb3LSutkts1JmIQ/viewform?usp=publish-editor" target="blank"class="btn-primary">Faire le diagnostic offert<i data-lucide="arrow-up-right" aria-hidden="true"></i></a>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfsIlapJ1kpymakN-_97jUNkh-KPlCYq2RTb3LSutkts1JmIQ/viewform?usp=publish-editor" target="blank"class="btn-primary">Faire le diagnostic offert<i data-lucide="arrow-up-right" aria-hidden="true"></i></a>
                     <a href="#check" class="btn-ghost">Tester mon Impact Coverage<i data-lucide="arrow-down" aria-hidden="true"></i></a>
                 </div>
 
@@ -177,7 +177,7 @@
         <h2>Un premier regard structuré sur la performance de votre dispositif Learning.</h2>
         <p>Répondez à une série courte de questions pour évaluer votre dispositif selon plusieurs dimensions clés : alignement avec les enjeux métier, qualité du design, apprentissage, transfert des acquis et pilotage. À l'issue du questionnaire, vos réponses sont analysées par Ward Wide Learning et donnent lieu à une restitution personnalisée.</p>
       </div>
-      <a href="#contact" data-need="Learning Performance Check" class="btn-primary">Faire le Learning Performance Check <i data-lucide="arrow-up-right" aria-hidden="true"></i></a>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSfsIlapJ1kpymakN-_97jUNkh-KPlCYq2RTb3LSutkts1JmIQ/viewform?usp=publish-editor" data-need="Learning Performance Check" class="btn-primary">Faire le Learning Performance Check <i data-lucide="arrow-up-right" aria-hidden="true"></i></a>
     </div>
   </div>
 </section>
