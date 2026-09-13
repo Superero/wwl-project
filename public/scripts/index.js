@@ -450,3 +450,26 @@
   })();
 
 })();
+
+// pop-up echec
+(function(){
+  const modal = document.getElementById('errorModal');
+  if(!modal) return;
+
+  const closeBtn = document.getElementById('errorModalClose');
+  const continueBtn = document.getElementById('errorModalContinue');
+  const backdrop = modal.querySelector('.success-modal-backdrop');
+
+  document.body.style.overflow = 'hidden';
+  requestAnimationFrame(() => modal.classList.add('is-visible'));
+
+  function closeModal(){
+    modal.classList.remove('is-visible');
+    document.body.style.overflow = '';
+    setTimeout(() => modal.remove(), 500);
+  }
+  if(closeBtn) closeBtn.addEventListener('click', closeModal);
+  if(continueBtn) continueBtn.addEventListener('click', closeModal);
+  if(backdrop) backdrop.addEventListener('click', closeModal);
+  document.addEventListener('keydown', (e) => { if(e.key === 'Escape') closeModal(); });
+})();

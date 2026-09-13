@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('company');
             $table->text('message')->nullable();
             $table->enum('status', ['en_attente', 'en_cours', 'valide'])->default('en_attente');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

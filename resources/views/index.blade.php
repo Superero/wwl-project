@@ -44,6 +44,36 @@
         </div>
     </div>
 @endif
+{{-- POPUP echec — affichée uniquement après une soumission échoue --}}
+@if ($errors->any())
+    <div class="success-modal error-modal" id="errorModal" role="dialog" aria-modal="true" aria-labelledby="errorTitle">
+        <div class="success-modal-backdrop"></div>
+        <div class="success-modal-card">
+            <button type="button" class="success-modal-close" id="errorModalClose" aria-label="Fermer">
+                ×
+            </button>
+            <div class="success-icon-wrapper error-icon-wrapper">
+                <div class="success-icon error-icon">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M12 8v5M12 16h.01M10.29 3.86l-8.18 14.18A2 2 0 0 0 3.82 21h16.36a2 2 0 0 0 1.71-2.96L13.71 3.86a2 2 0 0 0-3.42 0z"/>
+                    </svg>
+                </div>
+            </div>
+            <div class="success-modal-content">
+                <span class="success-modal-label">Formulaire incomplet</span>
+                <h2 id="errorTitle">Des informations sont manquantes</h2>
+                <ul class="error-list">
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+                <button type="button" class="success-modal-button error-modal-button" id="errorModalContinue">
+                    <i data-lucide="x" aria-hidden="true"></i> Corriger et réessayer
+                </button>
+            </div>
+        </div>
+    </div>
+@endif
 
 <!-- SCROLL PROGRESS -->
 <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>

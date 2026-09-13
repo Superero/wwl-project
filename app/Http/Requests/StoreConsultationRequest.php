@@ -32,4 +32,16 @@ class StoreConsultationRequest extends FormRequest
             'message' => 'nullable|string|max:2000',
         ];
     }
+    public function messages(): array
+{
+    return [
+        'name.required'    => 'Le nom complet est obligatoire.',
+        'email.required'   => 'L\'adresse email est obligatoire.',
+        'email.email'      => 'L\'adresse email n\'est pas valide.',
+        'company.required' => 'Le nom de l\'entreprise est obligatoire.',
+        'role.required'    => 'Merci de sélectionner votre fonction.',
+        'phone.required'   => 'Le numéro de téléphone est obligatoire.',
+        'need.required'    => 'Merci de sélectionner votre enjeu principal.',
+    ];
+}
 }

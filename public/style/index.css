@@ -2141,3 +2141,31 @@ html[data-theme="light"] .hero .btn1 {
     color: #5dc9ca;
     border-color: cadetblue;
 }
+
+/* POP-up echec */
+.error-modal .success-icon,
+.error-modal .success-icon-wrapper {
+    background: rgba(220, 38, 38, 0.12);
+    color: #dc2626;
+}
+
+.error-modal .success-icon svg {
+    stroke: #dc2626;
+    fill: none;
+    stroke-width: 2;
+}
+
+.error-modal .status-dot { display: none; }
+
+.error-list {
+    text-align: left;
+    margin: 12px 0;
+    padding-left: 18px;
+    color: #dc2626;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.error-modal-button {
+    background: #dc2626 !important;
+}
